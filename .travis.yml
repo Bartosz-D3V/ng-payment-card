@@ -1,0 +1,46 @@
+dist: trusty
+sudo: required
+
+language: node_js
+
+node_js:
+  - "8.9"
+
+cache:
+  yarn: true
+  directories:
+     - ./node_modules
+     - $HOME/.cache/yarn
+     - $HOME/.npm
+
+matrix:
+  fast_finish: true
+
+before_script:
+  - sh -e /etc/init.d/xvfb start
+  - export DISPLAY=:99.0
+  - sleep 3
+
+before_install:
+  - node --version
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - sudo apt-get update
+  - sudo apt-get install -y libappindicator1 fonts-liberation
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
+
+install:
+  - yarn install
+
+script:
+  - npm run dist-app
+  - npm run dist-lib
+  - xvfb-run -a npm run e2e -- --prod --protractor-config=./e2e/protractor-ci.conf.js
+  - xvfb-run -a npm test --browser=ChromeNoSandbox
+
+#after_success:
+#  - npm install -g codecov
+#  - codecov -t $TOKEN
+
+#notifications:
+#  email: false
