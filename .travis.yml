@@ -35,7 +35,7 @@ install:
 script:
   - npm run dist-app
   - npm run dist-lib
-  - xvfb-run -a npm run e2e -- --prod --protractor-config=protractor-ci.conf.js
+  - xvfb-run -a npm run e2e -- --prod --protractor-config=./e2e/protractor-ci.conf.js
   - xvfb-run -a npm test
 
 #after_success:
