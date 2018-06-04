@@ -1,0 +1,4 @@
+*.map*
+.ts.*
+coverage
+dist

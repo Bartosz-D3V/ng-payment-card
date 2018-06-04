@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "credit-card": {
+      "root": "projects/credit-card",
+      "sourceRoot": "projects/credit-card/src",
+      "projectType": "library",
+      "prefix": "ng",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/credit-card/tsconfig.lib.json",
+            "project": "projects/credit-card/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/credit-card/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/credit-card/src/test.ts",
+            "tsConfig": "projects/credit-card/tsconfig.spec.json",
+            "karmaConfig": "projects/credit-card/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/credit-card/tsconfig.lib.json",
+              "projects/credit-card/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-credit-card-app"

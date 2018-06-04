@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "credit-card": [
+        "dist/credit-card"
+      ],
+      "credit-card/*": [
+        "dist/credit-card/*"
+      ]
+    }
   }
 }
