@@ -1,4 +1,4 @@
-* text=auto whitespace=trailing-space, space-before-tab, -indent-with-non-tab, tab-in-indent, tabwidth=2
+* text=auto whitespace=trailing-space, tabwidth=2
 
 .git* text export-ignore
 *.rc text
