@@ -82,7 +82,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ]
+            ],
+            "codeCoverage": true
           }
         },
         "lint": {
@@ -149,7 +150,8 @@
           "options": {
             "main": "projects/credit-card/src/test.ts",
             "tsConfig": "projects/credit-card/tsconfig.spec.json",
-            "karmaConfig": "projects/credit-card/karma.conf.js"
+            "karmaConfig": "projects/credit-card/karma.conf.js",
+            "codeCoverage": true
           }
         },
         "lint": {

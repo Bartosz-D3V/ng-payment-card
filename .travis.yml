@@ -33,9 +33,10 @@ install:
   - yarn install
 
 script:
-  - npm run dist
-  - xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
-  - xvfb-run -a npm test -- --no-progress
+  - npm run dist-app
+  - npm run dist-lib
+  - xvfb-run -a npm run e2e -- --prod --protractor-config=protractor-ci.conf.js
+  - xvfb-run -a npm test
 
 #after_success:
 #  - npm install -g codecov
