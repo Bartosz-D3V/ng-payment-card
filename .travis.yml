@@ -42,5 +42,7 @@ script:
 #  - npm install -g codecov
 #  - codecov -t $TOKEN
 
-#notifications:
-#  email: false
+notifications:
+  email: false
+    on_success: never
+    on_failure: change
