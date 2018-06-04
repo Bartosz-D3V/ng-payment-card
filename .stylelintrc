@@ -3,7 +3,7 @@
     "stylelint-scss"
   ],
   "extends": [
-    "stylelint-config-sass-guidelines"
+    "stylelint-scss"
   ],
   "rules": {
     "max-nesting-depth": 2,

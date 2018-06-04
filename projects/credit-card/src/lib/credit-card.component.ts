@@ -2,15 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ng-credit-card',
-  template: `
-    <p>
-      credit-card works!
-    </p>
-  `,
-  styles: [],
+  templateUrl: './credit-card.component.html',
+  styleUrls: ['./credit-card.component.scss'],
 })
 export class CreditCardComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit(): void {}
 }
