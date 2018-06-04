@@ -2,6 +2,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
+const config = require('./protractor.conf').config;
 
 config.capabilities = {
   browserName: 'chrome',
@@ -31,3 +32,5 @@ exports.config = {
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   },
 };
+
+exports.config = config;
