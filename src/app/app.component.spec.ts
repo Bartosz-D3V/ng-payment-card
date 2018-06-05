@@ -1,7 +1,8 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
 import { CreditCardModule } from '@cc-project/public_api';
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   let app: AppComponent;
@@ -10,7 +11,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
-      imports: [CreditCardModule],
+      imports: [CreditCardModule, ReactiveFormsModule],
     }).compileComponents();
   }));
 
