@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'ng-credit-card',
@@ -6,7 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./credit-card.component.scss'],
 })
 export class CreditCardComponent implements OnInit {
-  constructor() {}
+  public ccForm: FormGroup;
 
-  public ngOnInit(): void {}
+  constructor(private _fb: FormBuilder) {}
+
+  public ngOnInit(): void {
+    this.buildForm();
+  }
+
+  private buildForm(): void {
+    this.ccForm = this._fb.group({
+      cardNumber: [''],
+      cardHolder: [''],
+      expirationDay: [''],
+      expirationMonth: [''],
+      ccv: [''],
+    });
+  }
 }
