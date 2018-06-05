@@ -17,6 +17,9 @@
       "dom"
     ],
     "paths": {
+      "@cc-project/*": [
+        "projects/credit-card/src/*"
+      ],
       "credit-card": [
         "dist/credit-card"
       ],
