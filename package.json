@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "pree2e": "webdriver-manager update --gecko=false",
     "e2e": "ng e2e",
-    "pretty": "prettier --write **/*.{js,ts}",
+    "pretty": "prettier --write **/*.{js,ts,scss}",
     "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
     "lint-staged": "lint-staged --config .lintstagedrc",
     "dist-app": "ng build ng-credit-card-app --prod --build-optimizer --aot --extract-licenses=false",
