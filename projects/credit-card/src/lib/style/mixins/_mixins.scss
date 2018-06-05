@@ -1,0 +1,37 @@
+@import '../variables/variables';
+
+@mixin breakpoint($size) {
+  @if $size == desktop-only {
+    @media only screen and (min-width: $x-large-min) {
+      @content;
+    }
+  } @else if $size == laptop-only {
+    @media only screen and (min-width: $large-min) and (max-width: $large-max) {
+      @content;
+    }
+  } @else if $size == laptop {
+    @media only screen and (max-width: $large-max) {
+      @content;
+    }
+  } @else if $size == tablet-only {
+    @media only screen and (min-width: $medium-min) and (max-width: $medium-max) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media only screen and (max-width: $medium-max) {
+      @content;
+    }
+  } @else if $size == smartphone-only {
+    @media only screen and (min-width: $small-min) and (max-width: $small-max) {
+      @content;
+    }
+  } @else if $size == smartphone {
+    @media only screen and (max-width: $small-max) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media only screen and (max-width: $x-small-max) {
+      @content;
+    }
+  }
+}
