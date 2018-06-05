@@ -1,7 +1,7 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 
-import { CreditCardModule } from '@cc-project/lib/credit-card.module';
 import { AppComponent } from './app.component';
+import { CreditCardModule } from '@cc-project/public_api';
 
 describe('AppComponent', () => {
   let app: AppComponent;
