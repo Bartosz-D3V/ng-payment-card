@@ -29,21 +29,10 @@ export class CreditCardComponent implements OnInit {
         ]),
       ],
       cardHolder: ['', Validators.compose([Validators.required])],
-      expirationDay: [
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(2),
-        ]),
-      ],
+      expirationDay: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)])],
       expirationMonth: [
         '',
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(2),
-        ]),
+        Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
       ],
       ccv: [
         '',
