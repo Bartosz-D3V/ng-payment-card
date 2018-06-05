@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { CardValidator } from './validators/card-validator';
 
 @Component({
   selector: 'ng-credit-card',
@@ -17,11 +19,41 @@ export class CreditCardComponent implements OnInit {
 
   private buildForm(): void {
     this.ccForm = this._fb.group({
-      cardNumber: [''],
-      cardHolder: [''],
-      expirationDay: [''],
-      expirationMonth: [''],
-      ccv: [''],
+      cardNumber: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(12),
+          Validators.maxLength(19),
+          CardValidator.numbersOnly,
+        ]),
+      ],
+      cardHolder: ['', Validators.compose([Validators.required])],
+      expirationDay: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(2),
+        ]),
+      ],
+      expirationMonth: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(2),
+        ]),
+      ],
+      ccv: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(4),
+          CardValidator.numbersOnly,
+        ]),
+      ],
     });
   }
 }

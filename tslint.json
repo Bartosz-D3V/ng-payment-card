@@ -36,7 +36,7 @@
     "label-position": true,
     "max-line-length": [
       true,
-      140
+      90
     ],
     "member-access": true,
     "member-ordering": [
@@ -52,7 +52,6 @@
     ],
     "no-arg": true,
     "no-bitwise": true,
-    "no-consecutive-blank-lines": true,
     "no-console": [
       true,
       "log",

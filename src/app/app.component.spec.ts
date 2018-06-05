@@ -1,8 +1,8 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { CreditCardModule } from '@cc-project/public_api';
 import { AppComponent } from './app.component';
+import { CreditCardModule } from '@cc-project/lib/credit-card.module';
 
 describe('AppComponent', () => {
   let app: AppComponent;
