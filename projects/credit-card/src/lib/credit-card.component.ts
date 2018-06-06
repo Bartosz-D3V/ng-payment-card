@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CardValidator } from './validators/card-validator';
+import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
+import { CardDetails } from '@cc-project/lib/domain/CardDetails';
 
 @Component({
   selector: 'ng-credit-card',
@@ -10,6 +12,8 @@ import { CardValidator } from './validators/card-validator';
 })
 export class CreditCardComponent implements OnInit {
   public ccForm: FormGroup;
+
+  @Output() public formUpdated: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
 
   constructor(private _fb: FormBuilder) {}
 
@@ -44,5 +48,10 @@ export class CreditCardComponent implements OnInit {
         ]),
       ],
     });
+  }
+
+  public emitUpdatedCard(): void {
+    const cardDetails: ICardDetails = <ICardDetails>this.ccForm.value;
+    this.formUpdated.emit(cardDetails);
   }
 }
