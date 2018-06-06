@@ -1,1 +1,32 @@
 @import 'style/manifest';
+
+.cc-form {
+  @at-root input {
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__input {
+    font-size: $input-font-size;
+    text-align: center;
+    margin-top: $input-margin;
+
+    &--long {
+      width: $input-large;
+    }
+  }
+}
+
+.cc-wrapper {
+  width: 60%;
+  height: 100%;
+  background-color: $wrapper-background;
+  border-radius: $wrapper-radius;
+}
