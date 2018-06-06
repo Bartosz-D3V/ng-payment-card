@@ -1,5 +1,5 @@
-@import 'assets/reset';
+@import 'styles/manifest';
 
 body {
-  background: linear-gradient(to right, #3fada8, #808080);
+  background: linear-gradient(to right, $background-gradient-start, $background-gradient-end);
 }
