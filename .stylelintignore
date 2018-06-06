@@ -1,2 +1,3 @@
 **/*.css
 **/*.map.*
+src/assets/_reset.scss
