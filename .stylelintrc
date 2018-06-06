@@ -7,7 +7,7 @@
   ],
   "rules": {
     "max-nesting-depth": 2,
-    "color-hex-case": "upper",
+    "color-hex-case": "lower",
     "indentation": 2,
     "color-no-invalid-hex": true,
     "font-family-no-duplicate-names": true,

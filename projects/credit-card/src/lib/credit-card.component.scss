@@ -1,6 +1,20 @@
 @import 'style/manifest';
 
 .cc-form {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &--inline {
+    display: inherit;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: inherit;
+    align-items: inherit;
+  }
+
   @at-root input {
     &[type='number'] {
       -moz-appearance: textfield;
@@ -17,6 +31,7 @@
     font-size: $input-font-size;
     text-align: center;
     margin-top: $input-margin;
+    margin-bottom: $input-margin;
 
     &--long {
       width: $input-large;
