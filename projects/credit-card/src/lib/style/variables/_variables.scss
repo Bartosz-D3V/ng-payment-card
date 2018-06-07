@@ -9,13 +9,18 @@ $large-max: 1919px;
 $x-large-min: 1920px;
 
 // Elements size
-$input-large: 260px;
+$input-width-large: 60%;
+$input-width-short: 50%;
+$input-height: 38px;
 $input-font-size: 1.2em;
+$label-font-size: 0.6em;
 
 // Colours definition
 $input-highlight: #333;
+$input-focus-border-colour: #41acf4;
 $wrapper-background: #fff;
 
 // Misc
 $wrapper-radius: 20px;
-$input-margin: 50px;
+$small-margin: 5%;
+$big-margin: 20%;
