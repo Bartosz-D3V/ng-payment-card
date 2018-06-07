@@ -6,13 +6,21 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: $small-margin;
+  padding-right: $small-margin;
 
   &--inline {
     display: inherit;
     flex-flow: row;
     flex-wrap: wrap;
-    justify-content: inherit;
+    justify-content: space-between;
     align-items: inherit;
+
+    > div {
+      display: block;
+    }
   }
 
   @at-root input {
@@ -27,14 +35,48 @@
     }
   }
 
+  &__wrapper {
+    margin-top: $small-margin;
+  }
+
+  &__label {
+    display: block;
+    text-transform: uppercase;
+    font-size: $label-font-size;
+    color: hsla(0, 0, 0, 0.6);
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Inconsolata', Serif, serif;
+    margin-top: $small-margin;
+    text-align: left;
+
+    &--first {
+      margin-top: $big-margin;
+    }
+  }
+
   &__input {
     font-size: $input-font-size;
     text-align: center;
-    margin-top: $input-margin;
-    margin-bottom: $input-margin;
+    display: block;
+    width: 100%;
+    height: $input-height;
+    color: hsl(0, 0, 20);
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid hsla(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
+
+    &:focus {
+      border-color: $input-focus-border-colour;
+    }
 
     &--long {
-      width: $input-large;
+      width: $input-width-large;
+    }
+
+    &--short {
+      width: $input-width-short;
     }
   }
 }
