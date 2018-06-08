@@ -1,12 +1,18 @@
 <section class="cc-wrapper">
   <form class="cc-form" [formGroup]="ccForm">
-    <label for="cc-number" class="cc-form__label cc-form__label--first">Card number</label>
-    <input class="cc-form__input cc-form__input--long" id="cc-number" aria-label="Card number"
-           type="number" title="Card number" maxlength="19" formControlName="cardNumber">
-    <label for="cc-holder-name" class="cc-form__label">Card Holder name</label>
-    <input class="cc-form__input cc-form__input--long" id="cc-holder-name" aria-label="Card holder name" type="text"
-           title="Card holder name" formControlName="cardHolder">
-    <div class="cc-form cc-form--inline">
+    <div class="cc-form--column">
+      <div class="cc-form__wrapper">
+        <label for="cc-number" class="cc-form__label cc-form__label--first">Card number</label>
+        <input class="cc-form__input cc-form__input--long" id="cc-number" aria-label="Card number"
+               type="number" title="Card number" maxlength="19" formControlName="cardNumber">
+      </div>
+      <div class="cc-form__wrapper">
+        <label for="cc-holder-name" class="cc-form__label">Card Holder name</label>
+        <input class="cc-form__input cc-form__input--long" id="cc-holder-name" aria-label="Card holder name" type="text"
+               title="Card holder name" formControlName="cardHolder">
+      </div>
+    </div>
+    <div class="cc-form--inline">
       <div class="cc-form__wrapper">
         <label for="cc-expiration-day" class="cc-form__label">Expiration day</label>
         <input class="cc-form__input cc-form__input--short" id="cc-expiration-day" aria-label="Expiration day"

@@ -11,16 +11,21 @@
   padding-left: $small-margin;
   padding-right: $small-margin;
 
+  &--column {
+    display: inherit;
+    flex-flow: row;
+    flex-wrap: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+  }
+
   &--inline {
     display: inherit;
     flex-flow: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: inherit;
+    justify-content: flex-end;
     align-items: inherit;
-
-    > div {
-      display: block;
-    }
+    margin-bottom: $small-margin;
   }
 
   @at-root input {
@@ -37,6 +42,7 @@
 
   &__wrapper {
     margin-top: $small-margin;
+    width: 100%;
   }
 
   &__label {
@@ -49,6 +55,7 @@
     font-family: 'Inconsolata', Serif, serif;
     margin-top: $small-margin;
     text-align: left;
+    width: 100%;
 
     &--first {
       margin-top: $big-margin;
@@ -71,13 +78,13 @@
       border-color: $input-focus-border-colour;
     }
 
-    &--long {
-      width: $input-width-large;
-    }
-
-    &--short {
-      width: $input-width-short;
-    }
+    //&--long {
+    //  width: $input-width-large;
+    //}
+    //
+    //&--short {
+    //  width: $input-width-short;
+    //}
   }
 }
 
