@@ -17,7 +17,16 @@
     align-items: inherit;
     margin-bottom: $small-margin;
     width: 100%;
-    margin-right: inherit;
+
+    @include breakpoint(smartphone) {
+      display: inherit;
+      flex-flow: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   @at-root input {
@@ -33,20 +42,55 @@
   }
 
   &__wrapper {
-    margin-top: $small-margin;
-    margin-right: $small-margin;
+    @include breakpoint(laptop) {
+      margin-top: $small-margin;
+      margin-right: $small-margin;
 
-    &--long {
-      width: $input-width-large;
+      &--long {
+        width: $input-width-large;
+      }
+
+      &--short {
+        width: $input-width-short;
+      }
+
+      &--last {
+        margin-left: $small-margin;
+        margin-right: $big-margin;
+      }
     }
 
-    &--short {
-      width: $input-width-short;
+    @include breakpoint(tablet) {
+      margin-top: $small-margin;
+      margin-right: $small-margin;
+
+      &--long {
+        width: $input-width-large;
+      }
+
+      &--short {
+        width: $input-width-short;
+      }
+
+      &--last {
+        margin-left: $small-margin;
+        margin-right: $big-margin;
+      }
     }
 
-    &--last {
-      margin-left: $small-margin;
-      margin-right: $big-margin;
+    @include breakpoint(smartphone) {
+      margin-top: 0;
+      margin-right: 0;
+
+      &--long,
+      &--short {
+        width: 80%;
+      }
+
+      &--last {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 
@@ -86,8 +130,17 @@
 }
 
 .cc-wrapper {
-  width: 60%;
-  height: 100%;
-  background-color: $wrapper-background;
-  border-radius: $wrapper-radius;
+  @include breakpoint(laptop) {
+    width: 40%;
+    height: 100%;
+    background-color: $wrapper-background;
+    border-radius: $wrapper-radius;
+  }
+
+  @include breakpoint(tablet) {
+    width: 50%;
+    height: 100%;
+    background-color: $wrapper-background;
+    border-radius: $wrapper-radius;
+  }
 }
