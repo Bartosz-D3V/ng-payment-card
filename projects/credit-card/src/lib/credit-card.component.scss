@@ -130,6 +130,9 @@
 }
 
 .cc-wrapper {
+  margin: 0;
+  padding: 0;
+
   @include breakpoint(laptop) {
     width: 40%;
     height: 100%;
@@ -142,5 +145,46 @@
     height: 100%;
     background-color: $wrapper-background;
     border-radius: $wrapper-radius;
+  }
+}
+
+.cc-box {
+  width: 400px;
+  height: 280px;
+  position: absolute;
+  top: -112px;
+  left: 50%;
+  transform: translateX(-100%);
+
+  &:hover &--flip,
+  &.hover &--flip {
+    transform: rotateY(180deg);
+  }
+
+  &__front,
+  &__back {
+    width: 400px;
+    height: 250px;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    background: linear-gradient(135deg, #bd6772, #53223f);
+    position: absolute;
+    color: #fff;
+    font-family: Inconsolata;
+    top: 0;
+    left: 0;
+    text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+    box-shadow: 0 1px 6px hsla(0, 0, 0, 0.3);
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      opacity: 0.05;
+    }
   }
 }
