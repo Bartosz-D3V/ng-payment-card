@@ -1,4 +1,4 @@
-import { range, stringify } from '@cc-project/lib/shared/helpers';
+import { range, stringifyArray } from '@cc-project/lib/shared/helpers';
 
 describe('helpers', () => {
   describe('range function', () => {
@@ -32,27 +32,27 @@ describe('helpers', () => {
     });
   });
 
-  describe('stringify function', () => {
+  describe('stringifyArray function', () => {
     it('should return converted array of numbers to array of strings', () => {
-      const mockArray: Array<string> = stringify([15, 16, 17, 18, 19, 20]);
+      const mockArray: Array<string> = stringifyArray([15, 16, 17, 18, 19, 20]);
       const expectedArray: Array<string> = ['15', '16', '17', '18', '19', '20'];
 
       expect(mockArray).toEqual(expectedArray);
     });
 
     it('should array of strings if passed array of strings', () => {
-      const mockArray: Array<string> = stringify(['15', '16', '17', '18', '19', '20']);
+      const mockArray: Array<string> = stringifyArray(['15', '16', '17', '18', '19', '20']);
       const expectedArray: Array<string> = ['15', '16', '17', '18', '19', '20'];
 
       expect(mockArray).toEqual(expectedArray);
     });
 
     it('should return null if null was passed', () => {
-      expect(stringify(null)).toBeNull();
+      expect(stringifyArray(null)).toBeNull();
     });
 
     it('should return null if undefined was passed', () => {
-      expect(stringify(undefined)).toBeNull();
+      expect(stringifyArray(undefined)).toBeNull();
     });
   });
 });
