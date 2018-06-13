@@ -36,4 +36,26 @@ describe('CardValidator', () => {
       expect(CardValidator.numbersOnly(abstractCtrl)).toEqual(expectedErr);
     });
   });
+
+  describe('checksum method', () => {
+    const expectedErr: ValidationErrors = {
+      checksum: true,
+    };
+
+    it('should return null if the VISA credit card number passes luhn algorithm checker', () => {
+      const cc1 = '4831334173681875';
+      const cc2 = '4485400695865889';
+      const cc3 = '4556705413750101610';
+      const abstractCtrl: AbstractControl = new FormControl();
+
+      abstractCtrl.setValue(cc1);
+      expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+
+      abstractCtrl.setValue(cc2);
+      expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+
+      // abstractCtrl.setValue(cc3);
+      // expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+    });
+  });
 });
