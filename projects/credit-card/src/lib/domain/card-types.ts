@@ -32,4 +32,4 @@ cardTypes.set(CardType.MASTERCARD, stringifyArray(range(50, 55)));
 cardTypes.set(CardType.VISA, ['4']);
 cardTypes.set(CardType.VISA_ELECTRON, ['4026', '417500', '4405', '4508', '4844', '4913', '4917']);
 
-export const CART_TYPES = cardTypes;
+export const CARD_TYPES = cardTypes;
