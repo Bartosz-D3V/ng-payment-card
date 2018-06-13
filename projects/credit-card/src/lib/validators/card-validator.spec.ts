@@ -7,6 +7,16 @@ describe('CardValidator', () => {
     expect(CardValidator).toBeTruthy();
   });
 
+  let abstractCtrl: AbstractControl;
+
+  beforeAll(() => {
+    abstractCtrl = new FormControl();
+  });
+
+  afterEach(() => {
+    abstractCtrl.reset();
+  });
+
   describe('numbersOnly method', () => {
     const expectedErr: ValidationErrors = {
       numbersOnly: true,
@@ -14,7 +24,6 @@ describe('CardValidator', () => {
 
     it('should return null if control value contains only numbers', () => {
       const mockText1 = 123;
-      const abstractCtrl: AbstractControl = new FormControl();
 
       abstractCtrl.setValue(mockText1);
       expect(CardValidator.numbersOnly(abstractCtrl)).toBeNull();
@@ -22,7 +31,6 @@ describe('CardValidator', () => {
 
     it('should return null if control value contains only numbers as string', () => {
       const mockText1 = '0901223';
-      const abstractCtrl: AbstractControl = new FormControl();
 
       abstractCtrl.setValue(mockText1);
       expect(CardValidator.numbersOnly(abstractCtrl)).toBeNull();
@@ -30,7 +38,6 @@ describe('CardValidator', () => {
 
     it('should return NUMBERS_ONLY_ERR if control value contains alphabet characters', () => {
       const mockInvalidText1 = '12AB23';
-      const abstractCtrl: AbstractControl = new FormControl();
 
       abstractCtrl.setValue(mockInvalidText1);
       expect(CardValidator.numbersOnly(abstractCtrl)).toEqual(expectedErr);
@@ -42,20 +49,66 @@ describe('CardValidator', () => {
       checksum: true,
     };
 
-    it('should return null if the VISA credit card number passes luhn algorithm checker', () => {
-      const cc1 = '4831334173681875';
-      const cc2 = '4485400695865889';
-      const cc3 = '4556705413750101610';
-      const abstractCtrl: AbstractControl = new FormControl();
+    it('should return null if the credit card number passes luhn algorithm checker', () => {
+      const ccNum1 = '4831334173681875';
+      const ccNum2 = '4485400695865889';
+      const ccNum3 = '4556705413750101610';
+      const ccNum4 = '4539883773969761482';
+      const ccNum5 = '5322540118114060';
+      const ccNum6 = '5404555568860708';
+      const ccNum7 = '5362427769465507';
 
-      abstractCtrl.setValue(cc1);
+      abstractCtrl.setValue(ccNum1);
       expect(CardValidator.checksum(abstractCtrl)).toBeNull();
 
-      abstractCtrl.setValue(cc2);
+      abstractCtrl.setValue(ccNum2);
       expect(CardValidator.checksum(abstractCtrl)).toBeNull();
 
-      // abstractCtrl.setValue(cc3);
-      // expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+      abstractCtrl.setValue(ccNum3);
+      expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+
+      abstractCtrl.setValue(ccNum4);
+      expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+
+      abstractCtrl.setValue(ccNum5);
+      expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+
+      abstractCtrl.setValue(ccNum6);
+      expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+
+      abstractCtrl.setValue(ccNum7);
+      expect(CardValidator.checksum(abstractCtrl)).toBeNull();
+    });
+
+    it('should return checksum error if the credit card number does not pass luhn algorithm checker', () => {
+      const ccNum1 = '4831334173681874';
+      const ccNum2 = '44854106958658810';
+      const ccNum3 = '4556705413750101620';
+      const ccNum4 = '4539883773969761462';
+      const ccNum5 = '5322540119114060';
+      const ccNum6 = '5404555561860738';
+      const ccNum7 = '5362427768465502';
+
+      abstractCtrl.setValue(ccNum1);
+      expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
+
+      abstractCtrl.setValue(ccNum2);
+      expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
+
+      abstractCtrl.setValue(ccNum3);
+      expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
+
+      abstractCtrl.setValue(ccNum4);
+      expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
+
+      abstractCtrl.setValue(ccNum5);
+      expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
+
+      abstractCtrl.setValue(ccNum6);
+      expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
+
+      abstractCtrl.setValue(ccNum7);
+      expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
     });
   });
 });

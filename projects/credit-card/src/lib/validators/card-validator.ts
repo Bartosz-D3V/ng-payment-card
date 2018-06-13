@@ -20,12 +20,11 @@ export class CardValidator {
     const luhnArray: Array<number> = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9];
     let length: number = ccNumber.length;
     let sum = 0;
-    let val;
+    let shouldMultiply = true;
 
     while (length) {
-      length--;
-      val = parseInt(ccNumber.charAt(length), 10);
-      sum += length % 2 === 0 ? luhnArray[val] : val;
+      const val: number = parseInt(ccNumber.charAt(--length), 10);
+      sum += (shouldMultiply = !shouldMultiply) ? luhnArray[val] : val;
     }
     return !(sum && sum % 10 === 0) ? CardValidator.CHECKSUM_INVALID : null;
   }
