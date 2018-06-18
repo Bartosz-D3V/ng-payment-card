@@ -1,0 +1,21 @@
+plugins:
+  tslint:
+    enabled: true
+    config: tslint.json
+  nodesecurity:
+    enabled: true
+  pmd:
+    enabled: true
+  fixme:
+    enabled: true
+  git-legal:
+    enabled: true
+  stylelint:
+    enabled: true
+    config: .stylelintrc
+  markdownlint:
+    enabled: true
+exclude_paths:
+  - "node_modules/"
+  - "coverage/"
+  - "dist/"
