@@ -6,13 +6,27 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 
   &--inline {
     display: inherit;
     flex-flow: row;
-    flex-wrap: wrap;
-    justify-content: inherit;
+    flex-wrap: inherit;
+    justify-content: flex-end;
     align-items: inherit;
+    margin-bottom: $small-margin;
+    width: 100%;
+
+    @include breakpoint(smartphone) {
+      display: inherit;
+      flex-flow: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   @at-root input {
@@ -27,21 +41,106 @@
     }
   }
 
+  &__wrapper {
+    @include breakpoint(laptop) {
+      margin-top: $small-margin;
+      margin-right: $small-margin;
+
+      &--long {
+        width: $input-width-large;
+      }
+
+      &--short {
+        width: $input-width-short;
+      }
+
+      &--last {
+        margin-left: $small-margin;
+        margin-right: $big-margin;
+      }
+    }
+
+    @include breakpoint(tablet) {
+      margin-top: $small-margin;
+      margin-right: $small-margin;
+
+      &--long {
+        width: $input-width-large;
+      }
+
+      &--short {
+        width: $input-width-short;
+      }
+
+      &--last {
+        margin-left: $small-margin;
+        margin-right: $big-margin;
+      }
+    }
+
+    @include breakpoint(smartphone) {
+      margin-top: 0;
+      margin-right: 0;
+
+      &--long,
+      &--short {
+        width: 80%;
+      }
+
+      &--last {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    text-transform: uppercase;
+    font-size: $label-font-size;
+    color: hsla(0, 0, 0, 0.6);
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Inconsolata', Serif, serif;
+    margin-top: $small-margin;
+    text-align: left;
+    width: 100%;
+
+    &--first {
+      margin-top: $big-margin;
+    }
+  }
+
   &__input {
     font-size: $input-font-size;
     text-align: center;
-    margin-top: $input-margin;
-    margin-bottom: $input-margin;
+    display: block;
+    width: 100%;
+    height: $input-height;
+    color: hsl(0, 0, 20);
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid hsla(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
 
-    &--long {
-      width: $input-large;
+    &:focus {
+      border-color: $input-focus-border-colour;
     }
   }
 }
 
 .cc-wrapper {
-  width: 60%;
-  height: 100%;
-  background-color: $wrapper-background;
-  border-radius: $wrapper-radius;
+  @include breakpoint(laptop) {
+    width: 40%;
+    height: 100%;
+    background-color: $wrapper-background;
+    border-radius: $wrapper-radius;
+  }
+
+  @include breakpoint(tablet) {
+    width: 50%;
+    height: 100%;
+    background-color: $wrapper-background;
+    border-radius: $wrapper-radius;
+  }
 }
