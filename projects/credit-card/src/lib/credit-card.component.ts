@@ -30,6 +30,7 @@ export class CreditCardComponent implements OnInit {
           Validators.minLength(12),
           Validators.maxLength(19),
           CardValidator.numbersOnly,
+          CardValidator.checksum,
         ]),
       ],
       cardHolder: ['', Validators.compose([Validators.required])],

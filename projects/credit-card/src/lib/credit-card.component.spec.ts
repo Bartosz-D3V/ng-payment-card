@@ -49,10 +49,11 @@ describe('CreditCardComponent', () => {
 
         expect(ctrl.valid).toBeFalsy();
         expect(ctrl.hasError('required')).toBeTruthy();
+        expect(ctrl.hasError('checksum')).toBeTruthy();
       });
 
       it('should be marked as valid if contains value', () => {
-        ctrl.setValue(123);
+        ctrl.setValue('5362427769465507');
 
         expect(ctrl.valid).toBeTruthy();
         expect(ctrl.hasError('required')).toBeFalsy();
@@ -73,7 +74,7 @@ describe('CreditCardComponent', () => {
       });
 
       it('should be marked as valid if contains between 12 and 19 digits', () => {
-        ctrl.setValue('123456789123456');
+        ctrl.setValue('4831334173681875');
 
         expect(ctrl.valid).toBeTruthy();
         expect(ctrl.hasError('minlength')).toBeFalsy();
@@ -88,10 +89,24 @@ describe('CreditCardComponent', () => {
       });
 
       it('should be marked as valid if contains numerical value', () => {
-        ctrl.setValue('1234567891234567');
+        ctrl.setValue('4485400695865889');
 
         expect(ctrl.valid).toBeTruthy();
         expect(ctrl.hasError('numbersOnly')).toBeFalsy();
+      });
+
+      it('should be marked as invalid if checksum is not valid', () => {
+        ctrl.setValue('4539883773969761462');
+
+        expect(ctrl.valid).toBeFalsy();
+        expect(ctrl.hasError('checksum')).toBeTruthy();
+      });
+
+      it('should be marked as valid if checksum is valid', () => {
+        ctrl.setValue('4556705413750101610');
+
+        expect(ctrl.valid).toBeTruthy();
+        expect(ctrl.hasError('checksum')).toBeFalsy();
       });
     });
 
