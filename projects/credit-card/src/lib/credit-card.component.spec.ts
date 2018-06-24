@@ -34,7 +34,8 @@ describe('CreditCardComponent', () => {
     it(
       'should emit form values when form was changed',
       fakeAsync(() => {
-        let result: ICardDetails = component.formUpdated.subscribe((val: ICardDetails) => (result = val));
+        let result: ICardDetails;
+        component.formUpdated.subscribe((val: ICardDetails) => (result = val));
         const mockForm: ICardDetails = new CardDetails('Donnie Darko', null, null, null, null);
         component.ccForm.setValue(mockForm);
         tick();
