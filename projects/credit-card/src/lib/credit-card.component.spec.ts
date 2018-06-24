@@ -1,7 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
 
 import { CreditCardComponent } from './credit-card.component';
+import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
+import { CardDetails } from './domain/CardDetails';
 
 describe('CreditCardComponent', () => {
   let component: CreditCardComponent;
@@ -26,6 +28,20 @@ describe('CreditCardComponent', () => {
 
   it('should instantiate form', () => {
     expect(component.ccForm).toBeDefined();
+  });
+
+  describe('OnChanges', () => {
+    it(
+      'should emit form values when form was changed',
+      fakeAsync(() => {
+        let result: ICardDetails = component.formUpdated.subscribe((val: ICardDetails) => (result = val));
+        const mockForm: ICardDetails = new CardDetails('Donnie Darko', null, null, null, null);
+        component.ccForm.setValue(mockForm);
+        tick();
+
+        expect(result).toEqual(mockForm);
+      })
+    );
   });
 
   describe('ccForm', () => {
