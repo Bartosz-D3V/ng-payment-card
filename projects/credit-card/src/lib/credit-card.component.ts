@@ -1,4 +1,12 @@
-import { Component, EventEmitter, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  OnChanges,
+  SimpleChanges,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CardValidator } from './validators/card-validator';
@@ -10,18 +18,12 @@ import { CardDetails } from '@cc-project/lib/domain/CardDetails';
   templateUrl: './credit-card.component.html',
   styleUrls: ['./credit-card.component.scss'],
 })
-export class CreditCardComponent implements OnInit, OnChanges {
+export class CreditCardComponent implements OnInit {
   public ccForm: FormGroup;
 
-  @Output() public formUpdated: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
+  @Output() public formSaved: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
 
   constructor(private _fb: FormBuilder) {}
-
-  public ngOnChanges(changes: SimpleChanges): void {
-    if (changes.ccForm) {
-      this.formUpdated.emit(this.ccForm.value);
-    }
-  }
 
   public ngOnInit(): void {
     this.buildForm();
@@ -57,8 +59,8 @@ export class CreditCardComponent implements OnInit, OnChanges {
     });
   }
 
-  public emitUpdatedCard(): void {
-    const cardDetails: ICardDetails = <ICardDetails>this.ccForm.value;
-    this.formUpdated.emit(cardDetails);
+  public emitSavedCard(): void {
+    const cardDetails: ICardDetails = <CardDetails>this.ccForm.value;
+    this.formSaved.emit(cardDetails);
   }
 }

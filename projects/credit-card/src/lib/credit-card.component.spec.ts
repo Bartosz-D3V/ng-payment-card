@@ -30,21 +30,6 @@ describe('CreditCardComponent', () => {
     expect(component.ccForm).toBeDefined();
   });
 
-  describe('OnChanges', () => {
-    it(
-      'should emit form values when form was changed',
-      fakeAsync(() => {
-        let result: ICardDetails;
-        component.formUpdated.subscribe((val: ICardDetails) => (result = val));
-        const mockForm: ICardDetails = new CardDetails('Donnie Darko', null, null, null, null);
-        component.ccForm.setValue(mockForm);
-        tick();
-
-        expect(result).toEqual(mockForm);
-      })
-    );
-  });
-
   describe('ccForm', () => {
     afterEach(() => {
       component.ccForm.reset();
@@ -312,5 +297,27 @@ describe('CreditCardComponent', () => {
         expect(ctrl.hasError('numbersOnly')).toBeFalsy();
       });
     });
+  });
+
+  describe('emitSavedCard', () => {
+    it(
+      'should emit saved form',
+      fakeAsync(() => {
+        let result: ICardDetails;
+        component.formSaved.subscribe((val: ICardDetails) => (result = val));
+        const exampleCard: ICardDetails = {
+          cardNumber: '123456789101',
+          cardHolder: 'Donnie Darko',
+          expirationDay: '05',
+          expirationMonth: '123',
+          ccv: 123,
+        };
+        component.ccForm.setValue(exampleCard);
+        component.emitSavedCard();
+
+        expect(result).toBeDefined();
+        expect(result).toEqual(exampleCard);
+      })
+    );
   });
 });
