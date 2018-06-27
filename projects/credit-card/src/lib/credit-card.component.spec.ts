@@ -337,5 +337,341 @@ describe('CreditCardComponent', () => {
         expect(component.ccNumMissingTxt).toEqual('Card number is required');
       });
     });
+
+    describe('ccNumTooShortTxt', () => {
+      afterEach(() => {
+        component.ccNumTooShortTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccNumTooShortTxt = 'Example text';
+
+        expect(component.ccNumTooShortTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccNumTooShortTxt).toEqual('Card number is too short');
+      });
+    });
+
+    describe('ccNumTooLongTxt', () => {
+      afterEach(() => {
+        component.ccNumTooLongTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccNumTooLongTxt = 'Example text';
+
+        expect(component.ccNumTooLongTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccNumTooLongTxt).toEqual('Card number is too long');
+      });
+    });
+
+    describe('ccNumContainsLettersTxt', () => {
+      afterEach(() => {
+        component.ccNumContainsLettersTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccNumContainsLettersTxt = 'Example text';
+
+        expect(component.ccNumContainsLettersTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccNumContainsLettersTxt).toEqual('Card number can contain digits only');
+      });
+    });
+
+    describe('ccNumchecksumInvalidTxt', () => {
+      afterEach(() => {
+        component.ccNumchecksumInvalidTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccNumchecksumInvalidTxt = 'Example text';
+
+        expect(component.ccNumchecksumInvalidTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccNumchecksumInvalidTxt).toEqual('Provided card number is invalid');
+      });
+    });
+
+    describe('ccNumchecksumInvalidTxt', () => {
+      afterEach(() => {
+        component.cardHolderMissingTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.cardHolderMissingTxt = 'Example text';
+
+        expect(component.cardHolderMissingTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.cardHolderMissingTxt).toEqual('Card holder name is required');
+      });
+    });
+
+    describe('expirationDayMissingTxt', () => {
+      afterEach(() => {
+        component.expirationDayMissingTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.expirationDayMissingTxt = 'Example text';
+
+        expect(component.expirationDayMissingTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.expirationDayMissingTxt).toEqual('Expiration day is required');
+      });
+    });
+
+    describe('expirationDayTooShortTxt', () => {
+      afterEach(() => {
+        component.expirationDayTooShortTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.expirationDayTooShortTxt = 'Example text';
+
+        expect(component.expirationDayTooShortTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.expirationDayTooShortTxt).toEqual('Expiration day is too short');
+      });
+    });
+
+    describe('expirationDayTooLongTxt', () => {
+      afterEach(() => {
+        component.expirationDayTooLongTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.expirationDayTooLongTxt = 'Example text';
+
+        expect(component.expirationDayTooLongTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.expirationDayTooLongTxt).toEqual('Expiration day is too long');
+      });
+    });
+
+    describe('expirationMonthMissingTxt', () => {
+      afterEach(() => {
+        component.expirationMonthMissingTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.expirationMonthMissingTxt = 'Example text';
+
+        expect(component.expirationMonthMissingTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.expirationMonthMissingTxt).toEqual('Expiration month is required');
+      });
+    });
+
+    describe('expirationMonthTooShortTxt', () => {
+      afterEach(() => {
+        component.expirationMonthTooShortTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.expirationMonthTooShortTxt = 'Example text';
+
+        expect(component.expirationMonthTooShortTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.expirationMonthTooShortTxt).toEqual('Expiration month is too short');
+      });
+    });
+
+    describe('expirationMonthTooLongTxt', () => {
+      afterEach(() => {
+        component.expirationMonthTooLongTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.expirationMonthTooLongTxt = 'Example text';
+
+        expect(component.expirationMonthTooLongTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.expirationMonthTooLongTxt).toEqual('Expiration month is too long');
+      });
+    });
+
+    describe('ccvMissingTxt', () => {
+      afterEach(() => {
+        component.ccvMissingTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccvMissingTxt = 'Example text';
+
+        expect(component.ccvMissingTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccvMissingTxt).toEqual('CCV number is required');
+      });
+    });
+
+    describe('ccvNumTooShortTxt', () => {
+      afterEach(() => {
+        component.ccvNumTooShortTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccvNumTooShortTxt = 'Example text';
+
+        expect(component.ccvNumTooShortTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccvNumTooShortTxt).toEqual('CCV number is too short');
+      });
+    });
+
+    describe('ccvNumTooLongTxt', () => {
+      afterEach(() => {
+        component.ccvNumTooLongTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccvNumTooLongTxt = 'Example text';
+
+        expect(component.ccvNumTooLongTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccvNumTooLongTxt).toEqual('CCV number is too long');
+      });
+    });
+
+    describe('ccvContainsLettersTxt', () => {
+      afterEach(() => {
+        component.ccvContainsLettersTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccvContainsLettersTxt = 'Example text';
+
+        expect(component.ccvContainsLettersTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccvContainsLettersTxt).toEqual('CCV number can contain digits only');
+      });
+    });
+
+    describe('validateCCNum', () => {
+      afterEach(() => {
+        component.validateCCNum = null;
+      });
+
+      it('should accept boolean value', () => {
+        component.validateCCNum = false;
+
+        expect(component.validateCCNum).toBeFalsy();
+      });
+
+      it('should have default true value', () => {
+        expect(component.validateCCNum).toBeTruthy();
+      });
+    });
+
+    describe('validateCCNum', () => {
+      afterEach(() => {
+        component.validateCCNum = null;
+      });
+
+      it('should accept boolean value', () => {
+        component.validateCCNum = false;
+
+        expect(component.validateCCNum).toBeFalsy();
+      });
+
+      it('should have default true value', () => {
+        expect(component.validateCCNum).toBeTruthy();
+      });
+    });
+
+    describe('validateCardHolder', () => {
+      afterEach(() => {
+        component.validateCardHolder = null;
+      });
+
+      it('should accept boolean value', () => {
+        component.validateCardHolder = false;
+
+        expect(component.validateCardHolder).toBeFalsy();
+      });
+
+      it('should have default true value', () => {
+        expect(component.validateCardHolder).toBeTruthy();
+      });
+    });
+
+    describe('validateExpirationDay', () => {
+      afterEach(() => {
+        component.validateExpirationDay = null;
+      });
+
+      it('should accept boolean value', () => {
+        component.validateExpirationDay = false;
+
+        expect(component.validateExpirationDay).toBeFalsy();
+      });
+
+      it('should have default true value', () => {
+        expect(component.validateExpirationDay).toBeTruthy();
+      });
+    });
+
+    describe('validateExpirationMonth', () => {
+      afterEach(() => {
+        component.validateExpirationMonth = null;
+      });
+
+      it('should accept boolean value', () => {
+        component.validateExpirationMonth = false;
+
+        expect(component.validateExpirationMonth).toBeFalsy();
+      });
+
+      it('should have default true value', () => {
+        expect(component.validateExpirationMonth).toBeTruthy();
+      });
+    });
+
+    describe('validateCCV', () => {
+      afterEach(() => {
+        component.validateCCV = null;
+      });
+
+      it('should accept boolean value', () => {
+        component.validateCCV = false;
+
+        expect(component.validateCCV).toBeFalsy();
+      });
+
+      it('should have default true value', () => {
+        expect(component.validateCCV).toBeTruthy();
+      });
+    });
   });
 });
