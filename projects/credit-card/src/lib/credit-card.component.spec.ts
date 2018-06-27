@@ -1,7 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
 
 import { CreditCardComponent } from './credit-card.component';
+import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
+import { CardDetails } from './domain/CardDetails';
 
 describe('CreditCardComponent', () => {
   let component: CreditCardComponent;
@@ -295,5 +297,27 @@ describe('CreditCardComponent', () => {
         expect(ctrl.hasError('numbersOnly')).toBeFalsy();
       });
     });
+  });
+
+  describe('emitSavedCard', () => {
+    it(
+      'should emit saved form',
+      fakeAsync(() => {
+        let result: ICardDetails;
+        component.formSaved.subscribe((val: ICardDetails) => (result = val));
+        const exampleCard: ICardDetails = {
+          cardNumber: '123456789101',
+          cardHolder: 'Donnie Darko',
+          expirationDay: '05',
+          expirationMonth: '123',
+          ccv: 123,
+        };
+        component.ccForm.setValue(exampleCard);
+        component.emitSavedCard();
+
+        expect(result).toBeDefined();
+        expect(result).toEqual(exampleCard);
+      })
+    );
   });
 });
