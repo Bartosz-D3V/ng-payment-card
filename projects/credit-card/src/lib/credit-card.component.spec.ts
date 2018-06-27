@@ -320,4 +320,22 @@ describe('CreditCardComponent', () => {
       })
     );
   });
+
+  describe('properties', () => {
+    describe('ccNumMissingTxt', () => {
+      afterEach(() => {
+        component.ccNumMissingTxt = null;
+      });
+
+      it('should accept string value', () => {
+        component.ccNumMissingTxt = 'Example text';
+
+        expect(component.ccNumMissingTxt).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.ccNumMissingTxt).toEqual('Card number is required');
+      });
+    });
+  });
 });
