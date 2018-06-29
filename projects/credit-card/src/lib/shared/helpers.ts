@@ -3,3 +3,12 @@ export const range = (start: number, end: number): Array<number> =>
 
 export const stringifyArray = <T>(array: Array<T>): Array<string> =>
   array != null ? array.map((n: T) => n.toString()) : null;
+
+export const getKeyByValue = <T>(value: T, map: Map<string, T>): string => {
+  for (const [key, val] of Array.from(map.entries())) {
+    if (val.toString() === value.toString()) {
+      return key;
+    }
+  }
+  return null;
+};

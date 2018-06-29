@@ -13,6 +13,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CardValidator } from './validators/card-validator';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
+import { CardType } from '@cc-project/lib/domain/card-type';
+import CARD_TYPES, { CardTypesContainer } from './domain/card-types';
 
 @Component({
   selector: 'ng-credit-card',
@@ -101,6 +103,14 @@ export class CreditCardComponent implements OnInit {
       ],
     });
   }
+
+  // public getCardType(cardTypes: CardTypesContainer, ccNum: string): CardType {
+  // return [...cardTypes.values()].find((value: Array<string>) => {
+  //    return value.filter((val: string) => {
+  //     return val.includes(ccNum);
+  //    }).length > 0;
+  // });
+  // }
 
   public emitSavedCard(): void {
     const cardDetails: ICardDetails = <CardDetails>this.ccForm.value;
