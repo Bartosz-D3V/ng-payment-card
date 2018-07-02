@@ -1,4 +1,4 @@
-import { range, stringifyArray, getKeyByValue } from '@cc-project/lib/shared/helpers';
+import { range, stringifyArray } from '@cc-project/lib/shared/helpers';
 
 describe('helpers', () => {
   describe('range function', () => {
@@ -53,29 +53,6 @@ describe('helpers', () => {
 
     it('should return null if undefined was passed', () => {
       expect(stringifyArray(undefined)).toBeNull();
-    });
-  });
-
-  describe('getKeyByValue', () => {
-    it('should return key by value', () => {
-      const mockMap: Map<string, number> = new Map();
-      mockMap.set('Test 1', 123);
-      mockMap.set('Test 2', 321);
-
-      const mockMap2: Map<string, Array<string>> = new Map();
-      mockMap2.set('1', ['Test1', 'Test2']);
-      mockMap2.set('2', ['Test2', 'Test3']);
-
-      expect(getKeyByValue(321, mockMap)).toEqual('Test 2');
-      expect(getKeyByValue(['Test2', 'Test3'], mockMap2)).toEqual('2');
-    });
-
-    it('should return null if value was not found', () => {
-      const mockMap: Map<string, number> = new Map();
-      mockMap.set('Test 1', 123);
-      mockMap.set('Test 2', 321);
-
-      expect(getKeyByValue(3210, mockMap)).toBeNull();
     });
   });
 });

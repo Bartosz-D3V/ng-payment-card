@@ -104,13 +104,14 @@ export class CreditCardComponent implements OnInit {
     });
   }
 
-  // public getCardType(cardTypes: CardTypesContainer, ccNum: string): CardType {
-  // return [...cardTypes.values()].find((value: Array<string>) => {
-  //    return value.filter((val: string) => {
-  //     return val.includes(ccNum);
-  //    }).length > 0;
-  // });
-  // }
+  public getCardType(cardTypes: CardTypesContainer, ccNum: string): CardType | null {
+    for (const [key, val] of Array.from(cardTypes.entries())) {
+      if (val.find((element: string) => ccNum.startsWith(element))) {
+        return key;
+      }
+    }
+    return null;
+  }
 
   public emitSavedCard(): void {
     const cardDetails: ICardDetails = <CardDetails>this.ccForm.value;
