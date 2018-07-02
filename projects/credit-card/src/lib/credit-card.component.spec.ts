@@ -1,11 +1,10 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
 
 import { CreditCardComponent } from './credit-card.component';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
-import { CardDetails } from './domain/CardDetails';
-import cardTypes from '@cc-project/lib/domain/card-types';
 import { CardType } from '@cc-project/lib/domain/card-type';
+import cardTypes from '@cc-project/lib/domain/card-types';
 
 describe('CreditCardComponent', () => {
   let component: CreditCardComponent;
@@ -388,23 +387,23 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('ccNumchecksumInvalidTxt', () => {
+    describe('ccNumChecksumInvalidTxt', () => {
       afterEach(() => {
-        component.ccNumchecksumInvalidTxt = null;
+        component.ccNumChecksumInvalidTxt = null;
       });
 
       it('should accept string value', () => {
-        component.ccNumchecksumInvalidTxt = 'Example text';
+        component.ccNumChecksumInvalidTxt = 'Example text';
 
-        expect(component.ccNumchecksumInvalidTxt).toEqual('Example text');
+        expect(component.ccNumChecksumInvalidTxt).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.ccNumchecksumInvalidTxt).toEqual('Provided card number is invalid');
+        expect(component.ccNumChecksumInvalidTxt).toEqual('Provided card number is invalid');
       });
     });
 
-    describe('ccNumchecksumInvalidTxt', () => {
+    describe('ccNumChecksumInvalidTxt', () => {
       afterEach(() => {
         component.cardHolderMissingTxt = null;
       });
