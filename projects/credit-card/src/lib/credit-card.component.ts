@@ -1,13 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  OnInit,
-  Output,
-  OnChanges,
-  SimpleChanges,
-  ChangeDetectionStrategy,
-  Input,
-} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CardValidator } from './validators/card-validator';
@@ -30,7 +21,7 @@ export class CreditCardComponent implements OnInit {
 
   @Input() public ccNumContainsLettersTxt? = 'Card number can contain digits only';
 
-  @Input() public ccNumchecksumInvalidTxt? = 'Provided card number is invalid';
+  @Input() public ccNumChecksumInvalidTxt? = 'Provided card number is invalid';
 
   @Input() public cardHolderMissingTxt? = 'Card holder name is required';
 
