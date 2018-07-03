@@ -3,6 +3,8 @@ import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
 
 import { CreditCardComponent } from './credit-card.component';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
+import { CardType } from '@cc-project/lib/domain/card-type';
+import cardTypes from '@cc-project/lib/domain/card-types';
 
 describe('CreditCardComponent', () => {
   let component: CreditCardComponent;
@@ -671,6 +673,33 @@ describe('CreditCardComponent', () => {
       it('should have default true value', () => {
         expect(component.validateCCV).toBeTruthy();
       });
+    });
+  });
+
+  describe('getCardType', () => {
+    it('should return AMERICAN_EXPRESS for number starting with 34', () => {
+      expect(component.getCardType(cardTypes, '34')).toBe(CardType.AMERICAN_EXPRESS);
+      expect(component.getCardType(cardTypes, '34123')).toBe(CardType.AMERICAN_EXPRESS);
+    });
+
+    it('should return AMERICAN_EXPRESS for number starting with 37', () => {
+      expect(component.getCardType(cardTypes, '37')).toBe(CardType.AMERICAN_EXPRESS);
+      expect(component.getCardType(cardTypes, '37723')).toBe(CardType.AMERICAN_EXPRESS);
+    });
+
+    it('should return CHINA_UNIONPAY for number starting with 62', () => {
+      expect(component.getCardType(cardTypes, '62')).toBe(CardType.CHINA_UNIONPAY);
+      expect(component.getCardType(cardTypes, '62123')).toBe(CardType.CHINA_UNIONPAY);
+    });
+
+    it('should return CHINA_UNIONPAY for number starting with 62', () => {
+      expect(component.getCardType(cardTypes, '88')).toBe(CardType.CHINA_UNIONPAY);
+      expect(component.getCardType(cardTypes, '88123')).toBe(CardType.CHINA_UNIONPAY);
+    });
+
+    it('should return DINERS_CLUBCARTE_BLANCHE for number between 300 and 305', () => {
+      expect(component.getCardType(cardTypes, '300')).toBe(CardType.DINERS_CLUBCARTE_BLANCHE);
+      expect(component.getCardType(cardTypes, '3055421')).toBe(CardType.DINERS_CLUBCARTE_BLANCHE);
     });
   });
 });
