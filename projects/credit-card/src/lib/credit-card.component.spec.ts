@@ -677,29 +677,53 @@ describe('CreditCardComponent', () => {
   });
 
   describe('getCardType', () => {
-    it('should return AMERICAN_EXPRESS for number starting with 34', () => {
-      expect(component.getCardType(cardTypes, '34')).toBe(CardType.AMERICAN_EXPRESS);
-      expect(component.getCardType(cardTypes, '34123')).toBe(CardType.AMERICAN_EXPRESS);
+    it('should return AMERICAN_EXPRESS', () => {
+      expect(component.getCardType(cardTypes, '377740327049504')).toBe(CardType.AMERICAN_EXPRESS);
+      expect(component.getCardType(cardTypes, '372774294508668')).toBe(CardType.AMERICAN_EXPRESS);
     });
 
-    it('should return AMERICAN_EXPRESS for number starting with 37', () => {
-      expect(component.getCardType(cardTypes, '37')).toBe(CardType.AMERICAN_EXPRESS);
-      expect(component.getCardType(cardTypes, '37723')).toBe(CardType.AMERICAN_EXPRESS);
+    it('should return DINERS', () => {
+      expect(component.getCardType(cardTypes, '36678417462141')).toBe(CardType.DINERS);
+      expect(component.getCardType(cardTypes, '36122381051416')).toBe(CardType.DINERS);
     });
 
-    it('should return CHINA_UNIONPAY for number starting with 62', () => {
-      expect(component.getCardType(cardTypes, '62')).toBe(CardType.CHINA_UNIONPAY);
-      expect(component.getCardType(cardTypes, '62123')).toBe(CardType.CHINA_UNIONPAY);
+    it('should return DINERS_CARTE_BLANCHE', () => {
+      expect(component.getCardType(cardTypes, '30310723060882')).toBe(CardType.DINERS_CARTE_BLANCHE);
+      expect(component.getCardType(cardTypes, '30105635125710')).toBe(CardType.DINERS_CARTE_BLANCHE);
     });
 
-    it('should return CHINA_UNIONPAY for number starting with 62', () => {
-      expect(component.getCardType(cardTypes, '88')).toBe(CardType.CHINA_UNIONPAY);
-      expect(component.getCardType(cardTypes, '88123')).toBe(CardType.CHINA_UNIONPAY);
+    it('should return DISCOVER_CLUB ', () => {
+      expect(component.getCardType(cardTypes, '6011611639813367')).toBe(CardType.DISCOVER_CLUB);
+      expect(component.getCardType(cardTypes, '6011040601455298')).toBe(CardType.DISCOVER_CLUB);
     });
 
-    it('should return DINERS_CLUBCARTE_BLANCHE for number between 300 and 305', () => {
-      expect(component.getCardType(cardTypes, '300')).toBe(CardType.DINERS_CLUBCARTE_BLANCHE);
-      expect(component.getCardType(cardTypes, '3055421')).toBe(CardType.DINERS_CLUBCARTE_BLANCHE);
+    it('should return CHINA_UNIONPAY', () => {
+      expect(component.getCardType(cardTypes, '6281620341037549')).toBe(CardType.CHINA_UNIONPAY);
+      expect(component.getCardType(cardTypes, '6237083013714488')).toBe(CardType.CHINA_UNIONPAY);
+    });
+
+    it('should return JCB', () => {
+      expect(component.getCardType(cardTypes, '3569198543021504')).toBe(CardType.JCB);
+      expect(component.getCardType(cardTypes, '3529500239872869')).toBe(CardType.JCB);
+    });
+
+    it('should return LASER', () => {
+      expect(component.getCardType(cardTypes, '6304611158942658')).toBe(CardType.LASER);
+    });
+
+    it('should return MAESTRO', () => {
+      expect(component.getCardType(cardTypes, '5053026275762086')).toBe(CardType.MAESTRO);
+      expect(component.getCardType(cardTypes, '5030644144155643')).toBe(CardType.MAESTRO);
+    });
+
+    xit('should return DANKORT', () => {
+      expect(component.getCardType(cardTypes, '5019718512619664')).toBe(CardType.DANKORT);
+      expect(component.getCardType(cardTypes, '5019149780363969')).toBe(CardType.DANKORT);
+    });
+
+    xit('should return MASTERCARD', () => {
+      expect(component.getCardType(cardTypes, '5585800405742631')).toBe(CardType.MASTERCARD);
+      expect(component.getCardType(cardTypes, '5579644035345946')).toBe(CardType.MASTERCARD);
     });
   });
 });

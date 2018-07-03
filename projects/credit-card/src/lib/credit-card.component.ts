@@ -97,7 +97,7 @@ export class CreditCardComponent implements OnInit {
 
   public getCardType(cardTypes: CardTypesContainer, ccNum: string): CardType | null {
     for (const [key, val] of Array.from(cardTypes.entries())) {
-      if (val.find((element: string) => ccNum.startsWith(element))) {
+      if (ccNum.match(val)) {
         return key;
       }
     }
