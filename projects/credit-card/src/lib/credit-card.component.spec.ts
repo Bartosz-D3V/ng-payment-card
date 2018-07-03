@@ -677,53 +677,63 @@ describe('CreditCardComponent', () => {
   });
 
   describe('getCardType', () => {
-    it('should return AMERICAN_EXPRESS', () => {
+    it('should detect AMERICAN_EXPRESS', () => {
       expect(component.getCardType(cardTypes, '377740327049504')).toBe(CardType.AMERICAN_EXPRESS);
       expect(component.getCardType(cardTypes, '372774294508668')).toBe(CardType.AMERICAN_EXPRESS);
     });
 
-    it('should return DINERS', () => {
+    it('should detect DINERS', () => {
       expect(component.getCardType(cardTypes, '36678417462141')).toBe(CardType.DINERS);
       expect(component.getCardType(cardTypes, '36122381051416')).toBe(CardType.DINERS);
     });
 
-    it('should return DINERS_CARTE_BLANCHE', () => {
+    it('should detect DINERS_CARTE_BLANCHE', () => {
       expect(component.getCardType(cardTypes, '30310723060882')).toBe(CardType.DINERS_CARTE_BLANCHE);
       expect(component.getCardType(cardTypes, '30105635125710')).toBe(CardType.DINERS_CARTE_BLANCHE);
     });
 
-    it('should return DISCOVER_CLUB ', () => {
+    it('should detect DISCOVER_CLUB ', () => {
       expect(component.getCardType(cardTypes, '6011611639813367')).toBe(CardType.DISCOVER_CLUB);
       expect(component.getCardType(cardTypes, '6011040601455298')).toBe(CardType.DISCOVER_CLUB);
     });
 
-    it('should return CHINA_UNIONPAY', () => {
+    it('should detect CHINA_UNIONPAY', () => {
       expect(component.getCardType(cardTypes, '6281620341037549')).toBe(CardType.CHINA_UNIONPAY);
       expect(component.getCardType(cardTypes, '6237083013714488')).toBe(CardType.CHINA_UNIONPAY);
     });
 
-    it('should return JCB', () => {
+    it('should detect JCB', () => {
       expect(component.getCardType(cardTypes, '3569198543021504')).toBe(CardType.JCB);
       expect(component.getCardType(cardTypes, '3529500239872869')).toBe(CardType.JCB);
     });
 
-    it('should return LASER', () => {
+    it('should detect LASER', () => {
       expect(component.getCardType(cardTypes, '6304611158942658')).toBe(CardType.LASER);
     });
 
-    it('should return MAESTRO', () => {
+    it('should detect MAESTRO', () => {
       expect(component.getCardType(cardTypes, '5053026275762086')).toBe(CardType.MAESTRO);
       expect(component.getCardType(cardTypes, '5030644144155643')).toBe(CardType.MAESTRO);
     });
 
-    xit('should return DANKORT', () => {
-      expect(component.getCardType(cardTypes, '5019718512619664')).toBe(CardType.DANKORT);
-      expect(component.getCardType(cardTypes, '5019149780363969')).toBe(CardType.DANKORT);
-    });
-
-    xit('should return MASTERCARD', () => {
+    it('should detect MASTERCARD', () => {
       expect(component.getCardType(cardTypes, '5585800405742631')).toBe(CardType.MASTERCARD);
       expect(component.getCardType(cardTypes, '5579644035345946')).toBe(CardType.MASTERCARD);
+    });
+
+    it('should detect VISA_ELECTRON', () => {
+      expect(component.getCardType(cardTypes, '4917907514666080')).toBe(CardType.VISA_ELECTRON);
+      expect(component.getCardType(cardTypes, '4913961879483056')).toBe(CardType.VISA_ELECTRON);
+    });
+
+    it('should detect VISA', () => {
+      expect(component.getCardType(cardTypes, '4539330631653907')).toBe(CardType.VISA);
+      expect(component.getCardType(cardTypes, '4929975343720')).toBe(CardType.VISA);
+    });
+
+    it('should return null if no card type was detected', () => {
+      expect(component.getCardType(cardTypes, '9139330631653907')).toBeNull();
+      expect(component.getCardType(cardTypes, '993219975343720')).toBeNull();
     });
   });
 });
