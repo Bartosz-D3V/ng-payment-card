@@ -1,36 +1,24 @@
 import { CardType } from '@cc-project/lib/domain/card-type';
-import { range, stringifyArray } from '@cc-project/lib/shared/helpers';
 
-const CARD_TYPES: Map<CardType, Array<string>> = new Map();
-CARD_TYPES.set(CardType.AMERICAN_EXPRESS, ['34', '37']);
-CARD_TYPES.set(CardType.CHINA_UNIONPAY, ['62', '88']);
-CARD_TYPES.set(CardType.DINERS_CLUBCARTE_BLANCHE, stringifyArray(range(300, 305)));
-CARD_TYPES.set(CardType.DINERS_CLUB_INTERNATIONAL, [...stringifyArray(range(300, 305)), '309', '36', '38', '39']);
-CARD_TYPES.set(CardType.DINERS_CLUB_US_AND_CANADA, ['38', '39']);
-CARD_TYPES.set(CardType.DISCOVER_CLUB, [
-  '6011',
-  ...stringifyArray(range(622126, 622925)),
-  ...stringifyArray(range(644, 649)),
-  '65',
-]);
-CARD_TYPES.set(CardType.JCB, stringifyArray(range(6528, 6589)));
-CARD_TYPES.set(CardType.LASER, ['6304', '6706', '6771', '6709']);
-CARD_TYPES.set(CardType.MAESTRO, [
-  '5018',
-  '5020',
-  '5038',
-  '5612',
-  '5893',
-  '6304',
-  '6759',
-  ...stringifyArray(range(6701, 6703)),
-  '0604',
-  '6390',
-]);
-CARD_TYPES.set(CardType.DANKORT, ['5019']);
-CARD_TYPES.set(CardType.MASTERCARD, stringifyArray(range(50, 55)));
-CARD_TYPES.set(CardType.VISA, ['4']);
-CARD_TYPES.set(CardType.VISA_ELECTRON, ['4026', '417500', '4405', '4508', '4844', '4913', '4917']);
+const CARD_TYPES: Map<CardType, RegExp> = new Map();
+CARD_TYPES.set(CardType.AMERICAN_EXPRESS, new RegExp('^3[47]'));
+CARD_TYPES.set(CardType.DINERS, new RegExp('^36'));
+CARD_TYPES.set(CardType.DINERS_CARTE_BLANCHE, new RegExp('^30[0-5]'));
+CARD_TYPES.set(
+  CardType.DISCOVER_CLUB,
+  new RegExp('^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)')
+);
+CARD_TYPES.set(CardType.CHINA_UNIONPAY, new RegExp('^(62[0-9]{14,17})$'));
+CARD_TYPES.set(CardType.JCB, new RegExp('^35(2[89]|[3-8][0-9])'));
+CARD_TYPES.set(CardType.LASER, new RegExp('^(6304|6706|6709|6771)[0-9]{12,15}$'));
+CARD_TYPES.set(CardType.MAESTRO, new RegExp('^(50|5[6-8]|6)[0-9]{12,19}$'));
+CARD_TYPES.set(CardType.DANKORT, new RegExp('^(5019)[0-9]{16}$'));
+CARD_TYPES.set(
+  CardType.MASTERCARD,
+  new RegExp('/^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/')
+);
+CARD_TYPES.set(CardType.VISA_ELECTRON, new RegExp('^(4026|417500|4508|4844|491([37]))'));
+CARD_TYPES.set(CardType.VISA, new RegExp('^4'));
 
 export default CARD_TYPES;
-export type CardTypesContainer = Map<CardType, Array<string>>;
+export type CardTypesContainer = typeof CARD_TYPES;
