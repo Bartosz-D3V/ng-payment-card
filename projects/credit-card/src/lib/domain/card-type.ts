@@ -7,7 +7,6 @@ export const enum CardType {
   JCB,
   LASER,
   MAESTRO,
-  DANKORT,
   MASTERCARD,
   VISA_ELECTRON,
   VISA,
