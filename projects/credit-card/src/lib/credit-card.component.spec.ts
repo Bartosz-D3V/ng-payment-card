@@ -731,6 +731,11 @@ describe('CreditCardComponent', () => {
       expect(component.getCardType(cardTypes, '4929975343720')).toBe(CardType.VISA);
     });
 
+    it('should detect card type if number contains spaces', () => {
+      expect(component.getCardType(cardTypes, '4539 3306 3165 3907')).toBe(CardType.VISA);
+      expect(component.getCardType(cardTypes, '5579 6440 3534 5946')).toBe(CardType.MASTERCARD);
+    });
+
     it('should return null if no card type was detected', () => {
       expect(component.getCardType(cardTypes, '9139330631653907')).toBeNull();
       expect(component.getCardType(cardTypes, '993219975343720')).toBeNull();
