@@ -99,7 +99,12 @@ export class CreditCardComponent implements OnInit {
 
   public getCardType(cardTypes: CardTypesContainer, ccNum: string): CardType | null {
     for (const [key, val] of Array.from(cardTypes.entries())) {
-      if (ccNum.match(val)) {
+      if (
+        ccNum
+          .split(' ')
+          .join('')
+          .match(val)
+      ) {
         return key;
       }
     }
