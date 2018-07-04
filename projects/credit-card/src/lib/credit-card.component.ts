@@ -5,7 +5,7 @@ import { CardValidator } from './validators/card-validator';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
 import { CardType } from '@cc-project/lib/domain/card-type';
-import CARD_TYPES, { CardTypesContainer } from './domain/card-types';
+import { default as CARD_TYPES, CardTypesContainer } from './domain/card-types';
 
 @Component({
   selector: 'ng-credit-card',
@@ -14,6 +14,8 @@ import CARD_TYPES, { CardTypesContainer } from './domain/card-types';
 })
 export class CreditCardComponent implements OnInit {
   public ccForm: FormGroup;
+
+  public readonly cardTypes: CardTypesContainer = CARD_TYPES;
 
   @Input() public ccNumMissingTxt? = 'Card number is required';
 
