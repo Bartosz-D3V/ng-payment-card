@@ -99,5 +99,7 @@ modules.xml
 .idea/misc.xml
 *.ipr
 
+# Compodoc documentation
+documentation/
 
 # End of https://www.gitignore.io/api/jetbrains+iml
