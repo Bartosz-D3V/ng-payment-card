@@ -151,12 +151,12 @@
 }
 
 .cc-box {
-  width: 400px;
-  height: 280px;
-  position: absolute;
-  top: -112px;
-  left: 50%;
-  transform: translateX(-100%);
+  width: $card-width;
+  height: $card-height;
+  position: relative;
+  margin: 0 auto;
+  z-index: 1;
+  padding: 0;
 
   &:hover &--flip,
   &.hover &--flip {
