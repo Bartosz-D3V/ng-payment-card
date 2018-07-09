@@ -2,20 +2,25 @@
   <div class="cc-box">
     <div class="cc-box--flip">
       <div class="cc-box__front">
+        <label for="cc-card-number"></label>
+        <input class="cc-form__input--transparent" id="cc-card-number"
+               aria-label="Credit card number" disabled="disabled" [value]="ccNumber.value">
+        <label for="cc-holder"></label>
+        <input class="cc-form__input--transparent" id="cc-holder"
+               aria-label="Card holder" disabled="disabled" [value]="ccName.value">
         <div class="cc-box__chip"></div>
-
       </div>
     </div>
   </div>
   <form class="cc-form" [formGroup]="ccForm">
     <div class="cc-form__wrapper--long">
       <label for="cc-number" class="cc-form__label cc-form__label--first">Card number</label>
-      <input class="cc-form__input" id="cc-number" aria-label="Card number"
+      <input #ccNumber class="cc-form__input" id="cc-number" aria-label="Card number"
              type="number" title="Card number" maxlength="19" formControlName="cardNumber">
     </div>
     <div class="cc-form__wrapper--long">
       <label for="cc-holder-name" class="cc-form__label">Card Holder name</label>
-      <input class="cc-form__input" id="cc-holder-name" aria-label="Card holder name" type="text"
+      <input #ccName class="cc-form__input" id="cc-holder-name" aria-label="Card holder name" type="text"
              title="Card holder name" formControlName="cardHolder">
     </div>
     <div class="cc-form--inline">
