@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { CardValidator } from './validators/card-validator';
+import { CardValidator } from './validator/card-validator';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
 import { CardType } from '@cc-project/lib/domain/card-type';
