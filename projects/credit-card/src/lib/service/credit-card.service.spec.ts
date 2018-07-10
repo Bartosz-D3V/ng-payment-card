@@ -74,6 +74,11 @@ describe('CreditCardCreditCardService', () => {
       expect(CreditCardService.getCardType('5579 6440 3534 5946')).toBe(CardType.MASTERCARD);
     });
 
+    it('should detect card type if number contains hyphens', () => {
+      expect(CreditCardService.getCardType('4539-3306-3165-3907')).toBe(CardType.VISA);
+      expect(CreditCardService.getCardType('5579-6440-3534-5946')).toBe(CardType.MASTERCARD);
+    });
+
     it('should return null if no card type was detected', () => {
       expect(CreditCardService.getCardType('9139330631653907')).toBeNull();
       expect(CreditCardService.getCardType('993219975343720')).toBeNull();
