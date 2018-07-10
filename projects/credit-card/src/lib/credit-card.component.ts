@@ -5,17 +5,16 @@ import { CardValidator } from './validators/card-validator';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
 import { CardType } from '@cc-project/lib/domain/card-type';
-import { default as CARD_TYPES, CardTypesContainer } from './domain/card-types';
+import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
 
 @Component({
   selector: 'ng-credit-card',
   templateUrl: './credit-card.component.html',
   styleUrls: ['./credit-card.component.scss'],
+  providers: [CreditCardService],
 })
 export class CreditCardComponent implements OnInit {
   public ccForm: FormGroup;
-
-  public readonly cardTypes: CardTypesContainer = CARD_TYPES;
 
   @Input() public ccNumMissingTxt? = 'Card number is required';
 
@@ -61,7 +60,7 @@ export class CreditCardComponent implements OnInit {
 
   @Output() public formSaved: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
 
-  constructor(private _fb: FormBuilder) {}
+  constructor(private _ccService: CreditCardService, private _fb: FormBuilder) {}
 
   public ngOnInit(): void {
     this.buildForm();
@@ -97,18 +96,8 @@ export class CreditCardComponent implements OnInit {
     });
   }
 
-  public getCardType(cardTypes: CardTypesContainer, ccNum: string): CardType | null {
-    for (const [key, val] of Array.from(cardTypes.entries())) {
-      if (
-        ccNum
-          .split(' ')
-          .join('')
-          .match(val)
-      ) {
-        return key;
-      }
-    }
-    return null;
+  public getCardType(ccNum: string): CardType | null {
+    return CreditCardService.getCardType(ccNum);
   }
 
   public emitSavedCard(): void {
