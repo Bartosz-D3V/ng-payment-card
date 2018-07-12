@@ -28,11 +28,11 @@ export class CreditCardComponent implements OnInit {
 
   @Input() public cardHolderMissingTxt? = 'Card holder name is required';
 
-  @Input() public expirationDayMissingTxt? = 'Expiration day is required';
+  @Input() public expirationYearMissingTxt? = 'Expiration year is required';
 
-  @Input() public expirationDayTooShortTxt? = 'Expiration day is too short';
+  @Input() public expirationYearTooShortTxt? = 'Expiration year is too short';
 
-  @Input() public expirationDayTooLongTxt? = 'Expiration day is too long';
+  @Input() public expirationYearTooLongTxt? = 'Expiration year is too long';
 
   @Input() public expirationMonthMissingTxt? = 'Expiration month is required';
 
@@ -52,9 +52,11 @@ export class CreditCardComponent implements OnInit {
 
   @Input() public validateCardHolder? = true;
 
-  @Input() public validateExpirationDay? = true;
+  @Input() public validateExpirationYear? = true;
 
   @Input() public validateExpirationMonth? = true;
+
+  @Input() public validateCardExpiration? = true;
 
   @Input() public validateCCV? = true;
 
@@ -67,33 +69,41 @@ export class CreditCardComponent implements OnInit {
   }
 
   private buildForm(): void {
-    this.ccForm = this._fb.group({
-      cardNumber: [
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(12),
-          Validators.maxLength(19),
-          CardValidator.numbersOnly,
-          CardValidator.checksum,
-        ]),
-      ],
-      cardHolder: ['', Validators.compose([Validators.required])],
-      expirationDay: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)])],
-      expirationMonth: [
-        '',
-        Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
-      ],
-      ccv: [
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(4),
-          CardValidator.numbersOnly,
-        ]),
-      ],
-    });
+    this.ccForm = this._fb.group(
+      {
+        cardNumber: [
+          '',
+          Validators.compose([
+            Validators.required,
+            Validators.minLength(12),
+            Validators.maxLength(19),
+            CardValidator.numbersOnly,
+            CardValidator.checksum,
+          ]),
+        ],
+        cardHolder: ['', Validators.compose([Validators.required])],
+        expirationMonth: [
+          '',
+          Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
+        ],
+        expirationYear: [
+          '',
+          Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
+        ],
+        ccv: [
+          '',
+          Validators.compose([
+            Validators.required,
+            Validators.minLength(3),
+            Validators.maxLength(4),
+            CardValidator.numbersOnly,
+          ]),
+        ],
+      },
+      {
+        validator: CardValidator.expiration,
+      }
+    );
   }
 
   public getCardType(ccNum: string): CardType | null {

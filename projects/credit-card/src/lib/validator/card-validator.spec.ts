@@ -1,4 +1,4 @@
-import { AbstractControl, FormControl, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
 
 import { CardValidator } from './card-validator';
 
@@ -119,6 +119,36 @@ describe('CardValidator', () => {
 
       abstractCtrl.setValue(ccNum7);
       expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
+    });
+  });
+
+  describe('expiration method', () => {
+    let formGroup: FormGroup;
+
+    beforeAll(() => {
+      formGroup = new FormGroup({ expirationMonth: new FormControl(), expirationYear: new FormControl() });
+    });
+
+    afterEach(() => {
+      formGroup.reset();
+    });
+
+    const CARD_EXPIRED: ValidationErrors = {
+      expiration: true,
+    };
+
+    it('should return error if card has expired', () => {
+      formGroup.get('expirationMonth').setValue('06');
+      formGroup.get('expirationYear').setValue('2015');
+
+      expect(CardValidator.expiration(formGroup)).toEqual(CARD_EXPIRED);
+    });
+
+    it('should return null if card is not expired', () => {
+      formGroup.get('expirationMonth').setValue(new Date().getMonth() + 1);
+      formGroup.get('expirationYear').setValue(new Date().getFullYear());
+
+      expect(CardValidator.expiration(formGroup)).toBeNull();
     });
   });
 });

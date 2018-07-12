@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
-import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { CreditCardComponent } from './credit-card.component';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
@@ -139,11 +139,11 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('expirationDay control', () => {
+    describe('expirationYear control', () => {
       let ctrl: AbstractControl;
 
       beforeAll(() => {
-        ctrl = component.ccForm.get('expirationDay');
+        ctrl = component.ccForm.get('expirationYear');
       });
 
       afterEach(() => {
@@ -298,6 +298,33 @@ describe('CreditCardComponent', () => {
         expect(ctrl.hasError('numbersOnly')).toBeFalsy();
       });
     });
+
+    describe('expiration validator', () => {
+      let formGroup: FormGroup;
+
+      beforeAll(() => {
+        formGroup = component.ccForm;
+      });
+
+      afterEach(() => {
+        formGroup.reset();
+      });
+
+      it('should be marked as invalid if card is expired', () => {
+        formGroup.get('expirationMonth').setValue('06');
+        formGroup.get('expirationYear').setValue('2015');
+
+        expect(formGroup.valid).toBeFalsy();
+        expect(formGroup.hasError('expiration')).toBeTruthy();
+      });
+
+      it('should be marked as valid if card is not expired', () => {
+        formGroup.get('expirationMonth').setValue(new Date().getMonth() + 1);
+        formGroup.get('expirationYear').setValue(new Date().getFullYear());
+
+        expect(formGroup.hasError('expiration')).toBeFalsy();
+      });
+    });
   });
 
   describe('emitSavedCard', () => {
@@ -309,7 +336,7 @@ describe('CreditCardComponent', () => {
         const exampleCard: ICardDetails = {
           cardNumber: '123456789101',
           cardHolder: 'Donnie Darko',
-          expirationDay: '05',
+          expirationYear: '05',
           expirationMonth: '123',
           ccv: 123,
         };
@@ -419,51 +446,51 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('expirationDayMissingTxt', () => {
+    describe('expirationYearMissingTxt', () => {
       afterEach(() => {
-        component.expirationDayMissingTxt = null;
+        component.expirationYearMissingTxt = null;
       });
 
       it('should accept string value', () => {
-        component.expirationDayMissingTxt = 'Example text';
+        component.expirationYearMissingTxt = 'Example text';
 
-        expect(component.expirationDayMissingTxt).toEqual('Example text');
+        expect(component.expirationYearMissingTxt).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.expirationDayMissingTxt).toEqual('Expiration day is required');
+        expect(component.expirationYearMissingTxt).toEqual('Expiration year is required');
       });
     });
 
-    describe('expirationDayTooShortTxt', () => {
+    describe('expirationYearTooShortTxt', () => {
       afterEach(() => {
-        component.expirationDayTooShortTxt = null;
+        component.expirationYearTooShortTxt = null;
       });
 
       it('should accept string value', () => {
-        component.expirationDayTooShortTxt = 'Example text';
+        component.expirationYearTooShortTxt = 'Example text';
 
-        expect(component.expirationDayTooShortTxt).toEqual('Example text');
+        expect(component.expirationYearTooShortTxt).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.expirationDayTooShortTxt).toEqual('Expiration day is too short');
+        expect(component.expirationYearTooShortTxt).toEqual('Expiration year is too short');
       });
     });
 
-    describe('expirationDayTooLongTxt', () => {
+    describe('expirationYearTooLongTxt', () => {
       afterEach(() => {
-        component.expirationDayTooLongTxt = null;
+        component.expirationYearTooLongTxt = null;
       });
 
       it('should accept string value', () => {
-        component.expirationDayTooLongTxt = 'Example text';
+        component.expirationYearTooLongTxt = 'Example text';
 
-        expect(component.expirationDayTooLongTxt).toEqual('Example text');
+        expect(component.expirationYearTooLongTxt).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.expirationDayTooLongTxt).toEqual('Expiration day is too long');
+        expect(component.expirationYearTooLongTxt).toEqual('Expiration year is too long');
       });
     });
 
@@ -627,19 +654,19 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('validateExpirationDay', () => {
+    describe('validateExpirationYear', () => {
       afterEach(() => {
-        component.validateExpirationDay = null;
+        component.validateExpirationYear = null;
       });
 
       it('should accept boolean value', () => {
-        component.validateExpirationDay = false;
+        component.validateExpirationYear = false;
 
-        expect(component.validateExpirationDay).toBeFalsy();
+        expect(component.validateExpirationYear).toBeFalsy();
       });
 
       it('should have default true value', () => {
-        expect(component.validateExpirationDay).toBeTruthy();
+        expect(component.validateExpirationYear).toBeTruthy();
       });
     });
 
@@ -656,6 +683,22 @@ describe('CreditCardComponent', () => {
 
       it('should have default true value', () => {
         expect(component.validateExpirationMonth).toBeTruthy();
+      });
+    });
+
+    describe('validateCardExpiration', () => {
+      afterEach(() => {
+        component.validateCardExpiration = null;
+      });
+
+      it('should accept boolean value', () => {
+        component.validateCardExpiration = false;
+
+        expect(component.validateCardExpiration).toBeFalsy();
+      });
+
+      it('should have default true value', () => {
+        expect(component.validateCardExpiration).toBeTruthy();
       });
     });
 

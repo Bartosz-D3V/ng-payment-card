@@ -4,14 +4,14 @@ export class CardDetails implements ICardDetails {
   public cardHolder: string;
   public cardNumber: string;
   public ccv: number;
-  public expirationDay: string;
   public expirationMonth: string;
+  public expirationYear: string;
 
-  constructor(cardHolder: string, cardNumber: string, ccv: number, expirationDay: string, expirationMonth: string) {
+  constructor(cardHolder: string, cardNumber: string, ccv: number, expirationMonth: string, expirationYear: string) {
     this.cardHolder = cardHolder;
     this.cardNumber = cardNumber;
     this.ccv = ccv;
-    this.expirationDay = expirationDay;
+    this.expirationYear = expirationYear;
     this.expirationMonth = expirationMonth;
   }
 }
