@@ -1,7 +1,7 @@
 export interface ICardDetails {
   cardNumber: string;
   cardHolder: string;
-  expirationDay: string;
   expirationMonth: string;
+  expirationYear: string;
   ccv: number;
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { default as CARD_TYPES, CardTypesContainer } from '@cc-project/lib/domain/card-types';
 import { CardType } from '@cc-project/lib/domain/card-type';
 
