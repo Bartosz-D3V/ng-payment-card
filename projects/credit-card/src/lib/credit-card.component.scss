@@ -198,4 +198,18 @@
     align-items: center;
     justify-content: center;
   }
+
+  &__back {
+    transform: rotateY(180deg);
+  }
+
+  &__label {
+    font-size: $label-font-size;
+    letter-spacing: 1px;
+    text-shadow: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    opacity: 0.5;
+    display: block;
+  }
 }
