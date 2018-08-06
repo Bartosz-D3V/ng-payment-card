@@ -5,7 +5,7 @@ import { AbstractControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
 import { CreditCardComponent } from './credit-card.component';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
-import { CreditCardNumberPipe } from '@cc-project/lib/pipe/credit-card-number.pipe';
+import { CreditCardNumberPipe } from '@cc-project/lib/pipe/credit-card-number/credit-card-number.pipe';
 
 describe('CreditCardComponent', () => {
   let component: CreditCardComponent;

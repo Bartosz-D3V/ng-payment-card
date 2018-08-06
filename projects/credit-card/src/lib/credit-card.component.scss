@@ -109,14 +109,20 @@
   &__label {
     display: block;
     text-transform: uppercase;
-    font-size: $label-font-size;
+    font-size: $label-font-size-normal;
     color: hsla(0, 0, 0, 0.6);
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: normal;
     font-family: 'Inconsolata', Serif, serif;
     margin-top: $small-margin;
     text-align: left;
     width: 100%;
+    text-shadow: none;
+    letter-spacing: 1px;
+
+    &--small {
+      font-size: $label-font-size-small;
+    }
 
     &--first {
       margin-top: $big-margin;
@@ -177,6 +183,10 @@
     transform: rotateY(180deg);
   }
 
+  &__element {
+    text-align: left;
+  }
+
   &__front,
   &__back {
     width: 100%;
@@ -201,15 +211,5 @@
 
   &__back {
     transform: rotateY(180deg);
-  }
-
-  &__label {
-    font-size: $label-font-size;
-    letter-spacing: 1px;
-    text-shadow: none;
-    text-transform: uppercase;
-    font-weight: normal;
-    opacity: 0.5;
-    display: block;
   }
 }
