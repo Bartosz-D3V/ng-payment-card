@@ -181,6 +181,9 @@
   &:hover &--flip,
   &.hover &--flip {
     transform: rotateY(180deg);
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
   }
 
   &__element {
@@ -207,6 +210,10 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+  }
+
+  &__front {
+    transform: rotateY(0deg);
   }
 
   &__back {
