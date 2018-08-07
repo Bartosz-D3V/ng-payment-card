@@ -178,12 +178,15 @@
     transform: translateY(-130%);
   }
 
-  &:hover &--flip,
-  &.hover &--flip {
-    transform: rotateY(180deg);
+  &--flip {
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
+
+    &:hover,
+    &.hover {
+      transform: rotateY(180deg);
+    }
   }
 
   &__element {
