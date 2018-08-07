@@ -146,6 +146,19 @@
       border: none;
     }
 
+    &--cursive {
+      font-size: $label-font-size-small;
+      font-style: italic;
+      position: absolute;
+      left: 0;
+      margin: 0 auto;
+    }
+
+    &--right-align {
+      text-align: right;
+      padding-right: $small-margin;
+    }
+
     &:focus {
       border-color: $input-focus-border-colour;
     }
@@ -181,7 +194,6 @@
   &--flip {
     transition: 0.6s;
     transform-style: preserve-3d;
-    position: relative;
 
     &:hover,
     &.hover {
@@ -191,6 +203,16 @@
 
   &__element {
     text-align: left;
+    padding: 0;
+  }
+
+  &__strip {
+    background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-70%);
   }
 
   &__front,

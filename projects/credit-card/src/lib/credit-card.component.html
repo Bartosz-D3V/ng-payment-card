@@ -22,6 +22,12 @@
         <div class="cc-box__chip"></div>
       </div>
       <div class="cc-box__back">
+        <div class="cc-box__strip">&nbsp;</div>
+        <div class="cc-box__element">
+          <input class="cc-form__input cc-form__input--cursive cc-form__input--right-align" id="cc-ccv"
+                 aria-label="CCV" disabled="disabled"
+                 [value]="'CCV:' + ccForm.get('ccv').value" title="CCV">
+        </div>
       </div>
     </div>
   </div>
