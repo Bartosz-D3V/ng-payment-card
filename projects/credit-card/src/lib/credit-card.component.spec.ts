@@ -6,6 +6,7 @@ import { CreditCardComponent } from './credit-card.component';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
 import { CreditCardNumberPipe } from '@cc-project/lib/pipe/credit-card-number/credit-card-number.pipe';
+import { ValidThruPipe } from '@cc-project/lib/pipe/valid-thru/valid-thru.pipe';
 
 describe('CreditCardComponent', () => {
   let component: CreditCardComponent;
@@ -14,7 +15,7 @@ describe('CreditCardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, CommonModule],
-      declarations: [CreditCardComponent, CreditCardNumberPipe],
+      declarations: [CreditCardComponent, CreditCardNumberPipe, ValidThruPipe],
       providers: [CreditCardService],
     }).compileComponents();
   }));

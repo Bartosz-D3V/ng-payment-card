@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ValidThruPipe implements PipeTransform {
   public transform(value: string): string {
-    return value && value.length === 7 ? value.substr(0, 3) + value.substr(5) : '';
+    return value && value.length === 7 ? value.substr(0, 3) + value.substr(5) : '/';
   }
 }
