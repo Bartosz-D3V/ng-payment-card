@@ -37,19 +37,52 @@
       <input class="cc-form__input" id="cc-number" aria-label="Card number"
              type="text" title="Card number" maxlength="19" formControlName="cardNumber"
              (focus)="ccBoxFlip.classList.remove('hover')">
+      <div class="cc-form__error"
+           *ngIf="validateCCNum && ccForm.get('cardNumber').touched && ccForm.get('cardNumber').hasError('required')">
+        {{ccNumMissingTxt}}
+      </div>
+      <div class="cc-form__error"
+           *ngIf="validateCCNum && ccForm.get('cardNumber').touched && ccForm.get('cardNumber').hasError('minlength')">
+        {{ccNumTooShortTxt}}
+      </div>
+      <div class="cc-form__error"
+           *ngIf="validateCCNum && ccForm.get('cardNumber').touched && ccForm.get('cardNumber').hasError('maxlength')">
+        {{ccNumTooLongTxt}}
+      </div>
+      <div class="cc-form__error"
+           *ngIf="validateCCNum && ccForm.get('cardNumber').touched && ccForm.get('cardNumber').hasError('numbersOnly')">
+        {{ccNumContainsLettersTxt}}
+      </div>
+      <div class="cc-form__error"
+           *ngIf="validateCCNum && ccForm.get('cardNumber').touched && ccForm.get('cardNumber').hasError('checksum')">
+        {{ccNumChecksumInvalidTxt}}
+      </div>
     </div>
     <div class="cc-form__wrapper--long">
       <label for="cc-holder-name" class="cc-form__label">Card Holder name</label>
       <input class="cc-form__input" id="cc-holder-name" aria-label="Card holder name" type="text"
              title="Card holder name" maxlength="22" formControlName="cardHolder"
              (focus)="ccBoxFlip.classList.remove('hover')">
+      <div class="cc-form__error"
+           *ngIf="validateCardHolder && ccForm.get('cardHolder').touched && ccForm.get('cardHolder').hasError('required')">
+        {{cardHolderMissingTxt}}
+      </div>
+      <div class="cc-form__error"
+           *ngIf="validateCardHolder && ccForm.get('cardHolder').touched && ccForm.get('cardHolder').hasError('maxlength')">
+        {{cardHolderTooLong}}
+      </div>
     </div>
     <div class="cc-form--inline">
       <div class="cc-form__wrapper cc-form__wrapper--short">
         <label for="cc-expiration-month" class="cc-form__label">Expiration month</label>
         <input class="cc-form__input" id="cc-expiration-month" aria-label="Expiration month"
-               type="number" title="Expiration month" formControlName="expirationMonth"
+               type="number" minlength="2" maxlength="2" title="Expiration month" formControlName="expirationMonth"
                (focus)="ccBoxFlip.classList.remove('hover')">
+        <div class="cc-form__error"
+             *ngIf="validateExpirationMonth && ccForm.get('expirationMonth').touched &&
+             (ccForm.get('expirationMonth').hasError('minlength') || ccForm.get('expirationMonth').hasError('maxlength'))">
+          {{expirationMonthTooShortTxt}}
+        </div>
       </div>
       <div class="cc-form__wrapper cc-form__wrapper--short">
         <label for="cc-expiration-year" class="cc-form__label">Expiration year</label>
@@ -59,8 +92,24 @@
       </div>
       <div class="cc-form__wrapper cc-form__wrapper--short cc-form__wrapper--last">
         <label for="cc-expiration-month" class="cc-form__label">CVV</label>
-        <input class="cc-form__input cc-form__input--short" id="cc-cvv" aria-label="CCV" type="number" title="CCV"
-               formControlName="ccv" (focus)="ccBoxFlip.classList.add('hover')">
+        <input class="cc-form__input cc-form__input--short" id="cc-cvv" aria-label="CCV" type="text" title="CCV"
+               minlength="3" maxlength="4" formControlName="ccv" (focus)="ccBoxFlip.classList.add('hover')">
+        <div class="cc-form__error"
+             *ngIf="validateCCV && ccForm.get('ccv').touched && ccForm.get('ccv').hasError('required')">
+          {{ccvMissingTxt}}
+        </div>
+        <div class="cc-form__error"
+             *ngIf="validateCCV && ccForm.get('ccv').touched && ccForm.get('ccv').hasError('minlength')">
+          {{ccvNumTooShortTxt}}
+        </div>
+        <div class="cc-form__error"
+             *ngIf="validateCCV && ccForm.get('ccv').touched && ccForm.get('ccv').hasError('maxlength')">
+          {{ccvNumTooLongTxt}}
+        </div>
+        <div class="cc-form__error"
+             *ngIf="validateCCV && ccForm.get('ccv').touched && ccForm.get('ccv').hasError('numbersOnly')">
+          {{ccvContainsLettersTxt}}
+        </div>
       </div>
     </div>
   </form>

@@ -463,6 +463,22 @@ describe('CreditCardComponent', () => {
       });
     });
 
+    describe('cardHolderTooLong', () => {
+      afterEach(() => {
+        component.cardHolderTooLong = null;
+      });
+
+      it('should accept string value', () => {
+        component.cardHolderTooLong = 'Example text';
+
+        expect(component.cardHolderTooLong).toEqual('Example text');
+      });
+
+      it('should have default value', () => {
+        expect(component.cardHolderTooLong).toEqual('Card holder name is too long');
+      });
+    });
+
     describe('expirationYearMissingTxt', () => {
       afterEach(() => {
         component.expirationYearMissingTxt = null;
