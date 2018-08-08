@@ -140,6 +140,20 @@ describe('CreditCardComponent', () => {
         expect(ctrl.valid).toBeTruthy();
         expect(ctrl.hasError('required')).toBeFalsy();
       });
+
+      it('should be marked as invalid if greater than 22 characters', () => {
+        ctrl.setValue('Mister Doctor Donnie Junior Darko The First');
+
+        expect(ctrl.valid).toBeFalsy();
+        expect(ctrl.hasError('maxlength')).toBeTruthy();
+      });
+
+      it('should be marked as valid if less than 22 characters', () => {
+        ctrl.setValue('Donnie Darko');
+
+        expect(ctrl.valid).toBeTruthy();
+        expect(ctrl.hasError('maxlength')).toBeFalsy();
+      });
     });
 
     describe('expirationYear control', () => {

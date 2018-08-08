@@ -83,7 +83,7 @@ export class CreditCardComponent implements OnInit {
             CardValidator.checksum,
           ]),
         ],
-        cardHolder: ['', Validators.compose([Validators.required])],
+        cardHolder: ['', Validators.compose([Validators.required, Validators.maxLength(22)])],
         expirationMonth: [
           '',
           Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
