@@ -1,6 +1,6 @@
 <section class="cc-wrapper">
   <div class="cc-box">
-    <div class="cc-box--flip">
+    <div #ccBoxFlip class="cc-box--flip">
       <div class="cc-box__front">
         <div class="cc-box__element">
           <label class="cc-form__label" for="cc-card-number"></label>
@@ -26,7 +26,7 @@
         <div class="cc-box__element">
           <input class="cc-form__input cc-form__input--cursive cc-form__input--right-align" id="cc-ccv"
                  aria-label="CCV" disabled="disabled"
-                 [value]="'CCV:' + ccForm.get('ccv').value" title="CCV">
+                 [value]="'CCV: ' + ccForm.get('ccv').value" title="CCV">
         </div>
       </div>
     </div>
@@ -35,28 +35,32 @@
     <div class="cc-form__wrapper--long">
       <label for="cc-number" class="cc-form__label cc-form__label--first">Card number</label>
       <input class="cc-form__input" id="cc-number" aria-label="Card number"
-             type="number" title="Card number" maxlength="19" formControlName="cardNumber">
+             type="number" title="Card number" maxlength="19" formControlName="cardNumber"
+             (focus)="ccBoxFlip.classList.remove('hover')">
     </div>
     <div class="cc-form__wrapper--long">
       <label for="cc-holder-name" class="cc-form__label">Card Holder name</label>
       <input class="cc-form__input" id="cc-holder-name" aria-label="Card holder name" type="text"
-             title="Card holder name" formControlName="cardHolder">
+             title="Card holder name" formControlName="cardHolder"
+             (focus)="ccBoxFlip.classList.remove('hover')">
     </div>
     <div class="cc-form--inline">
       <div class="cc-form__wrapper cc-form__wrapper--short">
         <label for="cc-expiration-month" class="cc-form__label">Expiration month</label>
         <input class="cc-form__input" id="cc-expiration-month" aria-label="Expiration month"
-               type="number" title="Expiration month" formControlName="expirationMonth">
+               type="number" title="Expiration month" formControlName="expirationMonth"
+               (focus)="ccBoxFlip.classList.remove('hover')">
       </div>
       <div class="cc-form__wrapper cc-form__wrapper--short">
         <label for="cc-expiration-year" class="cc-form__label">Expiration year</label>
         <input class="cc-form__input" id="cc-expiration-year" aria-label="Expiration year"
-               type="number" title="Expiration year" formControlName="expirationYear">
+               type="number" title="Expiration year" formControlName="expirationYear"
+               (focus)="ccBoxFlip.classList.remove('hover')">
       </div>
       <div class="cc-form__wrapper cc-form__wrapper--short cc-form__wrapper--last">
         <label for="cc-expiration-month" class="cc-form__label">CVV</label>
         <input class="cc-form__input cc-form__input--short" id="cc-cvv" aria-label="CCV" type="number" title="CCV"
-               formControlName="ccv">
+               formControlName="ccv" (focus)="ccBoxFlip.classList.add('hover')">
       </div>
     </div>
   </form>
