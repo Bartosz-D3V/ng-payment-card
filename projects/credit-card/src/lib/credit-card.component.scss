@@ -127,7 +127,7 @@
 
   &__input {
     font-size: $input-font-size;
-    text-align: center;
+    text-align: left;
     display: block;
     width: 100%;
     height: $input-height;
@@ -136,6 +136,8 @@
     outline: none;
     border: 1px solid hsla(0, 0, 0, 0.3);
     box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
 
     &--transparent {
       box-shadow: none;
@@ -149,6 +151,14 @@
       font-family: 'Inconsolata', monospace;
       font-size: $cc-font-size;
       text-shadow: 0 2px 1px hsla(0, 0, 0, 0.3);
+
+      @include breakpoint(tablet) {
+        font-size: $cc-font-size-medium;
+      }
+
+      @include breakpoint(mobile) {
+        font-size: $cc-font-size-big;
+      }
     }
 
     &--cursive {
@@ -211,8 +221,8 @@
   }
 
   &__element {
-    text-align: left;
     padding: 0;
+    width: 80%;
   }
 
   &__strip {
@@ -222,7 +232,7 @@
     padding: 0;
     margin: 0;
     transform: translateY(-90%);
-    font-size: $cc-font-size;
+    font-size: $strip-font-size;
   }
 
   &__front,

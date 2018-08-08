@@ -35,13 +35,13 @@
     <div class="cc-form__wrapper--long">
       <label for="cc-number" class="cc-form__label cc-form__label--first">Card number</label>
       <input class="cc-form__input" id="cc-number" aria-label="Card number"
-             type="number" title="Card number" maxlength="19" formControlName="cardNumber"
+             type="text" title="Card number" maxlength="19" formControlName="cardNumber"
              (focus)="ccBoxFlip.classList.remove('hover')">
     </div>
     <div class="cc-form__wrapper--long">
       <label for="cc-holder-name" class="cc-form__label">Card Holder name</label>
       <input class="cc-form__input" id="cc-holder-name" aria-label="Card holder name" type="text"
-             title="Card holder name" formControlName="cardHolder"
+             title="Card holder name" maxlength="22" formControlName="cardHolder"
              (focus)="ccBoxFlip.classList.remove('hover')">
     </div>
     <div class="cc-form--inline">
