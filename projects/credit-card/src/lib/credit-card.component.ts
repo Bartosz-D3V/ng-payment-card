@@ -28,17 +28,19 @@ export class CreditCardComponent implements OnInit {
 
   @Input() public cardHolderMissingTxt? = 'Card holder name is required';
 
-  @Input() public expirationYearMissingTxt? = 'Expiration year is required';
-
-  @Input() public expirationYearTooShortTxt? = 'Expiration year is too short';
-
-  @Input() public expirationYearTooLongTxt? = 'Expiration year is too long';
+  @Input() public cardHolderTooLong? = 'Card holder name is too long';
 
   @Input() public expirationMonthMissingTxt? = 'Expiration month is required';
 
   @Input() public expirationMonthTooShortTxt? = 'Expiration month is too short';
 
   @Input() public expirationMonthTooLongTxt? = 'Expiration month is too long';
+
+  @Input() public expirationYearMissingTxt? = 'Expiration year is required';
+
+  @Input() public expirationYearTooShortTxt? = 'Expiration year is too short';
+
+  @Input() public expirationYearTooLongTxt? = 'Expiration year is too long';
 
   @Input() public cardExpired? = 'Card has expired';
 
@@ -54,9 +56,9 @@ export class CreditCardComponent implements OnInit {
 
   @Input() public validateCardHolder? = true;
 
-  @Input() public validateExpirationYear? = true;
-
   @Input() public validateExpirationMonth? = true;
+
+  @Input() public validateExpirationYear? = true;
 
   @Input() public validateCardExpiration? = true;
 

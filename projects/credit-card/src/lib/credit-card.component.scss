@@ -182,6 +182,11 @@
       border-color: $input-focus-border-colour;
     }
   }
+
+  &__error {
+    font-size: $label-font-size-normal;
+    color: $card-font-invalid-colour;
+  }
 }
 
 .cc-wrapper {
@@ -258,5 +263,17 @@
 
   &__back {
     transform: rotateY(180deg);
+  }
+}
+
+.ng-invalid {
+  &.ng-touched {
+    border-color: $card-font-invalid-colour;
+  }
+}
+
+.ng-valid {
+  &.ng-touched {
+    border-color: $input-border-color;
   }
 }
