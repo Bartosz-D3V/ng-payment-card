@@ -17,8 +17,20 @@
     align-items: inherit;
     margin-bottom: $small-margin;
     width: 100%;
+    height: 100%;
 
-    @include breakpoint(smartphone) {
+    @include breakpoint(tablet) {
+      display: inherit;
+      flex-flow: row;
+      flex-wrap: inherit;
+      justify-content: flex-end;
+      align-items: inherit;
+      margin-bottom: $small-margin;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include breakpoint(mobile) {
       display: inherit;
       flex-flow: column;
       flex-wrap: wrap;
@@ -78,7 +90,7 @@
       }
     }
 
-    @include breakpoint(smartphone) {
+    @include breakpoint(mobile) {
       margin-top: 0;
       margin-right: 0;
 
@@ -97,14 +109,16 @@
   &__label {
     display: block;
     text-transform: uppercase;
-    font-size: $label-font-size;
+    font-size: $label-font-size-normal;
     color: hsla(0, 0, 0, 0.6);
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: normal;
     font-family: 'Inconsolata', Serif, serif;
     margin-top: $small-margin;
     text-align: left;
     width: 100%;
+    text-shadow: none;
+    letter-spacing: 1px;
 
     &--first {
       margin-top: $big-margin;
@@ -123,6 +137,37 @@
     border: 1px solid hsla(0, 0, 0, 0.3);
     box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
 
+    &--transparent {
+      box-shadow: none;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+    }
+
+    &--embosed {
+      color: $card-font-colour;
+      font-family: 'Inconsolata', monospace;
+      font-size: $cc-font-size;
+      text-shadow: 0 2px 1px hsla(0, 0, 0, 0.3);
+    }
+
+    &--cursive {
+      font-size: $label-font-size-normal;
+      font-style: italic;
+      position: absolute;
+      left: 0;
+      margin: 0 auto;
+    }
+
+    &--right-align {
+      text-align: right;
+      padding-right: $small-margin;
+    }
+
+    &--left-align {
+      text-align: left;
+    }
+
     &:focus {
       border-color: $input-focus-border-colour;
     }
@@ -130,17 +175,78 @@
 }
 
 .cc-wrapper {
-  @include breakpoint(laptop) {
-    width: 40%;
-    height: 100%;
-    background-color: $wrapper-background;
-    border-radius: $wrapper-radius;
-  }
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $wrapper-background;
+  border-radius: $wrapper-radius;
+}
+
+.cc-box {
+  width: $card-width;
+  height: $card-height;
+  position: relative;
+  margin: 0 auto;
+  z-index: 1;
+  padding: 0;
+  transform: translateY(-100%);
 
   @include breakpoint(tablet) {
-    width: 50%;
-    height: 100%;
-    background-color: $wrapper-background;
-    border-radius: $wrapper-radius;
+    transform: translateY(-115%);
+  }
+
+  @include breakpoint(mobile) {
+    transform: translateY(-130%);
+  }
+
+  &--flip {
+    transition: $transition-time;
+    transform-style: preserve-3d;
+
+    &:hover,
+    &.hover {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__element {
+    text-align: left;
+    padding: 0;
+  }
+
+  &__strip {
+    background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-90%);
+    font-size: $cc-font-size;
+  }
+
+  &__front,
+  &__back {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    background: linear-gradient(135deg, #bd6772, #53223f);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__front {
+    transform: rotateY(0deg);
+  }
+
+  &__back {
+    transform: rotateY(180deg);
   }
 }
