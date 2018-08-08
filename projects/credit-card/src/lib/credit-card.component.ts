@@ -6,6 +6,7 @@ import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
 import { CardType } from '@cc-project/lib/domain/card-type';
 import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
+import { Month } from '@cc-project/lib/domain/month.enum';
 
 @Component({
   selector: 'ng-credit-card',
@@ -15,6 +16,8 @@ import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
 })
 export class CreditCardComponent implements OnInit {
   public ccForm: FormGroup;
+  public months: Array<Month> = [];
+  public years: Array<number> = [];
 
   @Input() public ccNumMissingTxt? = 'Card number is required';
 
@@ -32,15 +35,7 @@ export class CreditCardComponent implements OnInit {
 
   @Input() public expirationMonthMissingTxt? = 'Expiration month is required';
 
-  @Input() public expirationMonthTooShortTxt? = 'Expiration month is too short';
-
-  @Input() public expirationMonthTooLongTxt? = 'Expiration month is too long';
-
   @Input() public expirationYearMissingTxt? = 'Expiration year is required';
-
-  @Input() public expirationYearTooShortTxt? = 'Expiration year is too short';
-
-  @Input() public expirationYearTooLongTxt? = 'Expiration year is too long';
 
   @Input() public cardExpired? = 'Card has expired';
 
@@ -70,6 +65,17 @@ export class CreditCardComponent implements OnInit {
 
   public ngOnInit(): void {
     this.buildForm();
+    this.assignDateValues();
+  }
+
+  private assignDateValues(): void {
+    for (const key of Object.keys(Month)) {
+      this.months.push(Month[key]);
+    }
+    const year = new Date().getFullYear();
+    for (let i = -2; i < 5; i++) {
+      this.years.push(year + i);
+    }
   }
 
   private buildForm(): void {
@@ -86,14 +92,8 @@ export class CreditCardComponent implements OnInit {
           ]),
         ],
         cardHolder: ['', Validators.compose([Validators.required, Validators.maxLength(22)])],
-        expirationMonth: [
-          '',
-          Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
-        ],
-        expirationYear: [
-          '',
-          Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
-        ],
+        expirationMonth: ['', Validators.required],
+        expirationYear: ['', Validators.required],
         ccv: [
           '',
           Validators.compose([

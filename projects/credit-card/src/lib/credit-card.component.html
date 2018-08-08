@@ -75,20 +75,29 @@
     <div class="cc-form--inline">
       <div class="cc-form__wrapper cc-form__wrapper--short">
         <label for="cc-expiration-month" class="cc-form__label">Expiration month</label>
-        <input class="cc-form__input" id="cc-expiration-month" aria-label="Expiration month"
-               type="number" minlength="2" maxlength="2" title="Expiration month" formControlName="expirationMonth"
-               (focus)="ccBoxFlip.classList.remove('hover')">
+        <select id="cc-expiration-month" formControlName="expirationMonth">
+          <option *ngFor="let month of months" value="{{month}}"
+                  (click)="ccBoxFlip.classList.remove('hover')">{{month}}
+          </option>
+        </select>
         <div class="cc-form__error"
              *ngIf="validateExpirationMonth && ccForm.get('expirationMonth').touched &&
-             (ccForm.get('expirationMonth').hasError('minlength') || ccForm.get('expirationMonth').hasError('maxlength'))">
-          {{expirationMonthTooShortTxt}}
+             ccForm.get('expirationMonth').hasError('required')">
+          {{expirationMonthMissingTxt}}
         </div>
       </div>
       <div class="cc-form__wrapper cc-form__wrapper--short">
         <label for="cc-expiration-year" class="cc-form__label">Expiration year</label>
-        <input class="cc-form__input" id="cc-expiration-year" aria-label="Expiration year"
-               type="number" title="Expiration year" formControlName="expirationYear"
-               (focus)="ccBoxFlip.classList.remove('hover')">
+        <select id="cc-expiration-year" formControlName="expirationYear">
+          <option *ngFor="let year of years" value="{{year}}"
+                  (click)="ccBoxFlip.classList.remove('hover')">{{year}}
+          </option>
+        </select>
+        <div class="cc-form__error"
+             *ngIf="validateExpirationMonth && ccForm.get('expirationYear').touched &&
+             ccForm.get('expirationYear').hasError('required')">
+          {{expirationYearMissingTxt}}
+        </div>
       </div>
       <div class="cc-form__wrapper cc-form__wrapper--short cc-form__wrapper--last">
         <label for="cc-expiration-month" class="cc-form__label">CVV</label>

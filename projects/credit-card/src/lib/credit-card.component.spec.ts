@@ -179,28 +179,6 @@ describe('CreditCardComponent', () => {
 
         expect(ctrl.valid).toBeTruthy();
       });
-
-      it('should be marked as invalid if contains less than 2 characters', () => {
-        ctrl.setValue('3');
-
-        expect(ctrl.valid).toBeFalsy();
-        expect(ctrl.hasError('minlength')).toBeTruthy();
-      });
-
-      it('should be marked as invalid if contains more than 2 characters', () => {
-        ctrl.setValue('031');
-
-        expect(ctrl.valid).toBeFalsy();
-        expect(ctrl.hasError('maxlength')).toBeTruthy();
-      });
-
-      it('should be marked as valid if contains exactly 2 characters', () => {
-        ctrl.setValue('03');
-
-        expect(ctrl.valid).toBeTruthy();
-        expect(ctrl.hasError('minlength')).toBeFalsy();
-        expect(ctrl.hasError('maxlength')).toBeFalsy();
-      });
     });
 
     describe('expirationMonth control', () => {
@@ -225,28 +203,6 @@ describe('CreditCardComponent', () => {
         ctrl.setValue('03');
 
         expect(ctrl.valid).toBeTruthy();
-      });
-
-      it('should be marked as invalid if contains less than 2 characters', () => {
-        ctrl.setValue('3');
-
-        expect(ctrl.valid).toBeFalsy();
-        expect(ctrl.hasError('minlength')).toBeTruthy();
-      });
-
-      it('should be marked as invalid if contains more than 2 characters', () => {
-        ctrl.setValue('031');
-
-        expect(ctrl.valid).toBeFalsy();
-        expect(ctrl.hasError('maxlength')).toBeTruthy();
-      });
-
-      it('should be marked as valid if contains exactly 2 characters', () => {
-        ctrl.setValue('03');
-
-        expect(ctrl.valid).toBeTruthy();
-        expect(ctrl.hasError('minlength')).toBeFalsy();
-        expect(ctrl.hasError('maxlength')).toBeFalsy();
       });
     });
 
@@ -495,38 +451,6 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('expirationYearTooShortTxt', () => {
-      afterEach(() => {
-        component.expirationYearTooShortTxt = null;
-      });
-
-      it('should accept string value', () => {
-        component.expirationYearTooShortTxt = 'Example text';
-
-        expect(component.expirationYearTooShortTxt).toEqual('Example text');
-      });
-
-      it('should have default value', () => {
-        expect(component.expirationYearTooShortTxt).toEqual('Expiration year is too short');
-      });
-    });
-
-    describe('expirationYearTooLongTxt', () => {
-      afterEach(() => {
-        component.expirationYearTooLongTxt = null;
-      });
-
-      it('should accept string value', () => {
-        component.expirationYearTooLongTxt = 'Example text';
-
-        expect(component.expirationYearTooLongTxt).toEqual('Example text');
-      });
-
-      it('should have default value', () => {
-        expect(component.expirationYearTooLongTxt).toEqual('Expiration year is too long');
-      });
-    });
-
     describe('expirationMonthMissingTxt', () => {
       afterEach(() => {
         component.expirationMonthMissingTxt = null;
@@ -540,38 +464,6 @@ describe('CreditCardComponent', () => {
 
       it('should have default value', () => {
         expect(component.expirationMonthMissingTxt).toEqual('Expiration month is required');
-      });
-    });
-
-    describe('expirationMonthTooShortTxt', () => {
-      afterEach(() => {
-        component.expirationMonthTooShortTxt = null;
-      });
-
-      it('should accept string value', () => {
-        component.expirationMonthTooShortTxt = 'Example text';
-
-        expect(component.expirationMonthTooShortTxt).toEqual('Example text');
-      });
-
-      it('should have default value', () => {
-        expect(component.expirationMonthTooShortTxt).toEqual('Expiration month is too short');
-      });
-    });
-
-    describe('expirationMonthTooLongTxt', () => {
-      afterEach(() => {
-        component.expirationMonthTooLongTxt = null;
-      });
-
-      it('should accept string value', () => {
-        component.expirationMonthTooLongTxt = 'Example text';
-
-        expect(component.expirationMonthTooLongTxt).toEqual('Example text');
-      });
-
-      it('should have default value', () => {
-        expect(component.expirationMonthTooLongTxt).toEqual('Expiration month is too long');
       });
     });
 
