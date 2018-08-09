@@ -110,7 +110,7 @@ export class CreditCardComponent implements OnInit {
     );
   }
 
-  public getCardType(ccNum: string): CardType | null {
+  public getCardType(ccNum: string): string | null {
     return CreditCardService.getCardType(ccNum);
   }
 

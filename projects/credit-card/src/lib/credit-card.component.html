@@ -2,6 +2,9 @@
   <div class="cc-box">
     <div #ccBoxFlip class="cc-box--flip">
       <div class="cc-box__front">
+        <div class="cc-box__logo">
+          <p>{{getCardType(ccNumber.value) | uppercase}}</p>
+        </div>
         <div class="cc-box__element">
           <label class="cc-form__label" for="cc-card-number"></label>
           <input class="cc-form__input cc-form__input--transparent cc-form__input--embosed" id="cc-card-number"
@@ -34,7 +37,7 @@
   <form class="cc-form" [formGroup]="ccForm" autocomplete="off">
     <div class="cc-form__wrapper--long">
       <label for="cc-number" class="cc-form__label cc-form__label--first">Card number</label>
-      <input class="cc-form__input" id="cc-number" aria-label="Card number"
+      <input #ccNumber class="cc-form__input" id="cc-number" aria-label="Card number"
              type="text" title="Card number" maxlength="19" formControlName="cardNumber"
              (focus)="ccBoxFlip.classList.remove('hover')">
       <div class="cc-form__error"
