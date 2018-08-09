@@ -125,6 +125,11 @@
     }
   }
 
+  &__select {
+    @extend .cc-form__input;
+    appearance: listbox;
+  }
+
   &__input {
     font-size: $input-font-size;
     text-align: left;

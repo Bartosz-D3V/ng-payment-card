@@ -64,18 +64,21 @@
              title="Card holder name" maxlength="22" formControlName="cardHolder"
              (focus)="ccBoxFlip.classList.remove('hover')">
       <div class="cc-form__error"
-           *ngIf="validateCardHolder && ccForm.get('cardHolder').touched && ccForm.get('cardHolder').hasError('required')">
+           *ngIf="validateCardHolder && ccForm.get('cardHolder').touched &&
+           ccForm.get('cardHolder').hasError('required')">
         {{cardHolderMissingTxt}}
       </div>
       <div class="cc-form__error"
-           *ngIf="validateCardHolder && ccForm.get('cardHolder').touched && ccForm.get('cardHolder').hasError('maxlength')">
+           *ngIf="validateCardHolder && ccForm.get('cardHolder').touched &&
+           ccForm.get('cardHolder').hasError('maxlength')">
         {{cardHolderTooLong}}
       </div>
     </div>
     <div class="cc-form--inline">
       <div class="cc-form__wrapper cc-form__wrapper--short">
         <label for="cc-expiration-month" class="cc-form__label">Expiration month</label>
-        <select id="cc-expiration-month" formControlName="expirationMonth">
+        <select id="cc-expiration-month" class="cc-form__select" aria-label="Expiration month"
+                formControlName="expirationMonth">
           <option *ngFor="let month of months" value="{{month}}"
                   (click)="ccBoxFlip.classList.remove('hover')">{{month}}
           </option>
@@ -88,7 +91,8 @@
       </div>
       <div class="cc-form__wrapper cc-form__wrapper--short">
         <label for="cc-expiration-year" class="cc-form__label">Expiration year</label>
-        <select id="cc-expiration-year" formControlName="expirationYear">
+        <select id="cc-expiration-year" class="cc-form__select" aria-label="Expiration year"
+                formControlName="expirationYear">
           <option *ngFor="let year of years" value="{{year}}"
                   (click)="ccBoxFlip.classList.remove('hover')">{{year}}
           </option>
