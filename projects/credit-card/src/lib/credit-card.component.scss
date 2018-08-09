@@ -192,6 +192,29 @@
     font-size: $label-font-size-normal;
     color: $card-font-invalid-colour;
   }
+
+  &__button {
+    padding: $small-padding;
+    margin-bottom: $small-margin;
+    position: relative;
+    user-select: none;
+    color: $card-font-colour;
+    background: $input-focus-border-colour;
+    border: 0;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: $small-radius;
+
+    &:hover {
+      box-shadow: 0 6px 8px -3px rgba(0, 0, 0, 0.3);
+      transform: translateY(-5px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .cc-wrapper {
