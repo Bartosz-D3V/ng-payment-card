@@ -258,6 +258,19 @@
     width: 80%;
   }
 
+  &__logo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-right: $medium-margin;
+    color: $card-font-colour;
+    font-style: italic;
+    font-weight: bold;
+    font-size: $input-font-size;
+  }
+
   &__strip {
     background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
     position: relative;
