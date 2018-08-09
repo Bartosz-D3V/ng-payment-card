@@ -37,8 +37,6 @@ export class CreditCardComponent implements OnInit {
 
   @Input() public expirationYearMissingTxt? = 'Expiration year is required';
 
-  @Input() public cardExpired? = 'Card has expired';
-
   @Input() public ccvMissingTxt? = 'CCV number is required';
 
   @Input() public ccvNumTooShortTxt? = 'CCV number is too short';
@@ -46,6 +44,8 @@ export class CreditCardComponent implements OnInit {
   @Input() public ccvNumTooLongTxt? = 'CCV number is too long';
 
   @Input() public ccvContainsLettersTxt? = 'CCV number can contain digits only';
+
+  @Input() public cardExpired? = 'Card has expired';
 
   @Input() public validateCCNum? = true;
 
