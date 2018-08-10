@@ -1,10 +1,10 @@
-# ngCreditCard - Responsive Angular credit card module
+# Responsive, Angular credit card component
 
 _Customizable component with zero external dependencies._
 <p align="center">
 
 
-![demo](https://github.com/Bartosz-D3V/ng-credit-card/tree/master/docs/demo.gif)
+![demo](https://github.com/Bartosz-D3V/ng-credit-card/blob/docs/master/readme/docs/demo.gif)
 </p>
 
 ## Install
@@ -23,7 +23,15 @@ As component is in active development - it has not been published on NPM yet.
 * Built with statical code analysis tools
 
 ## Usage
-TBC
+After installing the component as a dependency, import it into you Angular module.
+```js
+import { CreditCardModule } from 'credit-card';
+```
+
+Afterwards, you can use the component within your templates.
+```html
+<ng-credit-card></ng-credit-card>
+```
 
 ## Development
 ### Installation
