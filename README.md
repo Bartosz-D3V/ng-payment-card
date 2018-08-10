@@ -5,10 +5,12 @@
 _Customizable component with zero external dependencies._
 
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
-[![Build Status](https://travis-ci.org/Bartosz-D3V/ng-credit-card.svg?branch=master)](https://travis-ci.org/Bartosz-D3V/ng-credit-card)
+[![Build Status](https://travis-ci.com/Bartosz-D3V/ng-credit-card.svg?branch=master)](https://travis-ci.com/Bartosz-D3V/ng-credit-card)
 [![Build status](https://ci.appveyor.com/api/projects/status/ivxohrhd06i2yvco/branch/master?svg=true)](https://ci.appveyor.com/project/Bartosz-D3V/ng-credit-card/branch/master)
 [![codecov](https://codecov.io/gh/Bartosz-D3V/ng-credit-card/branch/master/graph/badge.svg)](https://codecov.io/gh/Bartosz-D3V/ng-credit-card)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
 </p>
 
@@ -74,8 +76,8 @@ npm install
 
 ### Running
 ```bash
-npm start // or
-yarn start
+yarn start // or
+npm start
 ```
 
 ### Testing
