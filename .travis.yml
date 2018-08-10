@@ -38,9 +38,9 @@ script:
   - xvfb-run -a npm run e2e -- --prod --protractor-config=./e2e/protractor-ci.conf.js
   - xvfb-run -a npm test --browser=ChromeNoSandbox
 
-#after_success:
-#  - npm install -g codecov
-#  - codecov -t $TOKEN
+after_success:
+  - npm install -g codecov
+  - codecov -t $TOKEN
 
 notifications:
   email:

@@ -1,11 +1,12 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { CardValidator } from './validators/card-validator';
+import { CardValidator } from './validator/card-validator';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
 import { CardType } from '@cc-project/lib/domain/card-type';
-import { default as CARD_TYPES, CardTypesContainer } from './domain/card-types';
+import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
+import { Month } from '@cc-project/lib/domain/month.enum';
 
 /**
  * NgCreditCard without any dependencies other then ReactiveFormsModule
@@ -14,19 +15,15 @@ import { default as CARD_TYPES, CardTypesContainer } from './domain/card-types';
   selector: 'ng-credit-card',
   templateUrl: './credit-card.component.html',
   styleUrls: ['./credit-card.component.scss'],
+  providers: [CreditCardService],
 })
 export class CreditCardComponent implements OnInit {
   /**
    * FormGroup available publicly
    */
   public ccForm: FormGroup;
-
-  /**
-   * Readonly card types container.
-   * Contains list of card types as enum and list of regexps
-   * @type {Map<CardType, RegExp>}
-   */
-  public readonly cardTypes: CardTypesContainer = CARD_TYPES;
+  public months: Array<Month> = [];
+  public years: Array<number> = [];
 
   /**
    * Validation message for missing credit card number
@@ -64,23 +61,7 @@ export class CreditCardComponent implements OnInit {
    */
   @Input() public cardHolderMissingTxt? = 'Card holder name is required';
 
-  /**
-   * Validation message for missing expiration day
-   * @type {string} [expirationDayMissingTxt] - Expiration day is required
-   */
-  @Input() public expirationDayMissingTxt? = 'Expiration day is required';
-
-  /**
-   * Validation message for too short expiration day
-   * @type {string} [expirationDayTooShortTxt] - Expiration day is too short
-   */
-  @Input() public expirationDayTooShortTxt? = 'Expiration day is too short';
-
-  /**
-   * Validation message for too long expiration day
-   * @type {string} [expirationDayTooLongTxt] - Expiration day is too long
-   */
-  @Input() public expirationDayTooLongTxt? = 'Expiration day is too long';
+  @Input() public cardHolderTooLong? = 'Card holder name is too long';
 
   /**
    * Validation message for missing expiration month
@@ -88,17 +69,7 @@ export class CreditCardComponent implements OnInit {
    */
   @Input() public expirationMonthMissingTxt? = 'Expiration month is required';
 
-  /**
-   * Validation message for too short expiration month
-   * @type {string} [expirationMonthTooShortTxt] - Expiration month is too short
-   */
-  @Input() public expirationMonthTooShortTxt? = 'Expiration month is too short';
-
-  /**
-   * Validation message for too long expiration month
-   * @type {string} [expirationMonthTooLongTxt] - Expiration month is too long
-   */
-  @Input() public expirationMonthTooLongTxt? = 'Expiration month is too long';
+  @Input() public expirationYearMissingTxt? = 'Expiration year is required';
 
   /**
    * Validation message for missing CCV number
@@ -124,6 +95,8 @@ export class CreditCardComponent implements OnInit {
    */
   @Input() public ccvContainsLettersTxt? = 'CCV number can contain digits only';
 
+  @Input() public cardExpired? = 'Card has expired';
+
   /**
    * Switch validation of the credit card number
    * @type {boolean} [validateCCNum] - true
@@ -137,16 +110,11 @@ export class CreditCardComponent implements OnInit {
   @Input() public validateCardHolder? = true;
 
   /**
-   * Switch validation of the credit card expiration day
-   * @type {boolean} [validateExpirationDay] - true
+   * Switch validation of the credit card expiration
+   * @type {boolean} [validateCardExpiration] - true
    */
-  @Input() public validateExpirationDay? = true;
 
-  /**
-   * Switch validation of the credit card expiration month
-   * @type {boolean} [validateExpirationMonth] - true
-   */
-  @Input() public validateExpirationMonth? = true;
+  @Input() public validateCardExpiration? = true;
 
   /**
    * Switch validation of the credit card CCV number
@@ -163,55 +131,59 @@ export class CreditCardComponent implements OnInit {
   /**
    * Constructor for component injecting FormBuilder from ReactiveFormsModule
    * @param {FormBuilder} _fb
+   * @param {CreditCardService} _ccService
    */
-  constructor(private _fb: FormBuilder) {}
+  constructor(private _ccService: CreditCardService, private _fb: FormBuilder) {}
 
   public ngOnInit(): void {
     this.buildForm();
+    this.assignDateValues();
+  }
+
+  private assignDateValues(): void {
+    for (const key of Object.keys(Month)) {
+      this.months.push(Month[key]);
+    }
+    const year = new Date().getFullYear();
+    for (let i = -2; i < 5; i++) {
+      this.years.push(year + i);
+    }
   }
 
   private buildForm(): void {
-    this.ccForm = this._fb.group({
-      cardNumber: [
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(12),
-          Validators.maxLength(19),
-          CardValidator.numbersOnly,
-          CardValidator.checksum,
-        ]),
-      ],
-      cardHolder: ['', Validators.compose([Validators.required])],
-      expirationDay: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)])],
-      expirationMonth: [
-        '',
-        Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
-      ],
-      ccv: [
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(4),
-          CardValidator.numbersOnly,
-        ]),
-      ],
-    });
+    this.ccForm = this._fb.group(
+      {
+        cardNumber: [
+          '',
+          Validators.compose([
+            Validators.required,
+            Validators.minLength(12),
+            Validators.maxLength(19),
+            CardValidator.numbersOnly,
+            CardValidator.checksum,
+          ]),
+        ],
+        cardHolder: ['', Validators.compose([Validators.required, Validators.maxLength(22)])],
+        expirationMonth: ['', Validators.required],
+        expirationYear: ['', Validators.required],
+        ccv: [
+          '',
+          Validators.compose([
+            Validators.required,
+            Validators.minLength(3),
+            Validators.maxLength(4),
+            CardValidator.numbersOnly,
+          ]),
+        ],
+      },
+      {
+        validator: CardValidator.expiration,
+      }
+    );
   }
 
-  public getCardType(cardTypes: CardTypesContainer, ccNum: string): CardType | null {
-    for (const [key, val] of Array.from(cardTypes.entries())) {
-      if (
-        ccNum
-          .split(' ')
-          .join('')
-          .match(val)
-      ) {
-        return key;
-      }
-    }
-    return null;
+  public getCardType(ccNum: string): string | null {
+    return CreditCardService.getCardType(ccNum);
   }
 
   public emitSavedCard(): void {

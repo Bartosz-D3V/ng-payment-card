@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
 
 export class CardValidator {
   private static NUMBERS_ONLY_ERR: ValidationErrors = {
@@ -7,6 +7,10 @@ export class CardValidator {
 
   private static CHECKSUM_INVALID: ValidationErrors = {
     checksum: true,
+  };
+
+  private static CARD_EXPIRED: ValidationErrors = {
+    expiration: true,
   };
 
   public static numbersOnly(abstractCtrl: AbstractControl): ValidationErrors | null {
@@ -27,5 +31,12 @@ export class CardValidator {
       sum += (shouldMultiply = !shouldMultiply) ? luhnArray[val] : val;
     }
     return !(sum && sum % 10 === 0) ? CardValidator.CHECKSUM_INVALID : null;
+  }
+
+  public static expiration(formGroup: FormGroup): ValidationErrors | null {
+    const expirationMonth: number = Number(formGroup.get('expirationMonth').value);
+    const expirationYear: number = Number(formGroup.get('expirationYear').value);
+    const expirationDate: Date = new Date(expirationYear, expirationMonth + 1, 0);
+    return new Date().getTime() > expirationDate.getTime() ? CardValidator.CARD_EXPIRED : null;
   }
 }

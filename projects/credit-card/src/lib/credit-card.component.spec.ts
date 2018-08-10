@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
-import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { CreditCardComponent } from './credit-card.component';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
-import { CardType } from '@cc-project/lib/domain/card-type';
-import cardTypes from '@cc-project/lib/domain/card-types';
+import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
+import { CreditCardNumberPipe } from '@cc-project/lib/pipe/credit-card-number/credit-card-number.pipe';
+import { ValidThruPipe } from '@cc-project/lib/pipe/valid-thru/valid-thru.pipe';
 
 describe('CreditCardComponent', () => {
   let component: CreditCardComponent;
@@ -12,8 +14,9 @@ describe('CreditCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [CreditCardComponent],
+      imports: [ReactiveFormsModule, CommonModule],
+      declarations: [CreditCardComponent, CreditCardNumberPipe, ValidThruPipe],
+      providers: [CreditCardService],
     }).compileComponents();
   }));
 
@@ -137,13 +140,27 @@ describe('CreditCardComponent', () => {
         expect(ctrl.valid).toBeTruthy();
         expect(ctrl.hasError('required')).toBeFalsy();
       });
+
+      it('should be marked as invalid if greater than 22 characters', () => {
+        ctrl.setValue('Mister Doctor Donnie Junior Darko The First');
+
+        expect(ctrl.valid).toBeFalsy();
+        expect(ctrl.hasError('maxlength')).toBeTruthy();
+      });
+
+      it('should be marked as valid if less than 22 characters', () => {
+        ctrl.setValue('Donnie Darko');
+
+        expect(ctrl.valid).toBeTruthy();
+        expect(ctrl.hasError('maxlength')).toBeFalsy();
+      });
     });
 
-    describe('expirationDay control', () => {
+    describe('expirationYear control', () => {
       let ctrl: AbstractControl;
 
       beforeAll(() => {
-        ctrl = component.ccForm.get('expirationDay');
+        ctrl = component.ccForm.get('expirationYear');
       });
 
       afterEach(() => {
@@ -161,28 +178,6 @@ describe('CreditCardComponent', () => {
         ctrl.setValue('03');
 
         expect(ctrl.valid).toBeTruthy();
-      });
-
-      it('should be marked as invalid if contains less than 2 characters', () => {
-        ctrl.setValue('3');
-
-        expect(ctrl.valid).toBeFalsy();
-        expect(ctrl.hasError('minlength')).toBeTruthy();
-      });
-
-      it('should be marked as invalid if contains more than 2 characters', () => {
-        ctrl.setValue('031');
-
-        expect(ctrl.valid).toBeFalsy();
-        expect(ctrl.hasError('maxlength')).toBeTruthy();
-      });
-
-      it('should be marked as valid if contains exactly 2 characters', () => {
-        ctrl.setValue('03');
-
-        expect(ctrl.valid).toBeTruthy();
-        expect(ctrl.hasError('minlength')).toBeFalsy();
-        expect(ctrl.hasError('maxlength')).toBeFalsy();
       });
     });
 
@@ -208,28 +203,6 @@ describe('CreditCardComponent', () => {
         ctrl.setValue('03');
 
         expect(ctrl.valid).toBeTruthy();
-      });
-
-      it('should be marked as invalid if contains less than 2 characters', () => {
-        ctrl.setValue('3');
-
-        expect(ctrl.valid).toBeFalsy();
-        expect(ctrl.hasError('minlength')).toBeTruthy();
-      });
-
-      it('should be marked as invalid if contains more than 2 characters', () => {
-        ctrl.setValue('031');
-
-        expect(ctrl.valid).toBeFalsy();
-        expect(ctrl.hasError('maxlength')).toBeTruthy();
-      });
-
-      it('should be marked as valid if contains exactly 2 characters', () => {
-        ctrl.setValue('03');
-
-        expect(ctrl.valid).toBeTruthy();
-        expect(ctrl.hasError('minlength')).toBeFalsy();
-        expect(ctrl.hasError('maxlength')).toBeFalsy();
       });
     });
 
@@ -298,6 +271,33 @@ describe('CreditCardComponent', () => {
         expect(ctrl.hasError('numbersOnly')).toBeFalsy();
       });
     });
+
+    describe('expiration validator', () => {
+      let formGroup: FormGroup;
+
+      beforeAll(() => {
+        formGroup = component.ccForm;
+      });
+
+      afterEach(() => {
+        formGroup.reset();
+      });
+
+      it('should be marked as invalid if card is expired', () => {
+        formGroup.get('expirationMonth').setValue('06');
+        formGroup.get('expirationYear').setValue('2015');
+
+        expect(formGroup.valid).toBeFalsy();
+        expect(formGroup.hasError('expiration')).toBeTruthy();
+      });
+
+      it('should be marked as valid if card is not expired', () => {
+        formGroup.get('expirationMonth').setValue(new Date().getMonth() + 1);
+        formGroup.get('expirationYear').setValue(new Date().getFullYear());
+
+        expect(formGroup.hasError('expiration')).toBeFalsy();
+      });
+    });
   });
 
   describe('emitSavedCard', () => {
@@ -309,7 +309,7 @@ describe('CreditCardComponent', () => {
         const exampleCard: ICardDetails = {
           cardNumber: '123456789101',
           cardHolder: 'Donnie Darko',
-          expirationDay: '05',
+          expirationYear: '05',
           expirationMonth: '123',
           ccv: 123,
         };
@@ -419,51 +419,35 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('expirationDayMissingTxt', () => {
+    describe('cardHolderTooLong', () => {
       afterEach(() => {
-        component.expirationDayMissingTxt = null;
+        component.cardHolderTooLong = null;
       });
 
       it('should accept string value', () => {
-        component.expirationDayMissingTxt = 'Example text';
+        component.cardHolderTooLong = 'Example text';
 
-        expect(component.expirationDayMissingTxt).toEqual('Example text');
+        expect(component.cardHolderTooLong).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.expirationDayMissingTxt).toEqual('Expiration day is required');
+        expect(component.cardHolderTooLong).toEqual('Card holder name is too long');
       });
     });
 
-    describe('expirationDayTooShortTxt', () => {
+    describe('expirationYearMissingTxt', () => {
       afterEach(() => {
-        component.expirationDayTooShortTxt = null;
+        component.expirationYearMissingTxt = null;
       });
 
       it('should accept string value', () => {
-        component.expirationDayTooShortTxt = 'Example text';
+        component.expirationYearMissingTxt = 'Example text';
 
-        expect(component.expirationDayTooShortTxt).toEqual('Example text');
+        expect(component.expirationYearMissingTxt).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.expirationDayTooShortTxt).toEqual('Expiration day is too short');
-      });
-    });
-
-    describe('expirationDayTooLongTxt', () => {
-      afterEach(() => {
-        component.expirationDayTooLongTxt = null;
-      });
-
-      it('should accept string value', () => {
-        component.expirationDayTooLongTxt = 'Example text';
-
-        expect(component.expirationDayTooLongTxt).toEqual('Example text');
-      });
-
-      it('should have default value', () => {
-        expect(component.expirationDayTooLongTxt).toEqual('Expiration day is too long');
+        expect(component.expirationYearMissingTxt).toEqual('Expiration year is required');
       });
     });
 
@@ -483,35 +467,19 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('expirationMonthTooShortTxt', () => {
+    describe('cardExpired', () => {
       afterEach(() => {
-        component.expirationMonthTooShortTxt = null;
+        component.cardExpired = null;
       });
 
       it('should accept string value', () => {
-        component.expirationMonthTooShortTxt = 'Example text';
+        component.cardExpired = 'Example text';
 
-        expect(component.expirationMonthTooShortTxt).toEqual('Example text');
+        expect(component.cardExpired).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.expirationMonthTooShortTxt).toEqual('Expiration month is too short');
-      });
-    });
-
-    describe('expirationMonthTooLongTxt', () => {
-      afterEach(() => {
-        component.expirationMonthTooLongTxt = null;
-      });
-
-      it('should accept string value', () => {
-        component.expirationMonthTooLongTxt = 'Example text';
-
-        expect(component.expirationMonthTooLongTxt).toEqual('Example text');
-      });
-
-      it('should have default value', () => {
-        expect(component.expirationMonthTooLongTxt).toEqual('Expiration month is too long');
+        expect(component.cardExpired).toEqual('Card has expired');
       });
     });
 
@@ -627,19 +595,19 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('validateExpirationDay', () => {
+    describe('validateExpirationYear', () => {
       afterEach(() => {
-        component.validateExpirationDay = null;
+        component.validateExpirationYear = null;
       });
 
       it('should accept boolean value', () => {
-        component.validateExpirationDay = false;
+        component.validateExpirationYear = false;
 
-        expect(component.validateExpirationDay).toBeFalsy();
+        expect(component.validateExpirationYear).toBeFalsy();
       });
 
       it('should have default true value', () => {
-        expect(component.validateExpirationDay).toBeTruthy();
+        expect(component.validateExpirationYear).toBeTruthy();
       });
     });
 
@@ -659,6 +627,22 @@ describe('CreditCardComponent', () => {
       });
     });
 
+    describe('validateCardExpiration', () => {
+      afterEach(() => {
+        component.validateCardExpiration = null;
+      });
+
+      it('should accept boolean value', () => {
+        component.validateCardExpiration = false;
+
+        expect(component.validateCardExpiration).toBeFalsy();
+      });
+
+      it('should have default true value', () => {
+        expect(component.validateCardExpiration).toBeTruthy();
+      });
+    });
+
     describe('validateCCV', () => {
       afterEach(() => {
         component.validateCCV = null;
@@ -673,72 +657,6 @@ describe('CreditCardComponent', () => {
       it('should have default true value', () => {
         expect(component.validateCCV).toBeTruthy();
       });
-    });
-  });
-
-  describe('getCardType', () => {
-    it('should detect AMERICAN_EXPRESS', () => {
-      expect(component.getCardType(cardTypes, '377740327049504')).toBe(CardType.AMERICAN_EXPRESS);
-      expect(component.getCardType(cardTypes, '372774294508668')).toBe(CardType.AMERICAN_EXPRESS);
-    });
-
-    it('should detect DINERS', () => {
-      expect(component.getCardType(cardTypes, '36678417462141')).toBe(CardType.DINERS);
-      expect(component.getCardType(cardTypes, '36122381051416')).toBe(CardType.DINERS);
-    });
-
-    it('should detect DINERS_CARTE_BLANCHE', () => {
-      expect(component.getCardType(cardTypes, '30310723060882')).toBe(CardType.DINERS_CARTE_BLANCHE);
-      expect(component.getCardType(cardTypes, '30105635125710')).toBe(CardType.DINERS_CARTE_BLANCHE);
-    });
-
-    it('should detect DISCOVER_CLUB ', () => {
-      expect(component.getCardType(cardTypes, '6011611639813367')).toBe(CardType.DISCOVER_CLUB);
-      expect(component.getCardType(cardTypes, '6011040601455298')).toBe(CardType.DISCOVER_CLUB);
-    });
-
-    it('should detect CHINA_UNIONPAY', () => {
-      expect(component.getCardType(cardTypes, '6281620341037549')).toBe(CardType.CHINA_UNIONPAY);
-      expect(component.getCardType(cardTypes, '6237083013714488')).toBe(CardType.CHINA_UNIONPAY);
-    });
-
-    it('should detect JCB', () => {
-      expect(component.getCardType(cardTypes, '3569198543021504')).toBe(CardType.JCB);
-      expect(component.getCardType(cardTypes, '3529500239872869')).toBe(CardType.JCB);
-    });
-
-    it('should detect LASER', () => {
-      expect(component.getCardType(cardTypes, '6304611158942658')).toBe(CardType.LASER);
-    });
-
-    it('should detect MAESTRO', () => {
-      expect(component.getCardType(cardTypes, '5053026275762086')).toBe(CardType.MAESTRO);
-      expect(component.getCardType(cardTypes, '5030644144155643')).toBe(CardType.MAESTRO);
-    });
-
-    it('should detect MASTERCARD', () => {
-      expect(component.getCardType(cardTypes, '5585800405742631')).toBe(CardType.MASTERCARD);
-      expect(component.getCardType(cardTypes, '5579644035345946')).toBe(CardType.MASTERCARD);
-    });
-
-    it('should detect VISA_ELECTRON', () => {
-      expect(component.getCardType(cardTypes, '4917907514666080')).toBe(CardType.VISA_ELECTRON);
-      expect(component.getCardType(cardTypes, '4913961879483056')).toBe(CardType.VISA_ELECTRON);
-    });
-
-    it('should detect VISA', () => {
-      expect(component.getCardType(cardTypes, '4539330631653907')).toBe(CardType.VISA);
-      expect(component.getCardType(cardTypes, '4929975343720')).toBe(CardType.VISA);
-    });
-
-    it('should detect card type if number contains spaces', () => {
-      expect(component.getCardType(cardTypes, '4539 3306 3165 3907')).toBe(CardType.VISA);
-      expect(component.getCardType(cardTypes, '5579 6440 3534 5946')).toBe(CardType.MASTERCARD);
-    });
-
-    it('should return null if no card type was detected', () => {
-      expect(component.getCardType(cardTypes, '9139330631653907')).toBeNull();
-      expect(component.getCardType(cardTypes, '993219975343720')).toBeNull();
     });
   });
 });

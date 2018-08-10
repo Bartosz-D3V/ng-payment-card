@@ -13,15 +13,29 @@ $input-width-large: 60%;
 $input-width-short: 15%;
 $input-height: 38px;
 $input-font-size: 1.2em;
-$label-font-size: 0.5em;
+$label-font-size-normal: 0.7em;
+$cc-font-size: 2vw;
+$cc-font-size-medium: 2.5vw;
+$cc-font-size-big: 3vw;
+$strip-font-size: 1.7em;
+
+// Credit card layout
+$card-width: 70%;
+$card-height: 100px;
 
 // Colours definition
 $input-highlight: #333;
 $input-focus-border-colour: #41acf4;
+$input-border-color: #b2b2b2;
 $wrapper-background: #fff;
+$card-font-colour: #fff;
+$card-font-invalid-colour: #ff5b5f;
 
 // Misc
 $wrapper-radius: 20px;
+$small-padding: 1%;
 $small-margin: 5%;
 $medium-margin: 10%;
 $big-margin: 20%;
+$transition-time: 0.6s;
+$small-radius: 3px;
