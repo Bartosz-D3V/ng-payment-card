@@ -17,8 +17,7 @@
     "lint-staged": "lint-staged --config .lintstagedrc",
     "dist-app": "ng build ng-credit-card-app --prod --build-optimizer --aot --extract-licenses=false",
     "dist-lib": "ng build credit-card --prod",
-    "clean": "rm -r dist/ coverage/",
-    "prepublish": "npm run clean && npm test && npm run dist-lib"
+    "clean": "rm -r dist/ coverage/ || exit 0"
   },
   "dependencies": {
     "@angular/animations": "^6.0.3",
