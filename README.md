@@ -1,10 +1,18 @@
 # Responsive, Angular credit card component
 
-_Customizable component with zero external dependencies._
 <p align="center">
 
+_Customizable component with zero external dependencies._
+
+[![Build Status](https://travis-ci.org/Bartosz-D3V/ng-credit-card.svg?branch=master)](https://travis-ci.org/Bartosz-D3V/ng-credit-card)
+[![Build status](https://ci.appveyor.com/api/projects/status/ivxohrhd06i2yvco/branch/master?svg=true)](https://ci.appveyor.com/project/Bartosz-D3V/ng-credit-card/branch/master)
+
+</p>
+
+<p align="center">
 
 <img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/master/docs/demo.gif" width="407" height="428"/>
+
 </p>
 
 ## Install
