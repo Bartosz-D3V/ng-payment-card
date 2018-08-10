@@ -4,6 +4,11 @@ environment:
 matrix:
   fast_finish: true
 
+cache:
+  - ./node_modules
+  - $HOME/.cache/yarn
+  - $HOME/.npm
+
 install:
   - ps: Install-Product node $env:nodejs_version
   - yarn
