@@ -1,27 +1,54 @@
-# NgCreditCardApp
+# Responsive, Angular credit card component
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+_Customizable component with zero external dependencies._
+<p align="center">
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/docs/master/readme/docs/demo.gif" width="407" height="428" />
+</p>
 
-## Code scaffolding
+## Install
+As component is in active development - it has not been published on NPM yet.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
+* Neat design
+* Validation of all fields (including Luhn validation) - that can be switched off
+* Displaying appropriate card provider's name based on card number
+* Fully responsive
+* No dependencies (apart from Angular itself)
+* Angular 2 - 6 compatible
+* Built with BEM methodology and SCSS
+* Fully customizable
+* 100% test coverage level
+* Built with statical code analysis tools
 
-## Build
+## Usage
+After installing the component as a dependency, import it into you Angular module.
+```js
+import { CreditCardModule } from 'credit-card';
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Afterwards, you can use the component within your templates.
+```html
+<ng-credit-card></ng-credit-card>
+```
 
-## Running unit tests
+## Development
+### Installation
+```bash
+yarn
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Running
+```bash
+npm start
+```
 
-## Running end-to-end tests
+### Testing
+```bash
+npm test
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+MIT
