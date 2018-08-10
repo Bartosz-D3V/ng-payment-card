@@ -4,7 +4,7 @@ _Customizable component with zero external dependencies._
 <p align="center">
 
 
-<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/docs/master/readme/docs/demo.gif" width="407" height="428" />
+<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/master/docs/demo.gif" width="407" height="428"/>
 </p>
 
 ## Install
@@ -31,18 +31,40 @@ import { CreditCardModule } from 'credit-card';
 Afterwards, you can use the component within your templates.
 ```html
 <ng-credit-card></ng-credit-card>
+
+// Setting custom validation messages
+<ng-credit-card
+  [ccNumMissingTxt]='Please provide card number'
+  [cardExpired]='Credit card has expired'>
+</ng-credit-card>
+
+// Handling event emitter
+<ng-credit-card
+  (formSaved)="processPayment(cc)">
+</ng-credit-card>
+```
+
+Upon submitting the form, component will emit object in the following format:
+```ts
+cardNumber: string;
+cardHolder: string;
+expirationMonth: string;
+expirationYear: string;
+ccv: number;
 ```
 
 ## Development
+
 ### Installation
 ```bash
-yarn
+yarn // or
 npm install
 ```
 
 ### Running
 ```bash
-npm start
+npm start // or
+yarn start
 ```
 
 ### Testing
