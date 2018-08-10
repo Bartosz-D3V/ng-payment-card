@@ -16,9 +16,10 @@
     "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
     "lint-staged": "lint-staged --config .lintstagedrc",
     "dist-app": "ng build ng-credit-card-app --prod --build-optimizer --aot --extract-licenses=false",
-    "dist-lib": "ng build credit-card --prod"
+    "dist-lib": "ng build credit-card --prod",
+    "clean": "rm -r dist/ coverage/",
+    "prepublish": "npm run clean && npm test && npm run dist-lib"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
     "@angular/common": "^6.0.3",
