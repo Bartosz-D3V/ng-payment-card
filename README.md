@@ -4,7 +4,7 @@ _Customizable component with zero external dependencies._
 <p align="center">
 
 
-![demo](https://github.com/Bartosz-D3V/ng-credit-card/blob/docs/master/readme/docs/demo.gif)
+<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/docs/master/readme/docs/demo.gif" width="407" height="428" />
 </p>
 
 ## Install
