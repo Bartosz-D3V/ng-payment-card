@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CardValidator } from './validator/card-validator';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
-import { CardType } from '@cc-project/lib/domain/card-type';
 import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
 import { Month } from '@cc-project/lib/domain/month.enum';
 
@@ -22,7 +21,17 @@ export class CreditCardComponent implements OnInit {
    * FormGroup available publicly
    */
   public ccForm: FormGroup;
+
+  /**
+   * List of months
+   * @type {any[]}
+   */
   public months: Array<Month> = [];
+
+  /**
+   * List of years
+   * @type {any[]}
+   */
   public years: Array<number> = [];
 
   /**
@@ -61,6 +70,10 @@ export class CreditCardComponent implements OnInit {
    */
   @Input() public cardHolderMissingTxt? = 'Card holder name is required';
 
+  /**
+   * Validation message for too long card holder name
+   * @type {string} [cardHolderTooLong] - Card holder name is too long
+   */
   @Input() public cardHolderTooLong? = 'Card holder name is too long';
 
   /**
@@ -69,6 +82,10 @@ export class CreditCardComponent implements OnInit {
    */
   @Input() public expirationMonthMissingTxt? = 'Expiration month is required';
 
+  /**
+   * Validation message for missing expiration year
+   * @type {string} [expirationYearMissingTxt] - Expiration year is required
+   */
   @Input() public expirationYearMissingTxt? = 'Expiration year is required';
 
   /**
@@ -95,7 +112,11 @@ export class CreditCardComponent implements OnInit {
    */
   @Input() public ccvContainsLettersTxt? = 'CCV number can contain digits only';
 
-  @Input() public cardExpired? = 'Card has expired';
+  /**
+   * Validation message for expired card
+   * @type {string} [cardExpiredTxt] - Card has expired
+   */
+  @Input() public cardExpiredTxt? = 'Card has expired';
 
   /**
    * Switch validation of the credit card number
@@ -110,10 +131,21 @@ export class CreditCardComponent implements OnInit {
   @Input() public validateCardHolder? = true;
 
   /**
+   * Switch validation of the credit card expiration month
+   * @type {boolean} [validateExpirationMonth] - true
+   */
+  @Input() public validateExpirationMonth? = true;
+
+  /**
+   * Switch validation of the credit card expiration year
+   * @type {boolean} [validateExpirationYear] - true
+   */
+  @Input() public validateExpirationYear? = true;
+
+  /**
    * Switch validation of the credit card expiration
    * @type {boolean} [validateCardExpiration] - true
    */
-
   @Input() public validateCardExpiration? = true;
 
   /**
@@ -182,10 +214,18 @@ export class CreditCardComponent implements OnInit {
     );
   }
 
+  /**
+   * Returns credit card type based on credit card number
+   * @param {string} ccNum
+   * @returns {string | null}
+   */
   public getCardType(ccNum: string): string | null {
     return CreditCardService.getCardType(ccNum);
   }
 
+  /**
+   * Callback function that emits credit card details after user clicks submit, or press enter
+   */
   public emitSavedCard(): void {
     const cardDetails: ICardDetails = <CardDetails>this.ccForm.value;
     this.formSaved.emit(cardDetails);

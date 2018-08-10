@@ -8,7 +8,7 @@ import { ValidThruPipe } from './pipe/valid-thru/valid-thru.pipe';
 
 /**
  * Monolithic module that is being bundled and published.
- * Depends only on ReactiveFormsModule.
+ * Depends only on ReactiveFormsModule and CommonModule.
  */
 @NgModule({
   imports: [ReactiveFormsModule, CommonModule],

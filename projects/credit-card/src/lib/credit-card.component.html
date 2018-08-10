@@ -130,7 +130,7 @@
     </div>
     <div class="cc-form__error" *ngIf="validateCardExpiration && ccForm.get('expirationMonth').touched &&
     ccForm.get('expirationYear').touched && ccForm.hasError('expiration')">
-      {{cardExpired}}
+      {{cardExpiredTxt}}
     </div>
     <button type="submit" class="cc-form__button" aria-label="submit" (click)="emitSavedCard()"
             (keydown.enter)="emitSavedCard()">Submit
