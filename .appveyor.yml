@@ -1,0 +1,16 @@
+environment:
+  nodejs_version: "8.9"
+
+matrix:
+  fast_finish: true
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - yarn
+
+test_script:
+  - npm run dist-lib
+  - npm run dist-app
+  - npm run test
+
+build: off
