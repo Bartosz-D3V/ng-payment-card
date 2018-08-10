@@ -51,18 +51,20 @@ cardHolder: string;
 expirationMonth: string;
 expirationYear: string;
 ccv: number;
-```ts
+```
 
 ## Development
+
 ### Installation
 ```bash
-yarn
+yarn // or
 npm install
 ```
 
 ### Running
 ```bash
-npm start
+npm start // or
+yarn start
 ```
 
 ### Testing
