@@ -41,7 +41,7 @@
     "@angular/language-service": "6.1.2",
     "@types/jasmine": "2.8.8",
     "@types/jasminewd2": "2.0.3",
-    "@types/node": "8.10.24",
+    "@types/node": "8.10.25",
     "codelyzer": "4.4.3",
     "husky": "1.0.0-rc.13",
     "jasmine-core": "2.99.1",
