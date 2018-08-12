@@ -19,47 +19,68 @@ export class CreditCardComponent implements OnInit {
   public months: Array<Month> = [];
   public years: Array<number> = [];
 
-  @Input() public ccNumMissingTxt? = 'Card number is required';
+  @Input()
+  public ccNumMissingTxt? = 'Card number is required';
 
-  @Input() public ccNumTooShortTxt? = 'Card number is too short';
+  @Input()
+  public ccNumTooShortTxt? = 'Card number is too short';
 
-  @Input() public ccNumTooLongTxt? = 'Card number is too long';
+  @Input()
+  public ccNumTooLongTxt? = 'Card number is too long';
 
-  @Input() public ccNumContainsLettersTxt? = 'Card number can contain digits only';
+  @Input()
+  public ccNumContainsLettersTxt? = 'Card number can contain digits only';
 
-  @Input() public ccNumChecksumInvalidTxt? = 'Provided card number is invalid';
+  @Input()
+  public ccNumChecksumInvalidTxt? = 'Provided card number is invalid';
 
-  @Input() public cardHolderMissingTxt? = 'Card holder name is required';
+  @Input()
+  public cardHolderMissingTxt? = 'Card holder name is required';
 
-  @Input() public cardHolderTooLong? = 'Card holder name is too long';
+  @Input()
+  public cardHolderTooLong? = 'Card holder name is too long';
 
-  @Input() public expirationMonthMissingTxt? = 'Expiration month is required';
+  @Input()
+  public expirationMonthMissingTxt? = 'Expiration month is required';
 
-  @Input() public expirationYearMissingTxt? = 'Expiration year is required';
+  @Input()
+  public expirationYearMissingTxt? = 'Expiration year is required';
 
-  @Input() public ccvMissingTxt? = 'CCV number is required';
+  @Input()
+  public ccvMissingTxt? = 'CCV number is required';
 
-  @Input() public ccvNumTooShortTxt? = 'CCV number is too short';
+  @Input()
+  public ccvNumTooShortTxt? = 'CCV number is too short';
 
-  @Input() public ccvNumTooLongTxt? = 'CCV number is too long';
+  @Input()
+  public ccvNumTooLongTxt? = 'CCV number is too long';
 
-  @Input() public ccvContainsLettersTxt? = 'CCV number can contain digits only';
+  @Input()
+  public ccvContainsLettersTxt? = 'CCV number can contain digits only';
 
-  @Input() public cardExpired? = 'Card has expired';
+  @Input()
+  public cardExpired? = 'Card has expired';
 
-  @Input() public validateCCNum? = true;
+  @Input()
+  public validateCCNum? = true;
 
-  @Input() public validateCardHolder? = true;
+  @Input()
+  public validateCardHolder? = true;
 
-  @Input() public validateExpirationMonth? = true;
+  @Input()
+  public validateExpirationMonth? = true;
 
-  @Input() public validateExpirationYear? = true;
+  @Input()
+  public validateExpirationYear? = true;
 
-  @Input() public validateCardExpiration? = true;
+  @Input()
+  public validateCardExpiration? = true;
 
-  @Input() public validateCCV? = true;
+  @Input()
+  public validateCCV? = true;
 
-  @Output() public formSaved: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
+  @Output()
+  public formSaved: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
 
   constructor(private _ccService: CreditCardService, private _fb: FormBuilder) {}
 
