@@ -1,11 +1,17 @@
 {
   "plugins": [
-    "stylelint-scss"
+    "stylelint-scss",
+    "stylelint-order"
   ],
   "extends": [
     "stylelint-scss"
   ],
   "rules": {
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true,
     "max-nesting-depth": 3,
     "color-hex-case": "lower",
     "indentation": 2,
