@@ -6826,9 +6826,9 @@ style-search@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
 
-stylelint-scss@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.2.0.tgz#13545a1be5ab5435ea94e761b2d4824eb32033b3"
+stylelint-scss@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.3.0.tgz#0de0ef241d347e32ed28a2cffb8397c37ae2738c"
   dependencies:
     lodash "^4.17.10"
     postcss-media-query-parser "^0.2.3"
