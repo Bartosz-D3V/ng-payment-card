@@ -69,6 +69,7 @@
       &--last {
         margin-left: $small-margin;
         margin-right: $big-margin;
+        margin-top: $label-line-height + 20px;
       }
     }
 
@@ -119,6 +120,7 @@
     width: 100%;
     text-shadow: none;
     letter-spacing: 1px;
+    line-height: $label-line-height;
 
     &--first {
       margin-top: $big-margin;
