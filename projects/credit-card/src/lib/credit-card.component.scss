@@ -203,19 +203,59 @@
     cursor: pointer;
     margin-bottom: $small-margin;
     margin-top: $small-padding;
+    outline: 0;
     overflow: hidden;
     padding: $small-padding;
     position: relative;
-    transition: all 200ms ease-in-out;
+    text-align: center;
     user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: $input-width-large;
 
     &:hover {
       box-shadow: 0 6px 8px -3px rgba(0, 0, 0, 0.3);
-      transform: translateY(-5px);
     }
 
     &:focus {
-      outline: none;
+      background: darken($input-focus-border-colour, 12%);
+    }
+
+    &--ripple {
+      overflow: hidden;
+      position: relative;
+
+      &:after {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 80%;
+        content: '';
+        display: block;
+        height: 120px;
+        left: 50%;
+        margin-left: -50%;
+        margin-top: -60px;
+        position: absolute;
+        top: 50%;
+        transform: scale(0);
+        width: 100%;
+      }
+
+      &:not(:active):after {
+        animation: button-ripple 2s ease-out;
+      }
+    }
+
+    @keyframes button-ripple {
+      0% {
+        transform: scale(0);
+      }
+      20% {
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
     }
   }
 }
