@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prestart": "ng build credit-card --prod",
+    "prestart": "npm run dist-lib",
     "start": "ng serve",
     "build": "ng build",
     "pretest": "npm run lint",
