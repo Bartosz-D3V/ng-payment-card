@@ -7,8 +7,14 @@ import { Month } from '@cc-project/lib/domain/month.enum';
   providedIn: 'root',
 })
 export class CreditCardService {
+  /**
+   * Collection of card types
+   */
   private static readonly cardTypes: CardTypesContainer = CARD_TYPES;
 
+  /**
+   * Return card type based on card number
+   */
   public static getCardType(ccNum: string): string | null {
     for (const [key, val] of Array.from(CreditCardService.cardTypes.entries())) {
       if (
@@ -23,6 +29,9 @@ export class CreditCardService {
     return null;
   }
 
+  /**
+   * Return months
+   */
   public static getMonths(): Array<Month> {
     const months: Array<Month> = [];
     for (const key of Object.keys(Month)) {
@@ -31,6 +40,9 @@ export class CreditCardService {
     return months;
   }
 
+  /**
+   * Return years based on current year
+   */
   public static getYears(): Array<number> {
     const years: Array<number> = [];
     const year = new Date().getFullYear();
