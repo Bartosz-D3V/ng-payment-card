@@ -7,6 +7,9 @@ import { CardDetails } from '@cc-project/lib/domain/CardDetails';
 import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
 import { Month } from '@cc-project/lib/domain/month.enum';
 
+/**
+ * NgCreditCard without any dependencies other then ReactiveFormsModule
+ */
 @Component({
   selector: 'ng-credit-card',
   templateUrl: './credit-card.component.html',
@@ -15,70 +18,144 @@ import { Month } from '@cc-project/lib/domain/month.enum';
   encapsulation: ViewEncapsulation.None,
 })
 export class CreditCardComponent implements OnInit {
+  /**
+   * FormGroup available publicly
+   */
   public ccForm: FormGroup;
+
+  /**
+   * List of months
+   */
   public months: Array<Month> = [];
+
+  /**
+   * List of years
+   */
   public years: Array<number> = [];
 
+  /**
+   * Validation message for missing credit card number
+   */
   @Input()
   public ccNumMissingTxt? = 'Card number is required';
 
+  /**
+   * Validation message for too short credit card number
+   */
   @Input()
   public ccNumTooShortTxt? = 'Card number is too short';
 
+  /**
+   * Validation message for too long credit card number
+   */
   @Input()
   public ccNumTooLongTxt? = 'Card number is too long';
 
+  /**
+   * Validation message for credit card number that contains characters other than digits
+   */
   @Input()
   public ccNumContainsLettersTxt? = 'Card number can contain digits only';
 
+  /**
+   * Validation message for invalid credit card  number (Luhn's validation)
+   */
   @Input()
   public ccNumChecksumInvalidTxt? = 'Provided card number is invalid';
 
+  /**
+   * Validation message for missing card holder name
+   */
   @Input()
   public cardHolderMissingTxt? = 'Card holder name is required';
 
+  /**
+   * Validation message for too long card holder name
+   */
   @Input()
   public cardHolderTooLong? = 'Card holder name is too long';
 
+  /**
+   * Validation message for missing expiration month
+   */
   @Input()
   public expirationMonthMissingTxt? = 'Expiration month is required';
 
+  /**
+   * Validation message for missing expiration year
+   */
   @Input()
   public expirationYearMissingTxt? = 'Expiration year is required';
 
+  /**
+   * Validation message for missing CCV number
+   */
   @Input()
   public ccvMissingTxt? = 'CCV number is required';
 
+  /**
+   * Validation message for too short CCV number
+   */
   @Input()
   public ccvNumTooShortTxt? = 'CCV number is too short';
 
+  /**
+   * Validation message for too long CCV number
+   */
   @Input()
   public ccvNumTooLongTxt? = 'CCV number is too long';
 
+  /**
+   * Validation message for incorrect CCV number containing characters other than digits
+   */
   @Input()
   public ccvContainsLettersTxt? = 'CCV number can contain digits only';
 
+  /**
+   * Validation message for expired card
+   */
   @Input()
-  public cardExpired? = 'Card has expired';
+  public cardExpiredTxt? = 'Card has expired';
 
+  /**
+   * Switch validation of the credit card number
+   */
   @Input()
   public validateCCNum? = true;
 
+  /**
+   * Switch validation of the credit card holder
+   */
   @Input()
   public validateCardHolder? = true;
 
+  /**
+   * Switch validation of the credit card expiration month
+   */
   @Input()
   public validateExpirationMonth? = true;
 
+  /**
+   * Switch validation of the credit card expiration year
+   */
   @Input()
   public validateExpirationYear? = true;
 
+  /**
+   * Switch validation of the credit card expiration
+   */
   @Input()
   public validateCardExpiration? = true;
 
+  /**
+   * Switch validation of the credit card CCV number
+   */
   @Input()
   public validateCCV? = true;
 
+  /**
+   * EventEmitter for credit card object
+   */
   @Output()
   public formSaved: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
 
@@ -89,11 +166,17 @@ export class CreditCardComponent implements OnInit {
     this.assignDateValues();
   }
 
+  /**
+   * Populate months and years
+   */
   private assignDateValues(): void {
     this.months = CreditCardService.getMonths();
     this.years = CreditCardService.getYears();
   }
 
+  /**
+   * Build reactive form
+   */
   private buildForm(): void {
     this.ccForm = this._fb.group(
       {
@@ -126,10 +209,16 @@ export class CreditCardComponent implements OnInit {
     );
   }
 
+  /**
+   * Returns credit card type based on credit card number
+   */
   public getCardType(ccNum: string): string | null {
     return CreditCardService.getCardType(ccNum);
   }
 
+  /**
+   * Callback function that emits credit card details after user clicks submit, or press enter
+   */
   public emitSavedCard(): void {
     const cardDetails: ICardDetails = <CardDetails>this.ccForm.value;
     this.formSaved.emit(cardDetails);

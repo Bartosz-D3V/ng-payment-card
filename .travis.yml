@@ -41,6 +41,7 @@ script:
 after_success:
   - npm install -g codecov
   - codecov -t $TOKEN
+  - if [[ $TRAVIS_BRANCH == "master" ]]; then npm run compodoc && bash ./scripts/deploy.sh; fi
 
 notifications:
   email:

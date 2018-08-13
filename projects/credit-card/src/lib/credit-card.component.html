@@ -114,7 +114,7 @@
     </div>
     <div class="cc-form__error" *ngIf="validateCardExpiration && ccForm.get('expirationMonth').touched &&
     ccForm.get('expirationYear').touched && ccForm.hasError('expiration')">
-      {{cardExpired}}
+      {{cardExpiredTxt}}
     </div>
     <div class="cc-form__error"
          *ngIf="validateCCV && ccForm.get('ccv').touched && ccForm.get('ccv').hasError('required')">

@@ -4,6 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'creditCardNumber',
 })
 export class CreditCardNumberPipe implements PipeTransform {
+  /**
+   * Transform card number to card format for known numbers
+   */
   public transform(value: string): string {
     switch (value.length) {
       case 15:

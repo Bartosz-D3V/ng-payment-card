@@ -464,19 +464,19 @@ describe('CreditCardComponent', () => {
       });
     });
 
-    describe('cardExpired', () => {
+    describe('cardExpiredTxt', () => {
       afterEach(() => {
-        component.cardExpired = null;
+        component.cardExpiredTxt = null;
       });
 
       it('should accept string value', () => {
-        component.cardExpired = 'Example text';
+        component.cardExpiredTxt = 'Example text';
 
-        expect(component.cardExpired).toEqual('Example text');
+        expect(component.cardExpiredTxt).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.cardExpired).toEqual('Card has expired');
+        expect(component.cardExpiredTxt).toEqual('Card has expired');
       });
     });
 
