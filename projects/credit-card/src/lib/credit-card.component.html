@@ -132,7 +132,7 @@
          *ngIf="validateCCV && ccForm.get('ccv').touched && ccForm.get('ccv').hasError('numbersOnly')">
       {{ccvContainsLettersTxt}}
     </div>
-    <button type="submit" class="cc-form__button" aria-label="submit" (click)="emitSavedCard()"
+    <button type="submit" class="cc-form__button cc-form__button--ripple" aria-label="submit" (click)="emitSavedCard()"
             (keydown.enter)="emitSavedCard()">Submit
     </button>
   </form>
