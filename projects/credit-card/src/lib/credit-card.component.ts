@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CardValidator } from './validator/card-validator';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
-import { CardType } from '@cc-project/lib/domain/card-type';
 import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
 import { Month } from '@cc-project/lib/domain/month.enum';
 
@@ -90,13 +89,8 @@ export class CreditCardComponent implements OnInit {
   }
 
   private assignDateValues(): void {
-    for (const key of Object.keys(Month)) {
-      this.months.push(Month[key]);
-    }
-    const year = new Date().getFullYear();
-    for (let i = -2; i < 5; i++) {
-      this.years.push(year + i);
-    }
+    this.months = CreditCardService.getMonths();
+    this.years = CreditCardService.getYears();
   }
 
   private buildForm(): void {

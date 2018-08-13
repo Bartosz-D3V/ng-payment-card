@@ -84,4 +84,16 @@ describe('CreditCardCreditCardService', () => {
       expect(CreditCardService.getCardType('993219975343720')).toBeNull();
     });
   });
+
+  describe('getMonths', () => {
+    it('should return array of months', () => {
+      expect(CreditCardService.getMonths().length).toEqual(12);
+    });
+  });
+
+  describe('getYears', () => {
+    it('should return array of years with two in the past and 4 in the future', () => {
+      expect(CreditCardService.getYears().length).toEqual(7);
+    });
+  });
 });
