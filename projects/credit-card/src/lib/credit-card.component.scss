@@ -1,43 +1,43 @@
 @import 'style/manifest';
 
 .cc-form {
+  align-items: center;
   display: flex;
   flex-flow: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   height: 100%;
+  justify-content: center;
+  width: 100%;
 
   &--inline {
+    align-items: inherit;
     display: inherit;
     flex-flow: row;
     flex-wrap: inherit;
+    height: 100%;
     justify-content: flex-end;
-    align-items: inherit;
     margin-bottom: $small-margin;
     width: 100%;
-    height: 100%;
 
     @include breakpoint(tablet) {
+      align-items: inherit;
       display: inherit;
       flex-flow: row;
       flex-wrap: inherit;
+      height: 100%;
       justify-content: flex-end;
-      align-items: inherit;
       margin-bottom: $small-margin;
       width: 100%;
-      height: 100%;
     }
 
     @include breakpoint(mobile) {
+      align-items: center;
       display: inherit;
       flex-flow: column;
       flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
       height: 100%;
+      justify-content: center;
+      width: 100%;
     }
   }
 
@@ -55,8 +55,8 @@
 
   &__wrapper {
     @include breakpoint(laptop) {
-      margin-top: $small-margin;
       margin-right: $small-margin;
+      margin-top: $small-margin;
 
       &--long {
         width: $input-width-large;
@@ -74,8 +74,8 @@
     }
 
     @include breakpoint(tablet) {
-      margin-top: $small-margin;
       margin-right: $small-margin;
+      margin-top: $small-margin;
 
       &--long {
         width: $input-width-large;
@@ -92,8 +92,8 @@
     }
 
     @include breakpoint(mobile) {
-      margin-top: 0;
       margin-right: 0;
+      margin-top: 0;
 
       &--long,
       &--short {
@@ -108,19 +108,19 @@
   }
 
   &__label {
-    display: block;
-    text-transform: uppercase;
-    font-size: $label-font-size-normal;
     color: hsla(0, 0, 0, 0.6);
-    margin-bottom: 5px;
-    font-weight: normal;
+    display: block;
     font-family: 'Inconsolata', Serif, serif;
-    margin-top: $small-margin;
-    text-align: left;
-    width: 100%;
-    text-shadow: none;
+    font-size: $label-font-size-normal;
+    font-weight: normal;
     letter-spacing: 1px;
     line-height: $label-line-height;
+    margin-bottom: 5px;
+    margin-top: $small-margin;
+    text-align: left;
+    text-shadow: none;
+    text-transform: uppercase;
+    width: 100%;
 
     &--first {
       margin-top: $big-margin;
@@ -133,24 +133,24 @@
   }
 
   &__input {
-    font-size: $input-font-size;
-    text-align: left;
-    display: block;
-    width: 100%;
-    height: $input-height;
-    color: hsl(0, 0, 20);
-    border-radius: 5px;
-    outline: none;
     border: 1px solid hsla(0, 0, 0, 0.3);
+    border-radius: 5px;
     box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
+    color: hsl(0, 0, 20);
+    display: block;
+    font-size: $input-font-size;
+    height: $input-height;
     margin: 0;
+    outline: none;
     padding: 0;
+    text-align: left;
+    width: 100%;
 
     &--transparent {
-      box-shadow: none;
-      border-radius: 0;
       background: transparent;
       border: none;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     &--embosed {
@@ -171,14 +171,14 @@
     &--cursive {
       font-size: $label-font-size-normal;
       font-style: italic;
-      position: absolute;
       left: 0;
       margin: 0 auto;
+      position: absolute;
     }
 
     &--right-align {
-      text-align: right;
       padding-right: $small-margin;
+      text-align: right;
     }
 
     &--left-align {
@@ -191,22 +191,23 @@
   }
 
   &__error {
-    font-size: $label-font-size-normal;
     color: $card-font-invalid-colour;
+    font-size: $label-font-size-normal;
   }
 
   &__button {
-    padding: $small-padding;
-    margin-bottom: $small-margin;
-    position: relative;
-    user-select: none;
-    color: $card-font-colour;
     background: $input-focus-border-colour;
     border: 0;
-    transition: all 200ms ease-in-out;
-    cursor: pointer;
-    overflow: hidden;
     border-radius: $small-radius;
+    color: $card-font-colour;
+    cursor: pointer;
+    margin-bottom: $small-margin;
+    margin-top: $small-padding;
+    overflow: hidden;
+    padding: $small-padding;
+    position: relative;
+    transition: all 200ms ease-in-out;
+    user-select: none;
 
     &:hover {
       box-shadow: 0 6px 8px -3px rgba(0, 0, 0, 0.3);
@@ -220,22 +221,22 @@
 }
 
 .cc-wrapper {
+  background-color: $wrapper-background;
+  border-radius: $wrapper-radius;
+  height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  background-color: $wrapper-background;
-  border-radius: $wrapper-radius;
 }
 
 .cc-box {
-  width: $card-width;
   height: $card-height;
-  position: relative;
   margin: 0 auto;
-  z-index: 1;
   padding: 0;
+  position: relative;
   transform: translateY(-100%);
+  width: $card-width;
+  z-index: 1;
 
   @include breakpoint(tablet) {
     transform: translateY(-115%);
@@ -246,8 +247,8 @@
   }
 
   &--flip {
-    transition: $transition-time;
     transform-style: preserve-3d;
+    transition: $transition-time;
 
     &:hover,
     &.hover {
@@ -261,43 +262,43 @@
   }
 
   &__logo {
+    align-items: center;
+    color: $card-font-colour;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    margin-right: $medium-margin;
-    color: $card-font-colour;
+    font-size: $input-font-size;
     font-style: italic;
     font-weight: bold;
-    font-size: $input-font-size;
+    justify-content: flex-end;
+    margin-right: $medium-margin;
+    width: 100%;
   }
 
   &__strip {
     background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
-    position: relative;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    transform: translateY(-90%);
     font-size: $strip-font-size;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transform: translateY(-90%);
+    width: 100%;
   }
 
   &__front,
   &__back {
-    width: 100%;
-    height: 250px;
-    border-radius: 15px;
+    align-items: center;
     backface-visibility: hidden;
     background: linear-gradient(135deg, #bd6772, #53223f);
-    position: absolute;
-    top: 0;
-    left: 0;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     flex-flow: column nowrap;
-    align-items: center;
+    height: 250px;
     justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
   &__front {
