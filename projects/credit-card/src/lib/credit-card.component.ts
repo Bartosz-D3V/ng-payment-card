@@ -24,147 +24,140 @@ export class CreditCardComponent implements OnInit {
 
   /**
    * List of months
-   * @type {any[]}
    */
   public months: Array<Month> = [];
 
   /**
    * List of years
-   * @type {any[]}
    */
   public years: Array<number> = [];
 
   /**
    * Validation message for missing credit card number
-   * @type {string} [ccNumMissingTxt] - Card number is required
    */
-  @Input() public ccNumMissingTxt? = 'Card number is required';
+  @Input()
+  public ccNumMissingTxt? = 'Card number is required';
 
   /**
    * Validation message for too short credit card number
-   * @type {string} [ccNumTooShortTxt] - Card number is too short
    */
-  @Input() public ccNumTooShortTxt? = 'Card number is too short';
+  @Input()
+  public ccNumTooShortTxt? = 'Card number is too short';
 
   /**
    * Validation message for too long credit card number
-   * @type {string} [ccNumTooLongTxt] - Card number is too long
    */
-  @Input() public ccNumTooLongTxt? = 'Card number is too long';
+  @Input()
+  public ccNumTooLongTxt? = 'Card number is too long';
 
   /**
    * Validation message for credit card number that contains characters other than digits
-   * @type {string} [ccNumContainsLettersTxt] - Card number can contain digits only
    */
-  @Input() public ccNumContainsLettersTxt? = 'Card number can contain digits only';
+  @Input()
+  public ccNumContainsLettersTxt? = 'Card number can contain digits only';
 
   /**
    * Validation message for invalid credit card  number (Luhn's validation)
-   * @type {string} [ccNumChecksumInvalidTxt] - Provided card number is invalid
    */
-  @Input() public ccNumChecksumInvalidTxt? = 'Provided card number is invalid';
+  @Input()
+  public ccNumChecksumInvalidTxt? = 'Provided card number is invalid';
 
   /**
    * Validation message for missing card holder name
-   * @type {string} [cardHolderMissingTxt] - Card holder name is required
    */
-  @Input() public cardHolderMissingTxt? = 'Card holder name is required';
+  @Input()
+  public cardHolderMissingTxt? = 'Card holder name is required';
 
   /**
    * Validation message for too long card holder name
-   * @type {string} [cardHolderTooLong] - Card holder name is too long
    */
-  @Input() public cardHolderTooLong? = 'Card holder name is too long';
+  @Input()
+  public cardHolderTooLong? = 'Card holder name is too long';
 
   /**
    * Validation message for missing expiration month
-   * @type {string} [expirationMonthMissingTxt] - Expiration month is required
    */
-  @Input() public expirationMonthMissingTxt? = 'Expiration month is required';
+  @Input()
+  public expirationMonthMissingTxt? = 'Expiration month is required';
 
   /**
    * Validation message for missing expiration year
-   * @type {string} [expirationYearMissingTxt] - Expiration year is required
    */
-  @Input() public expirationYearMissingTxt? = 'Expiration year is required';
+  @Input()
+  public expirationYearMissingTxt? = 'Expiration year is required';
 
   /**
    * Validation message for missing CCV number
-   * @type {string} [ccvMissingTxt] - CCV number is required
    */
-  @Input() public ccvMissingTxt? = 'CCV number is required';
+  @Input()
+  public ccvMissingTxt? = 'CCV number is required';
 
   /**
    * Validation message for too short CCV number
-   * @type {string} [ccvNumTooShortTxt] - CCV number is too short
    */
-  @Input() public ccvNumTooShortTxt? = 'CCV number is too short';
+  @Input()
+  public ccvNumTooShortTxt? = 'CCV number is too short';
 
   /**
    * Validation message for too long CCV number
-   * @type {string} [ccvNumTooLongTxt] - CCV number is too long
    */
-  @Input() public ccvNumTooLongTxt? = 'CCV number is too long';
+  @Input()
+  public ccvNumTooLongTxt? = 'CCV number is too long';
 
   /**
    * Validation message for incorrect CCV number containing characters other than digits
-   * @type {string} [ccvContainsLettersTxt] - CCV number can contain digits only
    */
-  @Input() public ccvContainsLettersTxt? = 'CCV number can contain digits only';
+  @Input()
+  public ccvContainsLettersTxt? = 'CCV number can contain digits only';
 
   /**
    * Validation message for expired card
-   * @type {string} [cardExpiredTxt] - Card has expired
    */
-  @Input() public cardExpiredTxt? = 'Card has expired';
+  @Input()
+  public cardExpiredTxt? = 'Card has expired';
 
   /**
    * Switch validation of the credit card number
-   * @type {boolean} [validateCCNum] - true
    */
-  @Input() public validateCCNum? = true;
+  @Input()
+  public validateCCNum? = true;
 
   /**
    * Switch validation of the credit card holder
-   * @type {boolean} [validateCardHolder] - true
    */
-  @Input() public validateCardHolder? = true;
+  @Input()
+  public validateCardHolder? = true;
 
   /**
    * Switch validation of the credit card expiration month
-   * @type {boolean} [validateExpirationMonth] - true
    */
-  @Input() public validateExpirationMonth? = true;
+  @Input()
+  public validateExpirationMonth? = true;
 
   /**
    * Switch validation of the credit card expiration year
-   * @type {boolean} [validateExpirationYear] - true
    */
-  @Input() public validateExpirationYear? = true;
+  @Input()
+  public validateExpirationYear? = true;
 
   /**
    * Switch validation of the credit card expiration
-   * @type {boolean} [validateCardExpiration] - true
    */
-  @Input() public validateCardExpiration? = true;
+  @Input()
+  public validateCardExpiration? = true;
 
   /**
    * Switch validation of the credit card CCV number
-   * @type {boolean} [validateCCV] - true
    */
-  @Input() public validateCCV? = true;
+  @Input()
+  public validateCCV? = true;
 
   /**
    * EventEmitter for credit card object
-   * @type {EventEmitter<CardDetails>}
    */
-  @Output() public formSaved: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
+  @Output()
+  public formSaved: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
 
-  /**
-   * Constructor for component injecting FormBuilder from ReactiveFormsModule
-   * @param {FormBuilder} _fb
-   * @param {CreditCardService} _ccService
-   */
   constructor(private _ccService: CreditCardService, private _fb: FormBuilder) {}
 
   public ngOnInit(): void {
@@ -172,16 +165,17 @@ export class CreditCardComponent implements OnInit {
     this.assignDateValues();
   }
 
+  /**
+   * Populate months and years
+   */
   private assignDateValues(): void {
-    for (const key of Object.keys(Month)) {
-      this.months.push(Month[key]);
-    }
-    const year = new Date().getFullYear();
-    for (let i = -2; i < 5; i++) {
-      this.years.push(year + i);
-    }
+    this.months = CreditCardService.getMonths();
+    this.years = CreditCardService.getYears();
   }
 
+  /**
+   * Build reactive form
+   */
   private buildForm(): void {
     this.ccForm = this._fb.group(
       {
@@ -216,8 +210,6 @@ export class CreditCardComponent implements OnInit {
 
   /**
    * Returns credit card type based on credit card number
-   * @param {string} ccNum
-   * @returns {string | null}
    */
   public getCardType(ccNum: string): string | null {
     return CreditCardService.getCardType(ccNum);
