@@ -16,7 +16,7 @@ _Customizable component with zero external dependencies._
 
 <p align="center">
 
-<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/master/docs/demo.gif" width="492" height="735"/>
+<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/master/docs/demo.gif"/>
 
 </p>
 
