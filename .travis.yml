@@ -46,7 +46,7 @@ before_deploy:
   - npm run compodoc
 
 deploy:
-  provider: pages
+    provider: pages
     local-dir: ./documentation/
     skip-cleanup: true
     github-token: $GH_TOKEN
