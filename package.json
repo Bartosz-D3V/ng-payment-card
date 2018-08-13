@@ -15,10 +15,14 @@
     "pretty": "prettier --write **/*.{js,ts,scss}",
     "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
     "lint-staged": "lint-staged --config .lintstagedrc",
-    "compodoc": "./node_modules/.bin/compodoc -p projects/credit-card/tsconfig.lib.json --theme stripe --hideGenerator",
+    "compodoc": "compodoc -p projects/credit-card/tsconfig.lib.json --theme stripe --hideGenerator",
     "dist-app": "ng build ng-credit-card-app --prod --build-optimizer --aot --extract-licenses=false",
     "dist-lib": "ng build credit-card --prod",
     "clean": "rm -r dist/ coverage/ || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bartosz-D3V/ng-credit-card.git"
   },
   "dependencies": {
     "@angular/animations": "6.1.2",
