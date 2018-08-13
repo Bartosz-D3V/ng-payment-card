@@ -15,7 +15,7 @@
     "pretty": "prettier --write **/*.{js,ts,scss}",
     "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
     "lint-staged": "lint-staged --config .lintstagedrc",
-    "compodoc": "compodoc -p projects/credit-card/tsconfig.lib.json --theme stripe --hideGenerator",
+    "compodoc": "compodoc -p projects/credit-card/tsconfig.lib.json -a ./docs/ --theme stripe --hideGenerator",
     "dist-app": "ng build ng-credit-card-app --prod --build-optimizer --aot --extract-licenses=false",
     "dist-lib": "ng build credit-card --prod",
     "clean": "rm -r dist/ coverage/ || exit 0"
