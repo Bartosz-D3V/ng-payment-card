@@ -16,7 +16,7 @@ _Customizable component with zero external dependencies._
 
 <p align="center">
 
-<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/master/docs/demo.gif" width="407" height="428"/>
+<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/master/docs/demo.gif" width="492" height="735"/>
 
 </p>
 
@@ -65,6 +65,19 @@ expirationMonth: string;
 expirationYear: string;
 ccv: number;
 ```
+
+## Supported card types
++ American Express
++ Diners
++ Diners Carte Blanche
++ Discover Club
++ China UnionPay
++ JCB
++ Laser
++ MAESTRO
++ Mastercard
++ Visa Electron
++ Visa
 
 ## Development
 
