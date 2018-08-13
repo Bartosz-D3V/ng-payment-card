@@ -4,6 +4,10 @@
 
 _Customizable component with zero external dependencies._
 
+</p>
+
+<p align="center">
+
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 [![Build Status](https://travis-ci.com/Bartosz-D3V/ng-credit-card.svg?branch=master)](https://travis-ci.com/Bartosz-D3V/ng-credit-card)
 [![Build status](https://ci.appveyor.com/api/projects/status/ivxohrhd06i2yvco/branch/master?svg=true)](https://ci.appveyor.com/project/Bartosz-D3V/ng-credit-card/branch/master)
@@ -16,7 +20,7 @@ _Customizable component with zero external dependencies._
 
 <p align="center">
 
-<img src="https://github.com/Bartosz-D3V/ng-credit-card/blob/master/docs/demo.gif" width="735" height="492"/>
+<img src="./docs/demo.gif" width="607" height="574"/>
 
 </p>
 
@@ -65,6 +69,8 @@ expirationMonth: string;
 expirationYear: string;
 ccv: number;
 ```
+
+<a href="https://bartosz-d3v.github.io/ng-credit-card/components/CreditCardComponent.html#inputs">Full list of available inputs</a>
 
 ## Supported card types
 + American Express
