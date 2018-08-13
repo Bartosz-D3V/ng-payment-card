@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CardValidator } from './validator/card-validator';
@@ -15,6 +15,7 @@ import { Month } from '@cc-project/lib/domain/month.enum';
   templateUrl: './credit-card.component.html',
   styleUrls: ['./credit-card.component.scss'],
   providers: [CreditCardService],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CreditCardComponent implements OnInit {
   /**
