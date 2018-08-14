@@ -15,4 +15,4 @@ import { ValidThruPipe } from './pipe/valid-thru/valid-thru.pipe';
   declarations: [CreditCardComponent, CreditCardNumberPipe, ValidThruPipe],
   exports: [CreditCardComponent],
 })
-export class CreditCardModule {}
+export class NgCreditCardModule {}
