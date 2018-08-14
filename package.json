@@ -18,6 +18,7 @@
     "compodoc": "compodoc -p projects/credit-card/tsconfig.lib.json -a ./docs/ --theme stripe --hideGenerator",
     "dist-app": "ng build ng-credit-card-app --prod --build-optimizer --aot --extract-licenses=false",
     "dist-lib": "ng build credit-card --prod",
+    "postdist-lib": "cp -r README.md CODE_OF_CONDUCT.md LICENSE docs dist/ng-credit-card/",
     "clean": "rm -r dist/ coverage/ || exit 0"
   },
   "repository": {
