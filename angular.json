@@ -127,7 +127,7 @@
         }
       }
     },
-    "payment-card": {
+    "ng-payment-card": {
       "root": "projects/ng-payment-card",
       "sourceRoot": "projects/ng-payment-card/src",
       "projectType": "library",
