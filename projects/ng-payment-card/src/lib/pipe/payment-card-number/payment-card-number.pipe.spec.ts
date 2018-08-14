@@ -1,7 +1,7 @@
-import { CreditCardNumberPipe } from './credit-card-number.pipe';
+import { PaymentCardNumberPipe } from './payment-card-number.pipe';
 
-describe('CreditCardNumberPipe', () => {
-  const pipe: CreditCardNumberPipe = new CreditCardNumberPipe();
+describe('PaymentCardNumberPipe', () => {
+  const pipe: PaymentCardNumberPipe = new PaymentCardNumberPipe();
 
   it('create an instance', () => {
     expect(pipe).toBeTruthy();

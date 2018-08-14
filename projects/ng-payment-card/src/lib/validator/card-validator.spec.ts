@@ -49,7 +49,7 @@ describe('CardValidator', () => {
       checksum: true,
     };
 
-    it('should return null if the credit card number passes luhn algorithm checker', () => {
+    it('should return null if the payment card number passes luhn algorithm checker', () => {
       const ccNum1 = '4831334173681875';
       const ccNum2 = '4485400695865889';
       const ccNum3 = '4556705413750101610';
@@ -80,17 +80,17 @@ describe('CardValidator', () => {
       expect(CardValidator.checksum(abstractCtrl)).toBeNull();
     });
 
-    it('should return checksum error if the credit card number is null', () => {
+    it('should return checksum error if the payment card number is null', () => {
       abstractCtrl.setValue(null);
       expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
     });
 
-    it('should return checksum error if the credit card number is undefined', () => {
+    it('should return checksum error if the payment card number is undefined', () => {
       abstractCtrl.setValue(undefined);
       expect(CardValidator.checksum(abstractCtrl)).toEqual(expectedErr);
     });
 
-    it('should return checksum error if the credit card number does not pass luhn algorithm checker', () => {
+    it('should return checksum error if the payment card number does not pass luhn algorithm checker', () => {
       const ccNum1 = '4831334173681874';
       const ccNum2 = '44854106958658810';
       const ccNum3 = '4556705413750101620';

@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'creditCardNumber',
+  name: 'paymentCardNumber',
 })
-export class CreditCardNumberPipe implements PipeTransform {
+export class PaymentCardNumberPipe implements PipeTransform {
   /**
    * Transform card number to card format for known numbers
    */

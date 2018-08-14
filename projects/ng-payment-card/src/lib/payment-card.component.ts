@@ -4,20 +4,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CardValidator } from './validator/card-validator';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
 import { CardDetails } from '@cc-project/lib/domain/CardDetails';
-import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
+import { PaymentCardService } from '@cc-project/lib/service/payment-card.service';
 import { Month } from '@cc-project/lib/domain/month.enum';
 
 /**
- * NgCreditCard without any dependencies other then ReactiveFormsModule
+ * NgPaymentCard without any dependencies other then ReactiveFormsModule
  */
 @Component({
-  selector: 'ng-credit-card',
-  templateUrl: './credit-card.component.html',
-  styleUrls: ['./credit-card.component.scss'],
-  providers: [CreditCardService],
+  selector: 'ng-payment-card',
+  templateUrl: './payment-card.component.html',
+  styleUrls: ['./payment-card.component.scss'],
+  providers: [PaymentCardService],
   encapsulation: ViewEncapsulation.None,
 })
-export class CreditCardComponent implements OnInit {
+export class PaymentCardComponent implements OnInit {
   /**
    * FormGroup available publicly
    */
@@ -34,31 +34,31 @@ export class CreditCardComponent implements OnInit {
   public years: Array<number> = [];
 
   /**
-   * Validation message for missing credit card number
+   * Validation message for missing payment card number
    */
   @Input()
   public ccNumMissingTxt? = 'Card number is required';
 
   /**
-   * Validation message for too short credit card number
+   * Validation message for too short payment card number
    */
   @Input()
   public ccNumTooShortTxt? = 'Card number is too short';
 
   /**
-   * Validation message for too long credit card number
+   * Validation message for too long payment card number
    */
   @Input()
   public ccNumTooLongTxt? = 'Card number is too long';
 
   /**
-   * Validation message for credit card number that contains characters other than digits
+   * Validation message for payment card number that contains characters other than digits
    */
   @Input()
   public ccNumContainsLettersTxt? = 'Card number can contain digits only';
 
   /**
-   * Validation message for invalid credit card  number (Luhn's validation)
+   * Validation message for invalid payment card  number (Luhn's validation)
    */
   @Input()
   public ccNumChecksumInvalidTxt? = 'Provided card number is invalid';
@@ -118,48 +118,48 @@ export class CreditCardComponent implements OnInit {
   public cardExpiredTxt? = 'Card has expired';
 
   /**
-   * Switch validation of the credit card number
+   * Switch validation of the payment card number
    */
   @Input()
   public validateCCNum? = true;
 
   /**
-   * Switch validation of the credit card holder
+   * Switch validation of the payment card holder
    */
   @Input()
   public validateCardHolder? = true;
 
   /**
-   * Switch validation of the credit card expiration month
+   * Switch validation of the payment card expiration month
    */
   @Input()
   public validateExpirationMonth? = true;
 
   /**
-   * Switch validation of the credit card expiration year
+   * Switch validation of the payment card expiration year
    */
   @Input()
   public validateExpirationYear? = true;
 
   /**
-   * Switch validation of the credit card expiration
+   * Switch validation of the payment card expiration
    */
   @Input()
   public validateCardExpiration? = true;
 
   /**
-   * Switch validation of the credit card CCV number
+   * Switch validation of the payment card CCV number
    */
   @Input()
   public validateCCV? = true;
 
   /**
-   * EventEmitter for credit card object
+   * EventEmitter for payment card object
    */
   @Output()
   public formSaved: EventEmitter<ICardDetails> = new EventEmitter<CardDetails>();
 
-  constructor(private _ccService: CreditCardService, private _fb: FormBuilder) {}
+  constructor(private _ccService: PaymentCardService, private _fb: FormBuilder) {}
 
   public ngOnInit(): void {
     this.buildForm();
@@ -170,8 +170,8 @@ export class CreditCardComponent implements OnInit {
    * Populate months and years
    */
   private assignDateValues(): void {
-    this.months = CreditCardService.getMonths();
-    this.years = CreditCardService.getYears();
+    this.months = PaymentCardService.getMonths();
+    this.years = PaymentCardService.getYears();
   }
 
   /**
@@ -210,14 +210,14 @@ export class CreditCardComponent implements OnInit {
   }
 
   /**
-   * Returns credit card type based on credit card number
+   * Returns payment card type based on payment card number
    */
   public getCardType(ccNum: string): string | null {
-    return CreditCardService.getCardType(ccNum);
+    return PaymentCardService.getCardType(ccNum);
   }
 
   /**
-   * Callback function that emits credit card details after user clicks submit, or press enter
+   * Callback function that emits payment card details after user clicks submit, or press enter
    */
   public emitSavedCard(): void {
     const cardDetails: ICardDetails = <CardDetails>this.ccForm.value;

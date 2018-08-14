@@ -6,7 +6,7 @@ import { Month } from '@cc-project/lib/domain/month.enum';
 @Injectable({
   providedIn: 'root',
 })
-export class CreditCardService {
+export class PaymentCardService {
   /**
    * Collection of card types
    */
@@ -16,7 +16,7 @@ export class CreditCardService {
    * Return card type based on card number
    */
   public static getCardType(ccNum: string): string | null {
-    for (const [key, val] of Array.from(CreditCardService.cardTypes.entries())) {
+    for (const [key, val] of Array.from(PaymentCardService.cardTypes.entries())) {
       if (
         ccNum
           .split(new RegExp('[ \\-]'))
