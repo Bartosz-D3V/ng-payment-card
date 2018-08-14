@@ -45,7 +45,7 @@ npm install --save ng-payment-card
 ## Usage
 After installing the component as a dependency, import it into you Angular module.
 ```js
-import { NgCreditCardModule } from 'ng-payment-card';
+import { NgPaymentCardModule } from 'ng-payment-card';
 ```
 
 Afterwards, you can use the component within your templates.
@@ -73,7 +73,7 @@ expirationYear: string;
 ccv: number;
 ```
 
-<a href="https://bartosz-d3v.github.io/ng-payment-card/components/CreditCardComponent.html#inputs">Full list of available inputs</a>
+<a href="https://bartosz-d3v.github.io/ng-payment-card/components/PaymentCardComponent.html#inputs">Full list of available inputs</a>
 
 ## Supported card types
 + American Express
