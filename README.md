@@ -1,10 +1,7 @@
 # Responsive, Angular payment card component
 
-<p align="center">
-
 _Customizable component with zero external dependencies._
 
-</p>
 
 <p align="center">
 
@@ -20,7 +17,7 @@ _Customizable component with zero external dependencies._
 
 <p align="center">
 
-<img src="./docs/demo.gif" width="607" height="574"/>
+<img src="docs/demo.gif" width="607" height="574"/>
 
 </p>
 

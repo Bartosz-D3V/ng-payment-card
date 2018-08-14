@@ -1,6 +1,10 @@
 {
   "name": "ng-payment-card",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bartosz-D3V/ng-payment-card.git"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
