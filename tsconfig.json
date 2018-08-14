@@ -18,13 +18,13 @@
     ],
     "paths": {
       "@cc-project/*": [
-        "projects/credit-card/src/*"
+        "projects/ng-credit-card/src/*"
       ],
-      "credit-card": [
-        "dist/credit-card"
+      "ng-credit-card": [
+        "dist/ng-credit-card"
       ],
-      "credit-card/*": [
-        "dist/credit-card/*"
+      "ng-credit-card/*": [
+        "dist/ng-credit-card/*"
       ]
     }
   }

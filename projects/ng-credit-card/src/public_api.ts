@@ -3,4 +3,4 @@
  */
 
 export * from './lib/credit-card.component';
-export * from './lib/credit-card.module';
+export * from './lib/ng-credit-card.module';
