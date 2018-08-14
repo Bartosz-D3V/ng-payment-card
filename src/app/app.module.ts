@@ -3,8 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgCreditCardModule } from '@cc-project/lib/ng-credit-card.module';
-// import { NgCreditCardModule } from 'ng-credit-card';
+import { NgPaymentCardModule } from '@cc-project/lib/ng-payment-card.module';
+// import { NgPaymentCardModule } from 'ng-payment-card';
 
 /**
  * @Ignore
@@ -13,7 +13,7 @@ import { NgCreditCardModule } from '@cc-project/lib/ng-credit-card.module';
  */
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, NgCreditCardModule, ReactiveFormsModule],
+  imports: [BrowserModule, NgPaymentCardModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

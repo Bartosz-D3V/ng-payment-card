@@ -1,5 +1,5 @@
 {
-  "name": "ng-credit-card-app",
+  "name": "ng-payment-card-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -15,15 +15,15 @@
     "pretty": "prettier --write **/*.{js,ts,scss}",
     "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
     "lint-staged": "lint-staged --config .lintstagedrc",
-    "compodoc": "compodoc -p projects/credit-card/tsconfig.lib.json -a ./docs/ --theme stripe --hideGenerator",
-    "dist-app": "ng build ng-credit-card-app --prod --build-optimizer --aot --extract-licenses=false",
-    "dist-lib": "ng build credit-card --prod",
-    "postdist-lib": "cp -r README.md CODE_OF_CONDUCT.md LICENSE docs dist/ng-credit-card/",
+    "compodoc": "compodoc -p projects/payment-card/tsconfig.lib.json -a ./docs/ --theme stripe --hideGenerator",
+    "dist-app": "ng build ng-payment-card-app --prod --build-optimizer --aot --extract-licenses=false",
+    "dist-lib": "ng build payment-card --prod",
+    "postdist-lib": "cp -r README.md CODE_OF_CONDUCT.md LICENSE docs dist/ng-payment-card/",
     "clean": "rm -r dist/ coverage/ || exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bartosz-D3V/ng-credit-card.git"
+    "url": "https://github.com/Bartosz-D3V/ng-payment-card.git"
   },
   "dependencies": {
     "@angular/animations": "6.1.2",

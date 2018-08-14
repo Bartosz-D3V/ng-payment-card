@@ -1,4 +1,4 @@
-# Responsive, Angular credit card component
+# Responsive, Angular payment card component
 
 <p align="center">
 
@@ -9,9 +9,9 @@ _Customizable component with zero external dependencies._
 <p align="center">
 
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
-[![Build Status](https://travis-ci.com/Bartosz-D3V/ng-credit-card.svg?branch=master)](https://travis-ci.com/Bartosz-D3V/ng-credit-card)
-[![Build status](https://ci.appveyor.com/api/projects/status/ivxohrhd06i2yvco/branch/master?svg=true)](https://ci.appveyor.com/project/Bartosz-D3V/ng-credit-card/branch/master)
-[![codecov](https://codecov.io/gh/Bartosz-D3V/ng-credit-card/branch/master/graph/badge.svg)](https://codecov.io/gh/Bartosz-D3V/ng-credit-card)
+[![Build Status](https://travis-ci.com/Bartosz-D3V/ng-payment-card.svg?branch=master)](https://travis-ci.com/Bartosz-D3V/ng-payment-card)
+[![Build status](https://ci.appveyor.com/api/projects/status/ivxohrhd06i2yvco/branch/master?svg=true)](https://ci.appveyor.com/project/Bartosz-D3V/ng-payment-card/branch/master)
+[![codecov](https://codecov.io/gh/Bartosz-D3V/ng-payment-card/branch/master/graph/badge.svg)](https://codecov.io/gh/Bartosz-D3V/ng-payment-card)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
@@ -26,8 +26,8 @@ _Customizable component with zero external dependencies._
 
 ## Install
 ```bash
-yarn add ng-credit-card //or
-npm install --save ng-credit-card
+yarn add ng-payment-card //or
+npm install --save ng-payment-card
 ```
 
 ## Features
@@ -45,23 +45,23 @@ npm install --save ng-credit-card
 ## Usage
 After installing the component as a dependency, import it into you Angular module.
 ```js
-import { NgCreditCardModule } from 'ng-credit-card';
+import { NgPaymentCardModule } from 'ng-payment-card';
 ```
 
 Afterwards, you can use the component within your templates.
 ```html
-<ng-credit-card></ng-credit-card>
+<ng-payment-card></ng-payment-card>
 
 // Setting custom validation messages
-<ng-credit-card
+<ng-payment-card
   [ccNumMissingTxt]='Please provide card number'
-  [cardExpired]='Credit card has expired'>
-</ng-credit-card>
+  [cardExpired]='Payment card has expired'>
+</ng-payment-card>
 
 // Handling event emitter
-<ng-credit-card
+<ng-payment-card
   (formSaved)="processPayment(cc)">
-</ng-credit-card>
+</ng-payment-card>
 ```
 
 Upon submitting the form, component will emit object in the following format:
@@ -73,7 +73,7 @@ expirationYear: string;
 ccv: number;
 ```
 
-<a href="https://bartosz-d3v.github.io/ng-credit-card/components/CreditCardComponent.html#inputs">Full list of available inputs</a>
+<a href="https://bartosz-d3v.github.io/ng-payment-card/components/PaymentCardComponent.html#inputs">Full list of available inputs</a>
 
 ## Supported card types
 + American Express

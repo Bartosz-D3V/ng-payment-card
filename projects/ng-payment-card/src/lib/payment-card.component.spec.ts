@@ -2,26 +2,26 @@ import { CommonModule } from '@angular/common';
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { AbstractControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
-import { CreditCardComponent } from './credit-card.component';
+import { PaymentCardComponent } from './payment-card.component';
 import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
-import { CreditCardService } from '@cc-project/lib/service/credit-card.service';
-import { CreditCardNumberPipe } from '@cc-project/lib/pipe/credit-card-number/credit-card-number.pipe';
+import { PaymentCardService } from '@cc-project/lib/service/payment-card.service';
+import { PaymentCardNumberPipe } from '@cc-project/lib/pipe/payment-card-number/payment-card-number.pipe';
 import { ValidThruPipe } from '@cc-project/lib/pipe/valid-thru/valid-thru.pipe';
 
-describe('CreditCardComponent', () => {
-  let component: CreditCardComponent;
-  let fixture: ComponentFixture<CreditCardComponent>;
+describe('PaymentCardComponent', () => {
+  let component: PaymentCardComponent;
+  let fixture: ComponentFixture<PaymentCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, CommonModule],
-      declarations: [CreditCardComponent, CreditCardNumberPipe, ValidThruPipe],
-      providers: [CreditCardService],
+      declarations: [PaymentCardComponent, PaymentCardNumberPipe, ValidThruPipe],
+      providers: [PaymentCardService],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreditCardComponent);
+    fixture = TestBed.createComponent(PaymentCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
