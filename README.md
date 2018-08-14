@@ -25,7 +25,10 @@ _Customizable component with zero external dependencies._
 </p>
 
 ## Install
-As component is in active development - it has not been published on NPM yet.
+```bash
+yarn add ng-credit-card //or
+npm install --save ng-credit-card
+```
 
 ## Features
 * Neat design
@@ -42,7 +45,7 @@ As component is in active development - it has not been published on NPM yet.
 ## Usage
 After installing the component as a dependency, import it into you Angular module.
 ```js
-import { CreditCardModule } from 'credit-card';
+import { NgCreditCardModule } from 'ng-credit-card';
 ```
 
 Afterwards, you can use the component within your templates.
