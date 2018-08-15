@@ -5,6 +5,18 @@
     "type": "git",
     "url": "https://github.com/Bartosz-D3V/ng-payment-card.git"
   },
+  "license": "MIT",
+  "keywords": [
+    "ng",
+    "payment",
+    "credit",
+    "debit",
+    "card",
+    "checkout",
+    "angular",
+    "component",
+    "material"
+  ],
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
