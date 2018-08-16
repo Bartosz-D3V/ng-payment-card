@@ -73,7 +73,7 @@ export class PaymentCardComponent implements OnInit {
    * Validation message for too long card holder name
    */
   @Input()
-  public cardHolderTooLong? = 'Card holder name is too long';
+  public cardHolderTooLongTxt? = 'Card holder name is too long';
 
   /**
    * Validation message for missing expiration month

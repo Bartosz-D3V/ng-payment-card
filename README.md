@@ -5,13 +5,13 @@ Customizable component with zero external dependencies.
 
 <p align="center">
 
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
-![GitHub](https://img.shields.io/npm/v/ng-payment-card.svg)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/npm/v/ng-payment-card.svg)](https://www.npmjs.com/package/ng-payment-card)
 [![Build Status](https://travis-ci.com/Bartosz-D3V/ng-payment-card.svg?branch=master)](https://travis-ci.com/Bartosz-D3V/ng-payment-card)
 [![Build status](https://ci.appveyor.com/api/projects/status/ivxohrhd06i2yvco/branch/master?svg=true)](https://ci.appveyor.com/project/Bartosz-D3V/ng-payment-card/branch/master)
 [![codecov](https://codecov.io/gh/Bartosz-D3V/ng-payment-card/branch/master/graph/badge.svg)](https://codecov.io/gh/Bartosz-D3V/ng-payment-card)
-![David](https://david-dm.org/bartosz-d3v/ng-payment-card.svg)
-![David](https://david-dm.org/bartosz-d3v/ng-payment-card/dev-status.svg)
+[![David](https://david-dm.org/bartosz-d3v/ng-payment-card.svg)](https://david-dm.org/bartosz-d3v/ng-credit-card)
+[![David](https://david-dm.org/bartosz-d3v/ng-payment-card/dev-status.svg)](https://david-dm.org/bartosz-d3v/ng-credit-card?type=dev)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
@@ -55,7 +55,7 @@ Afterwards, you can use the component within your templates.
 // Setting custom validation messages
 <ng-payment-card
   [ccNumMissingTxt]='Please provide card number'
-  [cardExpired]='Payment card has expired'>
+  [cardExpiredTxt]='Payment card has expired'>
 </ng-payment-card>
 
 // Handling event emitter
