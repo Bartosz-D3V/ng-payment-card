@@ -416,19 +416,19 @@ describe('PaymentCardComponent', () => {
       });
     });
 
-    describe('cardHolderTooLong', () => {
+    describe('cardHolderTooLongTxt', () => {
       afterEach(() => {
-        component.cardHolderTooLong = null;
+        component.cardHolderTooLongTxt = null;
       });
 
       it('should accept string value', () => {
-        component.cardHolderTooLong = 'Example text';
+        component.cardHolderTooLongTxt = 'Example text';
 
-        expect(component.cardHolderTooLong).toEqual('Example text');
+        expect(component.cardHolderTooLongTxt).toEqual('Example text');
       });
 
       it('should have default value', () => {
-        expect(component.cardHolderTooLong).toEqual('Card holder name is too long');
+        expect(component.cardHolderTooLongTxt).toEqual('Card holder name is too long');
       });
     });
 
