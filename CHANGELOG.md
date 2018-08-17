@@ -1,7 +1,26 @@
-<a name="0.0.3"></a>
-## [0.0.3](https://github.com/bartosz-d3v/ng-payment-card/compare/0.0.2...0.0.3) (2018-08-15)
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/bartosz-d3v/ng-payment-card/compare/v0.0.3...v0.0.4) (2018-08-17)
 
-No breaking changes
+### Breaking changes:
++ Renamed input property 'cardExpired' to 'cardExpiredTxt'
+
+### Dependencies
++ Update dependency @angular-devkit/build-ng-packagr to v0.7.4
++ Update dependency @angular-devkit/build-angular to v0.7.4
++ Update dependency @angular/cli to v6.1.4
++ Update dependency @types/node to v8.10.26
++ Update angular monorepo to v6.1.3
+
+### Development
++ Fix issue with randomly failing unit tests due to race condition
+
+### Documentation
++ Fix badges' links
+
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/bartosz-d3v/ng-payment-card/compare/v0.0.1...v0.0.3) (2018-08-15)
+
+### No breaking changes
 
 ### Documentation
 + Add keywords to package.json
