@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { AbstractControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { PaymentCardComponent } from './payment-card.component';
@@ -12,7 +12,7 @@ describe('PaymentCardComponent', () => {
   let component: PaymentCardComponent;
   let fixture: ComponentFixture<PaymentCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, CommonModule],
       declarations: [PaymentCardComponent, PaymentCardNumberPipe, ValidThruPipe],
