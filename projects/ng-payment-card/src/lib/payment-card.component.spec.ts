@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, async } from '@angular/core/testing';
 import { AbstractControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { PaymentCardComponent } from './payment-card.component';
@@ -42,7 +42,7 @@ describe('PaymentCardComponent', () => {
     describe('cardNumber control', () => {
       let ctrl: AbstractControl;
 
-      beforeAll(() => {
+      beforeEach(() => {
         ctrl = component.ccForm.get('cardNumber');
       });
 
@@ -119,7 +119,7 @@ describe('PaymentCardComponent', () => {
     describe('cardHolder control', () => {
       let ctrl: AbstractControl;
 
-      beforeAll(() => {
+      beforeEach(() => {
         ctrl = component.ccForm.get('cardHolder');
       });
 
@@ -159,7 +159,7 @@ describe('PaymentCardComponent', () => {
     describe('expirationYear control', () => {
       let ctrl: AbstractControl;
 
-      beforeAll(() => {
+      beforeEach(() => {
         ctrl = component.ccForm.get('expirationYear');
       });
 
@@ -184,7 +184,7 @@ describe('PaymentCardComponent', () => {
     describe('expirationMonth control', () => {
       let ctrl: AbstractControl;
 
-      beforeAll(() => {
+      beforeEach(() => {
         ctrl = component.ccForm.get('expirationMonth');
       });
 
@@ -209,7 +209,7 @@ describe('PaymentCardComponent', () => {
     describe('ccv control', () => {
       let ctrl: AbstractControl;
 
-      beforeAll(() => {
+      beforeEach(() => {
         ctrl = component.ccForm.get('ccv');
       });
 
@@ -275,7 +275,7 @@ describe('PaymentCardComponent', () => {
     describe('expiration validator', () => {
       let formGroup: FormGroup;
 
-      beforeAll(() => {
+      beforeEach(() => {
         formGroup = component.ccForm;
       });
 
