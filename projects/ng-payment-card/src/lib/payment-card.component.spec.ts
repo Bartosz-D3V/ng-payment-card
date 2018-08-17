@@ -12,13 +12,13 @@ describe('PaymentCardComponent', () => {
   let component: PaymentCardComponent;
   let fixture: ComponentFixture<PaymentCardComponent>;
 
-  beforeEach(fakeAsync(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, CommonModule],
       declarations: [PaymentCardComponent, PaymentCardNumberPipe, ValidThruPipe],
       providers: [PaymentCardService],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PaymentCardComponent);
