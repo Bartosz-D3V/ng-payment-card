@@ -1,4 +1,4 @@
-import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
+import { ICardDetails } from './ICardDetails';
 
 export class CardDetails implements ICardDetails {
   public cardHolder: string;

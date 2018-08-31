@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CardType } from '@cc-project/lib/domain/card-type';
-import { PaymentCardService } from '@cc-project/lib/service/payment-card.service';
+import { CardType } from '../domain/card-type';
+import { PaymentCardService } from './payment-card.service';
 
 describe('PaymentCardPaymentCardService', () => {
   beforeEach(() => {

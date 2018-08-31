@@ -2,10 +2,10 @@ import { Component, EventEmitter, OnInit, Output, Input, ViewEncapsulation } fro
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CardValidator } from './validator/card-validator';
-import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
-import { CardDetails } from '@cc-project/lib/domain/CardDetails';
-import { PaymentCardService } from '@cc-project/lib/service/payment-card.service';
-import { Month } from '@cc-project/lib/domain/month.enum';
+import { ICardDetails } from './domain/ICardDetails';
+import { CardDetails } from './domain/CardDetails';
+import { PaymentCardService } from './service/payment-card.service';
+import { Month } from './domain/month.enum';
 
 /**
  * NgPaymentCard without any dependencies other then ReactiveFormsModule
