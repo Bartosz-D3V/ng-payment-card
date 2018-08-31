@@ -1,4 +1,4 @@
-import { CardType } from '@cc-project/lib/domain/card-type';
+import { CardType } from './card-type';
 
 const CARD_TYPES: Map<string, RegExp> = new Map();
 CARD_TYPES.set(CardType.AMERICAN_EXPRESS, new RegExp('^3[47]'));
