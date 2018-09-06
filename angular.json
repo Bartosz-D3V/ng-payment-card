@@ -83,7 +83,8 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "codeCoverage": true
+            "codeCoverage": true,
+            "sourceMap": true
           }
         },
         "lint": {
@@ -151,7 +152,8 @@
             "main": "projects/ng-payment-card/src/test.ts",
             "tsConfig": "projects/ng-payment-card/tsconfig.spec.json",
             "karmaConfig": "projects/ng-payment-card/karma.conf.js",
-            "codeCoverage": true
+            "codeCoverage": true,
+            "sourceMap": true
           }
         },
         "lint": {
