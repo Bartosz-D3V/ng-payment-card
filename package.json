@@ -61,7 +61,7 @@
     "lint-staged": "7.2.2",
     "ng-packagr": "4.1.1",
     "prettier": "1.14.2",
-    "protractor": "5.3.2",
+    "protractor": "5.4.1",
     "stylelint": "9.5.0",
     "stylelint-order": "1.0.0",
     "stylelint-scss": "3.3.0",
