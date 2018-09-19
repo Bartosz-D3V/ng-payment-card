@@ -1,9 +1,2 @@
 coverage:
   precision: 2
-  status:
-    project: on
-      default:
-        target: 95%
-    patch: on
-      default:
-        target: 95%

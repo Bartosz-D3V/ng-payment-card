@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "pree2e": "webdriver-manager update --gecko=false",
     "e2e": "ng e2e",
-    "pretty": "prettier --write **/*.{js,ts,scss}",
+    "pretty": "prettier --write **/*.{js,ts,scss,json,yml,md}",
     "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
     "lint-staged": "lint-staged --config .lintstagedrc",
     "compodoc": "compodoc -p projects/ng-payment-card/tsconfig.lib.json -a ./docs/ --theme stripe --hideGenerator",
