@@ -16,15 +16,15 @@
     "@angular-devkit/core" "0.8.3"
     rxjs "~6.2.0"
 
-"@angular-devkit/build-angular@0.8.2":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-0.8.2.tgz#f1fc1fe67e6a453ac880aaec0e0465ada1f4eea5"
+"@angular-devkit/build-angular@0.8.3":
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-0.8.3.tgz#e302fdf0f11d589bc518f93afaa7fe5f967bde94"
   dependencies:
-    "@angular-devkit/architect" "0.8.2"
-    "@angular-devkit/build-optimizer" "0.8.2"
-    "@angular-devkit/build-webpack" "0.8.2"
-    "@angular-devkit/core" "0.8.2"
-    "@ngtools/webpack" "6.2.2"
+    "@angular-devkit/architect" "0.8.3"
+    "@angular-devkit/build-optimizer" "0.8.3"
+    "@angular-devkit/build-webpack" "0.8.3"
+    "@angular-devkit/core" "0.8.3"
+    "@ngtools/webpack" "6.2.3"
     ajv "~6.4.0"
     autoprefixer "^8.4.1"
     circular-dependency-plugin "^5.0.2"
@@ -80,21 +80,21 @@
     rxjs "~6.2.0"
     semver "^5.3.0"
 
-"@angular-devkit/build-optimizer@0.8.2":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.8.2.tgz#831299617c0835c83b9702417a4582322b052c81"
+"@angular-devkit/build-optimizer@0.8.3":
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.8.3.tgz#6fdc56bc29313ef9f80af095d5234af750b3277e"
   dependencies:
     loader-utils "^1.1.0"
     source-map "^0.5.6"
     typescript "~2.9.2"
     webpack-sources "^1.1.0"
 
-"@angular-devkit/build-webpack@0.8.2":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.8.2.tgz#768c3a33123e21027b6c5a32e0a40a65bed0a421"
+"@angular-devkit/build-webpack@0.8.3":
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.8.3.tgz#df8fd2195b0304acfd0c64c8af95ec543ec28593"
   dependencies:
-    "@angular-devkit/architect" "0.8.2"
-    "@angular-devkit/core" "0.8.2"
+    "@angular-devkit/architect" "0.8.3"
+    "@angular-devkit/core" "0.8.3"
     rxjs "~6.2.0"
 
 "@angular-devkit/core@0.8.2":
@@ -455,11 +455,11 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
 
-"@ngtools/webpack@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-6.2.2.tgz#e3500f43a530c41470ea2b2cc470c5bbae3fbecd"
+"@ngtools/webpack@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-6.2.3.tgz#88313131079d14f6c7e07940e807bb445db6a0aa"
   dependencies:
-    "@angular-devkit/core" "0.8.2"
+    "@angular-devkit/core" "0.8.3"
     rxjs "~6.2.0"
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
