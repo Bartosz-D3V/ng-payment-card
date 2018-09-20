@@ -2,7 +2,6 @@
 
 Customizable component with zero external dependencies.
 
-
 <p align="center">
 
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
@@ -25,30 +24,35 @@ Customizable component with zero external dependencies.
 </p>
 
 ## Install
+
 ```bash
 yarn add ng-payment-card //or
 npm install --save ng-payment-card
 ```
 
 ## Features
-* Neat design
-* Validation of all fields (including Luhn validation) - that can be switched off
-* Displaying appropriate card provider's name based on card number
-* Fully responsive
-* No dependencies (apart from Angular itself)
-* Angular 2 - 6 compatible
-* Built with BEM methodology and SCSS
-* Fully customizable
-* 100% test coverage level
-* Built with statical code analysis tools
+
+- Neat design
+- Validation of all fields (including Luhn validation) - that can be switched off
+- Displaying appropriate card provider's name based on card number
+- Fully responsive
+- No dependencies (apart from Angular itself)
+- Angular 2 - 6 compatible
+- Built with BEM methodology and SCSS
+- Fully customizable
+- 100% test coverage level
+- Built with statical code analysis tools
 
 ## Usage
+
 After installing the component as a dependency, import it into you Angular module.
+
 ```js
 import { NgPaymentCardModule } from 'ng-payment-card';
 ```
 
 Afterwards, you can use the component within your templates.
+
 ```html
 <ng-payment-card></ng-payment-card>
 
@@ -65,6 +69,7 @@ Afterwards, you can use the component within your templates.
 ```
 
 Upon submitting the form, component will emit object in the following format:
+
 ```ts
 cardNumber: string;
 cardHolder: string;
@@ -76,36 +81,41 @@ ccv: number;
 <a href="https://bartosz-d3v.github.io/ng-payment-card/components/PaymentCardComponent.html#inputs">Full list of available inputs</a>
 
 ## Supported card types
-+ American Express
-+ Diners
-+ Diners Carte Blanche
-+ Discover Club
-+ China UnionPay
-+ JCB
-+ Laser
-+ MAESTRO
-+ Mastercard
-+ Visa Electron
-+ Visa
+
+- American Express
+- Diners
+- Diners Carte Blanche
+- Discover Club
+- China UnionPay
+- JCB
+- Laser
+- MAESTRO
+- Mastercard
+- Visa Electron
+- Visa
 
 ## Development
 
 ### Installation
+
 ```bash
 yarn // or
 npm install
 ```
 
 ### Running
+
 ```bash
 yarn start // or
 npm start
 ```
 
 ### Testing
+
 ```bash
 npm test
 ```
 
 ## License
+
 MIT
