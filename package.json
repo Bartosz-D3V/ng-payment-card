@@ -62,7 +62,7 @@
     "ng-packagr": "4.2.0",
     "prettier": "1.14.3",
     "protractor": "5.4.1",
-    "stylelint": "9.5.0",
+    "stylelint": "9.6.0",
     "stylelint-order": "1.0.0",
     "stylelint-scss": "3.3.1",
     "ts-node": "7.0.1",
