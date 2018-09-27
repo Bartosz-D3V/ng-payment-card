@@ -47,7 +47,7 @@
     "@angular/language-service": "6.1.9",
     "@compodoc/compodoc": "1.1.5",
     "@types/jasmine": "2.8.8",
-    "@types/jasminewd2": "2.0.3",
+    "@types/jasminewd2": "2.0.4",
     "@types/node": "8.10.30",
     "codelyzer": "4.4.4",
     "husky": "1.0.1",
