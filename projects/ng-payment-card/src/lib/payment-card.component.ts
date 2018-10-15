@@ -14,7 +14,6 @@ import { Month } from './domain/month.enum';
   selector: 'ng-payment-card',
   templateUrl: './payment-card.component.html',
   styleUrls: ['./payment-card.component.scss'],
-  providers: [PaymentCardService],
   encapsulation: ViewEncapsulation.None,
 })
 export class PaymentCardComponent implements OnInit {

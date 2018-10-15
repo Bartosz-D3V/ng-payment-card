@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { default as CARD_TYPES, CardTypesContainer } from '../domain/card-types';
 import { Month } from '../domain/month.enum';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class PaymentCardService {
   /**
    * Collection of card types
