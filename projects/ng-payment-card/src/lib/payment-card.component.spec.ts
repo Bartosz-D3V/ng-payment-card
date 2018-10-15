@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, fakeAsync, async } from '@angular/core/testi
 import { AbstractControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { PaymentCardComponent } from './payment-card.component';
-import { ICardDetails } from '@cc-project/lib/domain/ICardDetails';
+import { ICardDetails } from '@cc-project/lib/domain/i-card-details';
 import { PaymentCardService } from '@cc-project/lib/service/payment-card.service';
 import { PaymentCardNumberPipe } from '@cc-project/lib/pipe/payment-card-number/payment-card-number.pipe';
 import { ValidThruPipe } from '@cc-project/lib/pipe/valid-thru/valid-thru.pipe';

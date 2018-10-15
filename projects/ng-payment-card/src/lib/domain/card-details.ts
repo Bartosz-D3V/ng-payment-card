@@ -1,4 +1,4 @@
-import { ICardDetails } from './ICardDetails';
+import { ICardDetails } from './i-card-details';
 
 export class CardDetails implements ICardDetails {
   public cardHolder: string;

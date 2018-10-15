@@ -2,8 +2,8 @@ import { Component, EventEmitter, OnInit, Output, Input, ViewEncapsulation } fro
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CardValidator } from './validator/card-validator';
-import { ICardDetails } from './domain/ICardDetails';
-import { CardDetails } from './domain/CardDetails';
+import { ICardDetails } from './domain/i-card-details';
+import { CardDetails } from './domain/card-details';
 import { PaymentCardService } from './service/payment-card.service';
 import { Month } from './domain/month.enum';
 
