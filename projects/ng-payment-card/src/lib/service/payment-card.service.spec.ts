@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CardType } from '../domain/card-type';
+import { CardType } from '../domain/card-type.enum';
 import { PaymentCardService } from './payment-card.service';
 
 describe('PaymentCardPaymentCardService', () => {
