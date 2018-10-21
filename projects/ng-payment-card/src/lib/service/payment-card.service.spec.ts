@@ -86,8 +86,20 @@ describe('PaymentCardPaymentCardService', () => {
   });
 
   describe('getMonths', () => {
-    it('should return array of months', () => {
+    it('should return array of months in numeric format', () => {
       expect(PaymentCardService.getMonths().length).toEqual(12);
+      expect(PaymentCardService.getMonths()[0]).toEqual('01');
+      expect(PaymentCardService.getMonths()[1]).toEqual('02');
+      expect(PaymentCardService.getMonths()[2]).toEqual('03');
+      expect(PaymentCardService.getMonths()[3]).toEqual('04');
+      expect(PaymentCardService.getMonths()[4]).toEqual('05');
+      expect(PaymentCardService.getMonths()[5]).toEqual('06');
+      expect(PaymentCardService.getMonths()[6]).toEqual('07');
+      expect(PaymentCardService.getMonths()[7]).toEqual('08');
+      expect(PaymentCardService.getMonths()[8]).toEqual('09');
+      expect(PaymentCardService.getMonths()[9]).toEqual('10');
+      expect(PaymentCardService.getMonths()[10]).toEqual('11');
+      expect(PaymentCardService.getMonths()[11]).toEqual('12');
     });
   });
 

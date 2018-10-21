@@ -13,7 +13,7 @@ export class PaymentCardService {
   /**
    * Return card type based on card number
    */
-  public static getCardType(ccNum: string): string | null {
+  public static getCardType(ccNum: string): number | null {
     for (const [key, val] of Array.from(PaymentCardService.cardTypes.entries())) {
       if (
         ccNum
@@ -28,12 +28,15 @@ export class PaymentCardService {
   }
 
   /**
-   * Return months
+   * Return months in numerical format
    */
-  public static getMonths(): Array<Month> {
-    const months: Array<Month> = [];
-    for (const key of Object.keys(Month)) {
-      months.push(Month[key]);
+  public static getMonths(): Array<string> {
+    const months: Array<string> = [];
+    for (const val of Object.values(Month)) {
+      if (!isNaN(Number(val))) {
+        const month: string = val < 10 ? `0${val}` : val.toString();
+        months.push(month);
+      }
     }
     return months;
   }

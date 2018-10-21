@@ -3,7 +3,7 @@
     <div #ccBoxFlip class="cc-box--flip">
       <div class="cc-box__front">
         <div class="cc-box__logo">
-          <p>{{getCardType(ccNumber.value) | uppercase}}</p>
+          <p>{{getCardType(ccNumber.value) | literalCardType}}</p>
         </div>
         <div class="cc-box__element">
           <label class="cc-form__label" for="cc-card-number-display"></label>

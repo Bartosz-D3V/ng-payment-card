@@ -5,7 +5,6 @@ import { CardValidator } from './validator/card-validator';
 import { ICardDetails } from './domain/i-card-details';
 import { CardDetails } from './domain/card-details';
 import { PaymentCardService } from './service/payment-card.service';
-import { Month } from './domain/month.enum';
 
 /**
  * NgPaymentCard without any dependencies other then ReactiveFormsModule
@@ -25,7 +24,7 @@ export class PaymentCardComponent implements OnInit {
   /**
    * List of months
    */
-  public months: Array<Month> = [];
+  public months: Array<string> = [];
 
   /**
    * List of years
@@ -211,7 +210,7 @@ export class PaymentCardComponent implements OnInit {
   /**
    * Returns payment card type based on payment card number
    */
-  public getCardType(ccNum: string): string | null {
+  public getCardType(ccNum: string): number | null {
     return PaymentCardService.getCardType(ccNum);
   }
 

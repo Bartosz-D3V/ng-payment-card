@@ -7,6 +7,7 @@ import { ICardDetails } from '@cc-project/lib/domain/i-card-details';
 import { PaymentCardService } from '@cc-project/lib/service/payment-card.service';
 import { PaymentCardNumberPipe } from '@cc-project/lib/pipe/payment-card-number/payment-card-number.pipe';
 import { ValidThruPipe } from '@cc-project/lib/pipe/valid-thru/valid-thru.pipe';
+import { LiteralCardTypePipe } from '@cc-project/lib/pipe/literal-card-type/literal-card-type.pipe';
 
 describe('PaymentCardComponent', () => {
   let component: PaymentCardComponent;
@@ -15,7 +16,7 @@ describe('PaymentCardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, CommonModule],
-      declarations: [PaymentCardComponent, PaymentCardNumberPipe, ValidThruPipe],
+      declarations: [PaymentCardComponent, PaymentCardNumberPipe, ValidThruPipe, LiteralCardTypePipe],
       providers: [PaymentCardService],
     }).compileComponents();
   }));
