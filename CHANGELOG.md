@@ -1,3 +1,30 @@
+<a name="0.0.6"></a>
+
+## [0.0.6](https://github.com/bartosz-d3v/ng-payment-card/compare/v0.0.5...v0.0.6) (2018-10-21)
+
+### Breaking changes:
+
+- Fix lack of backward compatibility with Angular 2-4 and TypeScript < 2.4
+
+### Dependencies:
+
+- Update dependency @angular/cli to v7.0.2
+- Update dependency @angular-devkit/build-ng-packagr to v0.10.2
+- Update dependency ng-packagr to v4.3.1
+- Update dependency @angular-devkit/build-angular to v0.8.5
+- Update dependency angular monorepo to v6.1.10
+- Update dependency husky to v1.1.2
+- Update dependency codelyzer to v4.5.0
+- Update dependency @types/jasminewd2 to v2.0.5
+- Update dependency @types/jasmine to v2.8.9
+- Update dependency rxjs to v6.3.3
+- Update dependency stylelint-scss to v3.3.1
+- Update dependency @types/node to v8.10.30
+- Update dependency lint-staged to v7.3.0
+- Update dependency prettier to v1.14.3
+- Update dependency tsickle to v0.33.0
+- Update dependency karma-coverage-istanbul-reporter to v2.0.4
+
 <a name="0.0.5"></a>
 
 ## [0.0.5](https://github.com/bartosz-d3v/ng-payment-card/compare/v0.0.4...v0.0.5) (2018-08-31)
