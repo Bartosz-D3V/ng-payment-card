@@ -1,3 +1,11 @@
+<a name="0.0.7"></a>
+
+## [0.0.7](https://github.com/bartosz-d3v/ng-payment-card/compare/v0.0.6...v0.0.7) (2018-10-21)
+
+### Breaking changes:
+
+- Fix Angular version in metadata file.
+
 <a name="0.0.6"></a>
 
 ## [0.0.6](https://github.com/bartosz-d3v/ng-payment-card/compare/v0.0.5...v0.0.6) (2018-10-21)
