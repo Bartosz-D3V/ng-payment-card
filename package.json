@@ -17,7 +17,7 @@
     "lint-staged": "lint-staged --config .lintstagedrc",
     "compodoc": "compodoc -p projects/ng-payment-card/tsconfig.lib.json -a ./docs/ --theme stripe --hideGenerator",
     "build-app:prod": "ng build ng-payment-card-app --prod --build-optimizer --aot --extract-licenses=false",
-    "build-lib:prod": "ng build ng-payment-card --prod --sourcemaps=false",
+    "build-lib:prod": "ng build ng-payment-card --prod",
     "postbuild-lib:prod": "cp -r README.md CODE_OF_CONDUCT.md LICENSE docs dist/ng-payment-card/",
     "clean": "rm -r dist/ coverage/ || exit 0"
   },
