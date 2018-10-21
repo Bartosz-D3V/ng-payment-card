@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "prestart": "npm run dist-lib",
+    "prestart": "npm run build-lib:prod",
     "start": "ng serve",
     "build": "ng build",
     "pretest": "npm run lint",
@@ -16,9 +16,9 @@
     "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
     "lint-staged": "lint-staged --config .lintstagedrc",
     "compodoc": "compodoc -p projects/ng-payment-card/tsconfig.lib.json -a ./docs/ --theme stripe --hideGenerator",
-    "dist-app": "ng build ng-payment-card-app --prod --build-optimizer --aot --extract-licenses=false",
-    "dist-lib": "ng build ng-payment-card --prod",
-    "postdist-lib": "cp -r README.md CODE_OF_CONDUCT.md LICENSE docs dist/ng-payment-card/",
+    "build-app:prod": "ng build ng-payment-card-app --prod --build-optimizer --aot --extract-licenses=false",
+    "build-lib:prod": "ng build ng-payment-card --prod --sourcemaps=false",
+    "postbuild-lib:prod": "cp -r README.md CODE_OF_CONDUCT.md LICENSE docs dist/ng-payment-card/",
     "clean": "rm -r dist/ coverage/ || exit 0"
   },
   "repository": {
