@@ -1,6 +1,6 @@
 import { CardType } from './card-type.enum';
 
-const CARD_TYPES: Map<string, RegExp> = new Map();
+const CARD_TYPES: Map<number, RegExp> = new Map();
 CARD_TYPES.set(CardType.AMERICAN_EXPRESS, new RegExp('^3[47]'));
 CARD_TYPES.set(CardType.DINERS, new RegExp('^36'));
 CARD_TYPES.set(CardType.DINERS_CARTE_BLANCHE, new RegExp('^30[0-5]'));

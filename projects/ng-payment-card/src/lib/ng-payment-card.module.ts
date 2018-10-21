@@ -6,6 +6,7 @@ import { PaymentCardComponent } from './payment-card.component';
 import { PaymentCardService } from './service/payment-card.service';
 import { PaymentCardNumberPipe } from './pipe/payment-card-number/payment-card-number.pipe';
 import { ValidThruPipe } from './pipe/valid-thru/valid-thru.pipe';
+import { LiteralCardTypePipe } from './pipe/literal-card-type/literal-card-type.pipe';
 
 /**
  * Monolithic module that is being bundled and published.
@@ -13,7 +14,7 @@ import { ValidThruPipe } from './pipe/valid-thru/valid-thru.pipe';
  */
 @NgModule({
   imports: [ReactiveFormsModule, CommonModule],
-  declarations: [PaymentCardComponent, PaymentCardNumberPipe, ValidThruPipe],
+  declarations: [PaymentCardComponent, PaymentCardNumberPipe, ValidThruPipe, LiteralCardTypePipe],
   providers: [PaymentCardService],
   exports: [PaymentCardComponent],
 })
