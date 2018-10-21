@@ -14,8 +14,8 @@ install:
   - yarn
 
 test_script:
-  - npm run dist-lib
-  - npm run dist-app
+  - npm run build-lib:prod
+  - npm run build-app:prod
   - npm run test
 
 build: off

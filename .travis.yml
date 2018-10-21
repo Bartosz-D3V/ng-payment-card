@@ -33,8 +33,8 @@ install:
   - yarn install
 
 script:
-  - npm run dist-lib
-  - npm run dist-app
+  - npm run build-lib:prod
+  - npm run build-app:prod
   - xvfb-run -a npm run e2e -- --prod --protractor-config=./e2e/protractor-ci.conf.js
   - xvfb-run -a npm test --browser=ChromeNoSandbox
 
