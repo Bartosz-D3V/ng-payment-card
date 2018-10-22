@@ -30,6 +30,9 @@ yarn add ng-payment-card //or
 npm install --save ng-payment-card
 ```
 
+*Version 0.0.8 is no longer compatible with Angular 2 - 4 due to TypeScript upgrade*
+_For Angular 2 - 4, please use version 0.0.7_
+
 ## Features
 
 - Neat design
