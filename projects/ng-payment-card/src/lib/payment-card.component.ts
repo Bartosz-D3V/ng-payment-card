@@ -210,7 +210,7 @@ export class PaymentCardComponent implements OnInit {
   /**
    * Returns payment card type based on payment card number
    */
-  public getCardType(ccNum: string): number | null {
+  public getCardType(ccNum: string): string | null {
     return PaymentCardService.getCardType(ccNum);
   }
 
