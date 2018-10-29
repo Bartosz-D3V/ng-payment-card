@@ -58,7 +58,7 @@
     "karma-coverage-istanbul-reporter": "2.0.4",
     "karma-jasmine": "1.1.2",
     "karma-jasmine-html-reporter": "1.4.0",
-    "lint-staged": "7.3.0",
+    "lint-staged": "8.0.0",
     "ng-packagr": "4.4.0",
     "prettier": "1.14.3",
     "protractor": "5.4.1",
