@@ -1,3 +1,27 @@
+<a name="0.0.8"></a>
+
+## [0.0.8](https://github.com/bartosz-d3v/ng-payment-card/compare/v0.0.7...v0.0.8) (2018-11-02)
+
+### Breaking changes:
+
+- Angular 7 & TypeScript 3.1 upgrade.
+- Moved card types to enum value.
+
+### Dependencies:
+
+- update dependency typescript to v3.1.6
+- update dependency husky to v1.1.3
+- update dependency @angular/cli to v7.0.4
+- update dependency @angular-devkit/build-angular to v0.10.4
+- update dependency @angular-devkit/build-ng-packagr to v0.10.4
+- update angular monorepo to v7.0.2
+- update dependency lint-staged to v8.0.4
+- update dependency stylelint to v9.7.1
+- update dependency @compodoc/compodoc to v1.1.6
+- update dependency jasmine-core to v3.3.0
+- update dependency tsickle to v0.33.1
+- update dependency karma to v3.1.1
+
 <a name="0.0.7"></a>
 
 ## [0.0.7](https://github.com/bartosz-d3v/ng-payment-card/compare/v0.0.6...v0.0.7) (2018-10-21)

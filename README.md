@@ -30,7 +30,8 @@ yarn add ng-payment-card //or
 npm install --save ng-payment-card
 ```
 
-*Version 0.0.8 is no longer compatible with Angular 2 - 4 due to TypeScript upgrade*
+_Version 0.0.8 is no longer compatible with Angular 2 - 4 due to TypeScript upgrade_
+
 _For Angular 2 - 4, please use version 0.0.7_
 
 ## Features
@@ -40,7 +41,7 @@ _For Angular 2 - 4, please use version 0.0.7_
 - Displaying appropriate card provider's name based on card number
 - Fully responsive
 - No dependencies (apart from Angular itself)
-- Angular 2 - 6 compatible
+- Angular 2 - 7 compatible
 - Built with BEM methodology and SCSS
 - Fully customizable
 - 100% test coverage level
