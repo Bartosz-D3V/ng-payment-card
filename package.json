@@ -63,7 +63,7 @@
     "prettier": "1.15.2",
     "protractor": "5.4.1",
     "stylelint": "9.8.0",
-    "stylelint-order": "1.0.0",
+    "stylelint-order": "2.0.0",
     "stylelint-scss": "3.4.0",
     "ts-node": "7.0.1",
     "tsickle": "0.34.0",
