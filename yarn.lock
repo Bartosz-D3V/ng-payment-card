@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.11.2.tgz#f0bcaa494c713f8648a5da2490e2b67cd0e57503"
-  integrity sha512-RTwpxc4glRsO6EW50WryZ2UZ+75hABnaRabRp7QsgADJylA10ANX2H3OjhRQQ6nQ3opE3w9GydM+5sHBKy6hPw==
-  dependencies:
-    "@angular-devkit/core" "7.1.2"
-    rxjs "6.3.3"
-
 "@angular-devkit/architect@0.11.3":
   version "0.11.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.11.3.tgz#971135f340d073d434dc2ada1ae3873c77387243"
@@ -101,17 +93,6 @@
     "@angular-devkit/core" "7.1.3"
     rxjs "6.3.3"
 
-"@angular-devkit/core@7.1.2":
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.1.2.tgz#86b0e5a4cdeaa3198f6b1b50e7e114fac403e57c"
-  integrity sha512-LyjHGuLnLWrgX7SYDkKmc3eW4H5uuaoC+CXYjRfgx3qundrLfvTCRgNGC6FPjhQNnVXH9qar+j9P1aMmKFb4Lw==
-  dependencies:
-    ajv "6.5.3"
-    chokidar "2.0.4"
-    fast-json-stable-stringify "2.0.0"
-    rxjs "6.3.3"
-    source-map "0.7.3"
-
 "@angular-devkit/core@7.1.3":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.1.3.tgz#3d82a7e99aeb6259ff941d82b65759cb1c397042"
@@ -123,12 +104,12 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@7.1.2":
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.1.2.tgz#847639044417d044bf1bc87f64508a0c3f99fae2"
-  integrity sha512-NFhHLYWf9gpGQm0s19lq+nAw3CZ0udBpoBLzCm8Crlmu6+7aAXgw7Fv5P4ukWJ/e1m7NDGVids+B6kBGXaY6Ig==
+"@angular-devkit/schematics@7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.1.3.tgz#30d03fde5bb27d6606d9a6e055188382408670d6"
+  integrity sha512-Snmfog/n5k1PWdDaI+Top1F978vlXZFTvxHRPzlMCGhGsY+LMOpeRLVHADI+WP1q1LZ+2BjLELZVA2GP35AH8A==
   dependencies:
-    "@angular-devkit/core" "7.1.2"
+    "@angular-devkit/core" "7.1.3"
     rxjs "6.3.3"
 
 "@angular/animations@7.1.3":
@@ -138,16 +119,16 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cli@7.1.2":
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-7.1.2.tgz#bcad530ef8ab36188f4e4ab800d636989194e9bf"
-  integrity sha512-e290s0ONx47QgBw03l0Kq7fIPB77WqEQPM45QEWWbewF2lAFXx54ooQsdgLn+ESk6J0cW7DazRb23CUygZZbBw==
+"@angular/cli@7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-7.1.3.tgz#591bdd104084b6f74819c4ddabc28d1cc1e35d84"
+  integrity sha512-mf1dBxMm2I3ER4849v5HyoX+IvjOno6/PL6rew1nFDR+KRNl4DU9Aa6jUVzuHgKqlMgu5+LjvPfJDud8lQc9sg==
   dependencies:
-    "@angular-devkit/architect" "0.11.2"
-    "@angular-devkit/core" "7.1.2"
-    "@angular-devkit/schematics" "7.1.2"
-    "@schematics/angular" "7.1.2"
-    "@schematics/update" "0.11.2"
+    "@angular-devkit/architect" "0.11.3"
+    "@angular-devkit/core" "7.1.3"
+    "@angular-devkit/schematics" "7.1.3"
+    "@schematics/angular" "7.1.3"
+    "@schematics/update" "0.11.3"
     inquirer "6.2.0"
     opn "5.3.0"
     semver "5.5.1"
@@ -580,22 +561,22 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@schematics/angular@7.1.2":
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-7.1.2.tgz#b3eefbc81d12b0b53816896f6172eb613885826c"
-  integrity sha512-coypNxjRjCExCbkJ8Vser4iZbdksl3cNqgdokDlEtpXnnph3ZYvNDhDD9TBWYQ+cwDhCHAOzT3U3IjN4R2MCgQ==
+"@schematics/angular@7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-7.1.3.tgz#2cdbc6471358cf429fbea7ab192edc7246c87bd5"
+  integrity sha512-6Wq6vNjGTc0zmudPogTjiegtTUc0pORTCxI39iinUM+5iemMrCLYKJmYLi5mPFU4OG/Q2fnT06A3dYUorhtLkA==
   dependencies:
-    "@angular-devkit/core" "7.1.2"
-    "@angular-devkit/schematics" "7.1.2"
+    "@angular-devkit/core" "7.1.3"
+    "@angular-devkit/schematics" "7.1.3"
     typescript "3.1.6"
 
-"@schematics/update@0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@schematics/update/-/update-0.11.2.tgz#edcf6ed3cf84762a097f083253b2e35a482bee8b"
-  integrity sha512-dGA2PYnBLWRjVSTrTMPnVzsl5h5ojVcgFTpMke0FmgaJcR/D15FiwSs2LuJrmbb8f4oTAbQe1ON696M9kjWJIQ==
+"@schematics/update@0.11.3":
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/@schematics/update/-/update-0.11.3.tgz#ffbe8d2d839773df171972193e0d8765eb2bcdc7"
+  integrity sha512-0bGuRZVsmNMF3SFFuhuuZcySImK4gxl+6tdb6r4LPBx5lKM7mIzdUuC0SIn6gArciAeW0GCKYSpwMO15P8zSOA==
   dependencies:
-    "@angular-devkit/core" "7.1.2"
-    "@angular-devkit/schematics" "7.1.2"
+    "@angular-devkit/core" "7.1.3"
+    "@angular-devkit/schematics" "7.1.3"
     "@yarnpkg/lockfile" "1.1.0"
     ini "1.3.5"
     pacote "9.1.1"
