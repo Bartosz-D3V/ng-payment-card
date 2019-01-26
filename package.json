@@ -65,7 +65,7 @@
     "stylelint": "9.10.1",
     "stylelint-order": "2.0.0",
     "stylelint-scss": "3.5.1",
-    "ts-node": "8.0.1",
+    "ts-node": "8.0.2",
     "tsickle": "0.34.0",
     "tslib": "1.9.3",
     "tslint": "5.12.1",
