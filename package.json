@@ -64,7 +64,7 @@
     "protractor": "5.4.2",
     "stylelint": "9.10.1",
     "stylelint-order": "2.0.0",
-    "stylelint-scss": "3.5.1",
+    "stylelint-scss": "3.5.2",
     "ts-node": "8.0.2",
     "tsickle": "0.34.2",
     "tslib": "1.9.3",
