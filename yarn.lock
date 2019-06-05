@@ -1296,18 +1296,6 @@ autoprefixer@9.4.6:
     postcss "^7.0.13"
     postcss-value-parser "^3.3.1"
 
-autoprefixer@^9.0.0:
-  version "9.1.1"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.1.1.tgz#e4ffa96c71270b8a1967d1542abc5f8453920a77"
-  integrity sha512-Q/2zhVEglXXCBNCOFfnihQcQystPYJt4GrIopeWhPjFxRPXya8eOstB89AafW0nWhSscByp+rSXp9EE5X4zgXQ==
-  dependencies:
-    browserslist "^4.0.2"
-    caniuse-lite "^1.0.30000876"
-    normalize-range "^0.1.2"
-    num2fraction "^1.2.2"
-    postcss "^7.0.2"
-    postcss-value-parser "^3.2.3"
-
 autoprefixer@^9.5.1:
   version "9.5.1"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.5.1.tgz#243b1267b67e7e947f28919d786b50d3bb0fb357"
@@ -1318,6 +1306,19 @@ autoprefixer@^9.5.1:
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^7.0.14"
+    postcss-value-parser "^3.3.1"
+
+autoprefixer@^9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.6.0.tgz#0111c6bde2ad20c6f17995a33fad7cf6854b4c87"
+  integrity sha512-kuip9YilBqhirhHEGHaBTZKXL//xxGnzvsD0FtBQa6z+A69qZD6s/BAX9VzDF1i9VKDquTJDQaPLSEhOnL6FvQ==
+  dependencies:
+    browserslist "^4.6.1"
+    caniuse-lite "^1.0.30000971"
+    chalk "^2.4.2"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^7.0.16"
     postcss-value-parser "^3.3.1"
 
 aws-sign2@~0.7.0:
@@ -1765,7 +1766,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@^4.0.0, browserslist@^4.0.2:
+browserslist@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.0.2.tgz#294388f5844bb3ab15ef7394ca17f49bf7a4e6f1"
   integrity sha512-lpujC4zv1trcKUUwfD4pFVNga4YSpB3sLB+/I+A8gvGQxno1c0dMB2aCQy0FE5oUNIDjD9puFiFF0zeS6Ji48w==
@@ -1791,6 +1792,15 @@ browserslist@^4.5.4:
     caniuse-lite "^1.0.30000955"
     electron-to-chromium "^1.3.122"
     node-releases "^1.1.13"
+
+browserslist@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.6.1.tgz#ee5059b1aec18cbec9d055d6cb5e24ae50343a9b"
+  integrity sha512-1MC18ooMPRG2UuVFJTHFIAkk6mpByJfxCrnUyvSlu/hyQSFHMrlhM02SzNuCV+quTP4CKmqtOMAIjrifrpBJXQ==
+  dependencies:
+    caniuse-lite "^1.0.30000971"
+    electron-to-chromium "^1.3.137"
+    node-releases "^1.1.21"
 
 browserstack@^1.5.1:
   version "1.5.1"
@@ -2058,6 +2068,11 @@ caniuse-lite@^1.0.30000955, caniuse-lite@^1.0.30000957:
   version "1.0.30000960"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000960.tgz#ec48297037e5607f582f246ae7b12bee66a78999"
   integrity sha512-7nK5qs17icQaX6V3/RYrJkOsZyRNnroA4+ZwxaKJzIKy+crIy0Mz5CBlLySd2SNV+4nbUZeqeNfiaEieUBu3aA==
+
+caniuse-lite@^1.0.30000971:
+  version "1.0.30000973"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000973.tgz#2f8e8e54f9e6c5b7a631c9e69bfa1093d8cfd360"
+  integrity sha512-/F3t/Yo8LEdRSEPCmI15fLu5vepVh9UCg/9inJXF5AAfW7xRRJkbaM2ut52iRMQMnGCLQouLbFdbOA+VEFOIsg==
 
 canonical-path@1.0.0:
   version "1.0.0"
@@ -3228,6 +3243,11 @@ electron-to-chromium@^1.3.122:
   version "1.3.124"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.124.tgz#861fc0148748a11b3e5ccebdf8b795ff513fa11f"
   integrity sha512-glecGr/kFdfeXUHOHAWvGcXrxNU+1wSO/t5B23tT1dtlvYB26GY8aHzZSWD7HqhqC800Lr+w/hQul6C5AF542w==
+
+electron-to-chromium@^1.3.137:
+  version "1.3.146"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.146.tgz#d7010f417f87c2068fbb6700ae57767e2393eba7"
+  integrity sha512-BrUq08sx7eR4PCwLbjFxXmjcbDro6DSoc1pN8VCxq76U+o9JQzJlWH/NVtcpAqcktwpE5CVvMyqHqTQfCETNoQ==
 
 electron-to-chromium@^1.3.57:
   version "1.3.57"
@@ -6860,13 +6880,13 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.1.tgz#acb909e327b1e87ec9ef15f41b8a269512ad41ee"
   integrity sha512-3KL3fvuRkZ7s4IFOMfztb7zJp3QaVWnBeGoJlgB38XnCRPj/0tLzzLG5IB8NYOHbJ8g8UGrgZv44GLDk6CxTxA==
 
-ng-packagr@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-5.2.0.tgz#a27af1aa3861eea5905223174b3a73848ab33bf7"
-  integrity sha512-OZLBm9NUai8v5uKn7K1h9RyC2g1RG4G905j7VS3p9zphqkF+LYs7u7xDz+Shmtnk39YsyvDsL0xxMD9WRoATKg==
+ng-packagr@5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-5.3.0.tgz#92434ca05ecbd1e01fe961a66c8a9a66b095f6fa"
+  integrity sha512-i+964lzZC7VVzatDCLDZndiXTog1XGozY7K1Bs78+uBF8O1YHNQP9wB9C5fR4uEaSKVhCWEBYekoS69flCugMA==
   dependencies:
     "@ngtools/json-schema" "^1.1.0"
-    autoprefixer "^9.0.0"
+    autoprefixer "^9.6.0"
     browserslist "^4.0.0"
     chalk "^2.3.1"
     chokidar "^3.0.0"
@@ -6878,7 +6898,6 @@ ng-packagr@5.2.0:
     less "^3.8.0"
     less-plugin-npm-import "^2.1.0"
     node-sass-tilde-importer "^1.0.0"
-    opencollective-postinstall "^2.0.1"
     postcss "^7.0.0"
     postcss-url "^8.0.0"
     read-pkg-up "^5.0.0"
@@ -6891,7 +6910,7 @@ ng-packagr@5.2.0:
     rxjs "^6.0.0"
     sass "^1.17.3"
     stylus "^0.54.5"
-    terser "^3.16.1"
+    terser "^4.0.0"
     update-notifier "^3.0.0"
 
 nice-try@^1.0.4:
@@ -6995,6 +7014,13 @@ node-releases@^1.1.13:
   version "1.1.14"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.14.tgz#f1f41c83cac82caebd6739e6313d56b3b09c9189"
   integrity sha512-d58EpVZRhQE60kWiWUaaPlK9dyC4zg3ZoMcHcky2d4hDksyQj0rUozwInOl0C66mBsqo01Tuns8AvxnL5S7PKg==
+  dependencies:
+    semver "^5.3.0"
+
+node-releases@^1.1.21:
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.23.tgz#de7409f72de044a2fa59c097f436ba89c39997f0"
+  integrity sha512-uq1iL79YjfYC0WXoHbC/z28q/9pOl8kSHaXdWmAAc8No+bDwqkZbzIJz55g/MUsPgSGm9LZ7QSUbzTcH5tz47w==
   dependencies:
     semver "^5.3.0"
 
@@ -7302,11 +7328,6 @@ open@6.0.0:
   integrity sha512-/yb5mVZBz7mHLySMiSj2DcLtMBbFPJk5JBKEkHVZFxZAPzeg3L026O0T+lbdz1B2nyDnkClRSwRQJdeVUIF7zw==
   dependencies:
     is-wsl "^1.1.0"
-
-opencollective-postinstall@^2.0.1:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
-  integrity sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
 
 opencollective@^1.0.3:
   version "1.0.3"
@@ -8018,6 +8039,15 @@ postcss@^7.0.13:
   version "7.0.13"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.13.tgz#42bf716413e8f1c786ab71dc6e722b3671b16708"
   integrity sha512-h8SY6kQTd1wISHWjz+E6cswdhMuyBZRb16pSTv3W4zYZ3/YbyWeJdNUeOXB5IdZqE1U76OUEjjjqsC3z2f3hVg==
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
+postcss@^7.0.16:
+  version "7.0.16"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.16.tgz#48f64f1b4b558cb8b52c88987724359acb010da2"
+  integrity sha512-MOo8zNSlIqh22Uaa3drkdIAgUGEL+AD1ESiSdmElLUmE2uVDo1QloiT/IfW9qRw8Gw+Y/w69UVMGwbufMSftxA==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
@@ -9437,6 +9467,14 @@ source-map-support@~0.4.0:
   dependencies:
     source-map "^0.5.6"
 
+source-map-support@~0.5.10:
+  version "0.5.12"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.12.tgz#b4f3b10d51857a5af0138d3ce8003b201613d599"
+  integrity sha512-4h2Pbvyy15EE02G+JOZpUCmqWJuqrs+sEkzewTm++BPi7Hvn/HwcqLAcNxYAyI0x13CpPPn+kMjl+hplXMHITQ==
+  dependencies:
+    buffer-from "^1.0.0"
+    source-map "^0.6.0"
+
 source-map-support@~0.5.6:
   version "0.5.9"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.9.tgz#41bc953b2534267ea2d605bccfa7bfa3111ced5f"
@@ -10135,6 +10173,15 @@ terser@^3.8.1:
     commander "~2.17.1"
     source-map "~0.6.1"
     source-map-support "~0.5.6"
+
+terser@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.0.0.tgz#ef356f6f359a963e2cc675517f21c1c382877374"
+  integrity sha512-dOapGTU0hETFl1tCo4t56FN+2jffoKyER9qBGoUFyZ6y7WLoKT0bF+lAYi6B6YsILcGF3q1C2FBh8QcKSCgkgA==
+  dependencies:
+    commander "^2.19.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.10"
 
 through2@^2.0.0:
   version "2.0.3"
