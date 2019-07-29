@@ -1,0 +1,2108 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-payment-card-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/stripe.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-payment-card-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PaymentCardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/ng-payment-card/src/lib/payment-card.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>NgPaymentCard without any dependencies other then ReactiveFormsModule</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ng-payment-card</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./payment-card.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./payment-card.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ccForm">ccForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#months">months</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#years">years</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#assignDateValues">assignDateValues</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#buildForm">buildForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#emitSavedCard">emitSavedCard</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getCardType">getCardType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cardExpiredTxt">cardExpiredTxt</a>
+                            </li>
+                            <li>
+                                <a href="#cardHolderMissingTxt">cardHolderMissingTxt</a>
+                            </li>
+                            <li>
+                                <a href="#cardHolderTooLongTxt">cardHolderTooLongTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccNumChecksumInvalidTxt">ccNumChecksumInvalidTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccNumContainsLettersTxt">ccNumContainsLettersTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccNumMissingTxt">ccNumMissingTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccNumTooLongTxt">ccNumTooLongTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccNumTooShortTxt">ccNumTooShortTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccvContainsLettersTxt">ccvContainsLettersTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccvMissingTxt">ccvMissingTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccvNumTooLongTxt">ccvNumTooLongTxt</a>
+                            </li>
+                            <li>
+                                <a href="#ccvNumTooShortTxt">ccvNumTooShortTxt</a>
+                            </li>
+                            <li>
+                                <a href="#expirationMonthMissingTxt">expirationMonthMissingTxt</a>
+                            </li>
+                            <li>
+                                <a href="#expirationYearMissingTxt">expirationYearMissingTxt</a>
+                            </li>
+                            <li>
+                                <a href="#validateCardExpiration">validateCardExpiration</a>
+                            </li>
+                            <li>
+                                <a href="#validateCardHolder">validateCardHolder</a>
+                            </li>
+                            <li>
+                                <a href="#validateCCNum">validateCCNum</a>
+                            </li>
+                            <li>
+                                <a href="#validateCCV">validateCCV</a>
+                            </li>
+                            <li>
+                                <a href="#validateExpirationMonth">validateExpirationMonth</a>
+                            </li>
+                            <li>
+                                <a href="#validateExpirationYear">validateExpirationYear</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formSaved">formSaved</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_ccService: <a href="../injectables/PaymentCardService.html">PaymentCardService</a>, _fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:158</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_ccService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PaymentCardService.html" target="_self" >PaymentCardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cardExpiredTxt"></a>
+                        <b>cardExpiredTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Card has expired&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:116</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for expired card</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cardHolderMissingTxt"></a>
+                        <b>cardHolderMissingTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Card holder name is required&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:68</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for missing card holder name</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cardHolderTooLongTxt"></a>
+                        <b>cardHolderTooLongTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Card holder name is too long&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:74</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for too long card holder name</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccNumChecksumInvalidTxt"></a>
+                        <b>ccNumChecksumInvalidTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Provided card number is invalid&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:62</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for invalid payment card  number (Luhn&#39;s validation)</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccNumContainsLettersTxt"></a>
+                        <b>ccNumContainsLettersTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Card number can contain digits only&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:56</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for payment card number that contains characters other than digits</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccNumMissingTxt"></a>
+                        <b>ccNumMissingTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Card number is required&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:38</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for missing payment card number</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccNumTooLongTxt"></a>
+                        <b>ccNumTooLongTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Card number is too long&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:50</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for too long payment card number</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccNumTooShortTxt"></a>
+                        <b>ccNumTooShortTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Card number is too short&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:44</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for too short payment card number</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccvContainsLettersTxt"></a>
+                        <b>ccvContainsLettersTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;CCV number can contain digits only&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:110</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for incorrect CCV number containing characters other than digits</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccvMissingTxt"></a>
+                        <b>ccvMissingTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;CCV number is required&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:92</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for missing CCV number</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccvNumTooLongTxt"></a>
+                        <b>ccvNumTooLongTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;CCV number is too long&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:104</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for too long CCV number</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccvNumTooShortTxt"></a>
+                        <b>ccvNumTooShortTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;CCV number is too short&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:98</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for too short CCV number</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expirationMonthMissingTxt"></a>
+                        <b>expirationMonthMissingTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Expiration month is required&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:80</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for missing expiration month</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expirationYearMissingTxt"></a>
+                        <b>expirationYearMissingTxt</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Expiration year is required&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:86</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Validation message for missing expiration year</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validateCardExpiration"></a>
+                        <b>validateCardExpiration</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="146" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:146</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Switch validation of the payment card expiration</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validateCardHolder"></a>
+                        <b>validateCardHolder</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:128</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Switch validation of the payment card holder</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validateCCNum"></a>
+                        <b>validateCCNum</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:122</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Switch validation of the payment card number</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validateCCV"></a>
+                        <b>validateCCV</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:152</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Switch validation of the payment card CCV number</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validateExpirationMonth"></a>
+                        <b>validateExpirationMonth</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:134</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Switch validation of the payment card expiration month</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validateExpirationYear"></a>
+                        <b>validateExpirationYear</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:140</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Switch validation of the payment card expiration year</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formSaved"></a>
+                        <b>formSaved</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICardDetails.html" target="_self" >EventEmitter&lt;ICardDetails&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:158</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>EventEmitter for payment card object</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assignDateValues"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            assignDateValues
+                        </b>
+                        <a href="#assignDateValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>assignDateValues()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:170</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Populate months and years</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buildForm"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            buildForm
+                        </b>
+                        <a href="#buildForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>buildForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:178</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Build reactive form</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emitSavedCard"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            emitSavedCard
+                        </b>
+                        <a href="#emitSavedCard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>emitSavedCard()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:220</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Callback function that emits payment card details after user clicks submit, or press enter</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCardType"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getCardType
+                        </b>
+                        <a href="#getCardType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCardType(ccNum: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:213</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns payment card type based on payment card number</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ccNum</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string | null</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:162</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ccForm"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            ccForm</b>
+                            <a href="#ccForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>FormGroup available publicly</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="months"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            months</b>
+                            <a href="#months"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Array&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>List of months</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="years"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            years</b>
+                            <a href="#years"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Array&lt;number&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/ng-payment-card/src/lib/payment-card.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>List of years</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, OnInit, Output, Input, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+
+import { CardValidator } from &#x27;./validator/card-validator&#x27;;
+import { ICardDetails } from &#x27;./domain/i-card-details&#x27;;
+import { CardDetails } from &#x27;./domain/card-details&#x27;;
+import { PaymentCardService } from &#x27;./service/payment-card.service&#x27;;
+
+/**
+ * NgPaymentCard without any dependencies other then ReactiveFormsModule
+ */
+@Component({
+  selector: &#x27;ng-payment-card&#x27;,
+  templateUrl: &#x27;./payment-card.component.html&#x27;,
+  styleUrls: [&#x27;./payment-card.component.scss&#x27;],
+  encapsulation: ViewEncapsulation.None,
+})
+export class PaymentCardComponent implements OnInit {
+  /**
+   * FormGroup available publicly
+   */
+  public ccForm: FormGroup;
+
+  /**
+   * List of months
+   */
+  public months: Array&lt;string&gt; &#x3D; [];
+
+  /**
+   * List of years
+   */
+  public years: Array&lt;number&gt; &#x3D; [];
+
+  /**
+   * Validation message for missing payment card number
+   */
+  @Input()
+  public ccNumMissingTxt? &#x3D; &#x27;Card number is required&#x27;;
+
+  /**
+   * Validation message for too short payment card number
+   */
+  @Input()
+  public ccNumTooShortTxt? &#x3D; &#x27;Card number is too short&#x27;;
+
+  /**
+   * Validation message for too long payment card number
+   */
+  @Input()
+  public ccNumTooLongTxt? &#x3D; &#x27;Card number is too long&#x27;;
+
+  /**
+   * Validation message for payment card number that contains characters other than digits
+   */
+  @Input()
+  public ccNumContainsLettersTxt? &#x3D; &#x27;Card number can contain digits only&#x27;;
+
+  /**
+   * Validation message for invalid payment card  number (Luhn&#x27;s validation)
+   */
+  @Input()
+  public ccNumChecksumInvalidTxt? &#x3D; &#x27;Provided card number is invalid&#x27;;
+
+  /**
+   * Validation message for missing card holder name
+   */
+  @Input()
+  public cardHolderMissingTxt? &#x3D; &#x27;Card holder name is required&#x27;;
+
+  /**
+   * Validation message for too long card holder name
+   */
+  @Input()
+  public cardHolderTooLongTxt? &#x3D; &#x27;Card holder name is too long&#x27;;
+
+  /**
+   * Validation message for missing expiration month
+   */
+  @Input()
+  public expirationMonthMissingTxt? &#x3D; &#x27;Expiration month is required&#x27;;
+
+  /**
+   * Validation message for missing expiration year
+   */
+  @Input()
+  public expirationYearMissingTxt? &#x3D; &#x27;Expiration year is required&#x27;;
+
+  /**
+   * Validation message for missing CCV number
+   */
+  @Input()
+  public ccvMissingTxt? &#x3D; &#x27;CCV number is required&#x27;;
+
+  /**
+   * Validation message for too short CCV number
+   */
+  @Input()
+  public ccvNumTooShortTxt? &#x3D; &#x27;CCV number is too short&#x27;;
+
+  /**
+   * Validation message for too long CCV number
+   */
+  @Input()
+  public ccvNumTooLongTxt? &#x3D; &#x27;CCV number is too long&#x27;;
+
+  /**
+   * Validation message for incorrect CCV number containing characters other than digits
+   */
+  @Input()
+  public ccvContainsLettersTxt? &#x3D; &#x27;CCV number can contain digits only&#x27;;
+
+  /**
+   * Validation message for expired card
+   */
+  @Input()
+  public cardExpiredTxt? &#x3D; &#x27;Card has expired&#x27;;
+
+  /**
+   * Switch validation of the payment card number
+   */
+  @Input()
+  public validateCCNum? &#x3D; true;
+
+  /**
+   * Switch validation of the payment card holder
+   */
+  @Input()
+  public validateCardHolder? &#x3D; true;
+
+  /**
+   * Switch validation of the payment card expiration month
+   */
+  @Input()
+  public validateExpirationMonth? &#x3D; true;
+
+  /**
+   * Switch validation of the payment card expiration year
+   */
+  @Input()
+  public validateExpirationYear? &#x3D; true;
+
+  /**
+   * Switch validation of the payment card expiration
+   */
+  @Input()
+  public validateCardExpiration? &#x3D; true;
+
+  /**
+   * Switch validation of the payment card CCV number
+   */
+  @Input()
+  public validateCCV? &#x3D; true;
+
+  /**
+   * EventEmitter for payment card object
+   */
+  @Output()
+  public formSaved: EventEmitter&lt;ICardDetails&gt; &#x3D; new EventEmitter&lt;CardDetails&gt;();
+
+  constructor(private _ccService: PaymentCardService, private _fb: FormBuilder) {}
+
+  public ngOnInit(): void {
+    this.buildForm();
+    this.assignDateValues();
+  }
+
+  /**
+   * Populate months and years
+   */
+  private assignDateValues(): void {
+    this.months &#x3D; PaymentCardService.getMonths();
+    this.years &#x3D; PaymentCardService.getYears();
+  }
+
+  /**
+   * Build reactive form
+   */
+  private buildForm(): void {
+    this.ccForm &#x3D; this._fb.group(
+      {
+        cardNumber: [
+          &#x27;&#x27;,
+          Validators.compose([
+            Validators.required,
+            Validators.minLength(12),
+            Validators.maxLength(19),
+            CardValidator.numbersOnly,
+            CardValidator.checksum,
+          ]),
+        ],
+        cardHolder: [&#x27;&#x27;, Validators.compose([Validators.required, Validators.maxLength(22)])],
+        expirationMonth: [&#x27;&#x27;, Validators.required],
+        expirationYear: [&#x27;&#x27;, Validators.required],
+        ccv: [
+          &#x27;&#x27;,
+          Validators.compose([
+            Validators.required,
+            Validators.minLength(3),
+            Validators.maxLength(4),
+            CardValidator.numbersOnly,
+          ]),
+        ],
+      },
+      {
+        validator: CardValidator.expiration,
+      }
+    );
+  }
+
+  /**
+   * Returns payment card type based on payment card number
+   */
+  public getCardType(ccNum: string): string | null {
+    return PaymentCardService.getCardType(ccNum);
+  }
+
+  /**
+   * Callback function that emits payment card details after user clicks submit, or press enter
+   */
+  public emitSavedCard(): void {
+    const cardDetails: ICardDetails &#x3D; &lt;CardDetails&gt;this.ccForm.value;
+    this.formSaved.emit(cardDetails);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;cc-wrapper&quot;&gt;
+  &lt;div class&#x3D;&quot;cc-box&quot;&gt;
+    &lt;div #ccBoxFlip class&#x3D;&quot;cc-box--flip&quot;&gt;
+      &lt;div class&#x3D;&quot;cc-box__front&quot;&gt;
+        &lt;div class&#x3D;&quot;cc-box__logo&quot;&gt;
+          &lt;p&gt;{{getCardType(ccNumber.value) | uppercase}}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;cc-box__element&quot;&gt;
+          &lt;label class&#x3D;&quot;cc-form__label&quot; for&#x3D;&quot;cc-card-number-display&quot;&gt;&lt;/label&gt;
+          &lt;input class&#x3D;&quot;cc-form__input cc-form__input--transparent cc-form__input--embosed&quot; id&#x3D;&quot;cc-card-number-display&quot;
+                 aria-label&#x3D;&quot;Payment card number&quot; disabled&#x3D;&quot;disabled&quot;
+                 [value]&#x3D;&quot;ccForm.get(&#x27;cardNumber&#x27;).value | paymentCardNumber&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;cc-box__element&quot;&gt;
+          &lt;label class&#x3D;&quot;cc-form__label&quot; for&#x3D;&quot;cc-holder-display&quot;&gt;CARD HOLDER&lt;/label&gt;
+          &lt;input class&#x3D;&quot;cc-form__input cc-form__input--transparent cc-form__input--embosed&quot; id&#x3D;&quot;cc-holder-display&quot;
+                 aria-label&#x3D;&quot;Card holder&quot; disabled&#x3D;&quot;disabled&quot; [value]&#x3D;&quot;ccForm.get(&#x27;cardHolder&#x27;).value | uppercase&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;cc-box__element&quot;&gt;
+          &lt;label class&#x3D;&quot;cc-form__label&quot; for&#x3D;&quot;cc-valid-date-display&quot;&gt;VALID THRU&lt;/label&gt;
+          &lt;input class&#x3D;&quot;cc-form__input cc-form__input--left-align cc-form__input--transparent cc-form__input--embosed&quot;
+                 id&#x3D;&quot;cc-valid-date-display&quot; aria-label&#x3D;&quot;Card holder&quot; disabled&#x3D;&quot;disabled&quot;
+                 [value]&#x3D;&quot;ccForm.get(&#x27;expirationMonth&#x27;).value + &#x27;/&#x27; + ccForm.get(&#x27;expirationYear&#x27;).value | validThru&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;cc-box__chip&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;cc-box__back&quot;&gt;
+        &lt;div class&#x3D;&quot;cc-box__strip&quot;&gt;&amp;nbsp;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;cc-box__element&quot;&gt;
+          &lt;input class&#x3D;&quot;cc-form__input cc-form__input--cursive cc-form__input--right-align&quot; id&#x3D;&quot;cc-ccv-display&quot;
+                 aria-label&#x3D;&quot;CCV&quot; disabled&#x3D;&quot;disabled&quot;
+                 [value]&#x3D;&quot;&#x27;CCV: &#x27; + ccForm.get(&#x27;ccv&#x27;).value&quot; title&#x3D;&quot;CCV&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;form class&#x3D;&quot;cc-form&quot; [formGroup]&#x3D;&quot;ccForm&quot; autocomplete&#x3D;&quot;off&quot;&gt;
+    &lt;div class&#x3D;&quot;cc-form__wrapper--long&quot;&gt;
+      &lt;label for&#x3D;&quot;cc-number&quot; class&#x3D;&quot;cc-form__label cc-form__label--first&quot;&gt;Card number&lt;/label&gt;
+      &lt;input #ccNumber class&#x3D;&quot;cc-form__input&quot; id&#x3D;&quot;cc-number&quot; aria-label&#x3D;&quot;Card number&quot;
+             type&#x3D;&quot;text&quot; title&#x3D;&quot;Card number&quot; maxlength&#x3D;&quot;19&quot; formControlName&#x3D;&quot;cardNumber&quot;
+             (focus)&#x3D;&quot;ccBoxFlip.classList.remove(&#x27;hover&#x27;)&quot;&gt;
+      &lt;div class&#x3D;&quot;cc-form__error&quot;
+           *ngIf&#x3D;&quot;validateCCNum &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).touched &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+        {{ccNumMissingTxt}}
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;cc-form__error&quot;
+           *ngIf&#x3D;&quot;validateCCNum &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).touched &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).hasError(&#x27;minlength&#x27;)&quot;&gt;
+        {{ccNumTooShortTxt}}
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;cc-form__error&quot;
+           *ngIf&#x3D;&quot;validateCCNum &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).touched &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).hasError(&#x27;maxlength&#x27;)&quot;&gt;
+        {{ccNumTooLongTxt}}
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;cc-form__error&quot;
+           *ngIf&#x3D;&quot;validateCCNum &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).touched &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).hasError(&#x27;numbersOnly&#x27;)&quot;&gt;
+        {{ccNumContainsLettersTxt}}
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;cc-form__error&quot;
+           *ngIf&#x3D;&quot;validateCCNum &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).touched &amp;&amp; ccForm.get(&#x27;cardNumber&#x27;).hasError(&#x27;checksum&#x27;)&quot;&gt;
+        {{ccNumChecksumInvalidTxt}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form__wrapper--long&quot;&gt;
+      &lt;label for&#x3D;&quot;cc-holder-name&quot; class&#x3D;&quot;cc-form__label&quot;&gt;Card Holder name&lt;/label&gt;
+      &lt;input class&#x3D;&quot;cc-form__input&quot; id&#x3D;&quot;cc-holder-name&quot; aria-label&#x3D;&quot;Card holder name&quot; type&#x3D;&quot;text&quot;
+             title&#x3D;&quot;Card holder name&quot; maxlength&#x3D;&quot;22&quot; formControlName&#x3D;&quot;cardHolder&quot;
+             (focus)&#x3D;&quot;ccBoxFlip.classList.remove(&#x27;hover&#x27;)&quot;&gt;
+      &lt;div class&#x3D;&quot;cc-form__error&quot;
+           *ngIf&#x3D;&quot;validateCardHolder &amp;&amp; ccForm.get(&#x27;cardHolder&#x27;).touched &amp;&amp;
+           ccForm.get(&#x27;cardHolder&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+        {{cardHolderMissingTxt}}
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;cc-form__error&quot;
+           *ngIf&#x3D;&quot;validateCardHolder &amp;&amp; ccForm.get(&#x27;cardHolder&#x27;).touched &amp;&amp;
+           ccForm.get(&#x27;cardHolder&#x27;).hasError(&#x27;maxlength&#x27;)&quot;&gt;
+        {{cardHolderTooLongTxt}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form--inline&quot;&gt;
+      &lt;div class&#x3D;&quot;cc-form__wrapper cc-form__wrapper--short&quot;&gt;
+        &lt;label for&#x3D;&quot;cc-expiration-month&quot; class&#x3D;&quot;cc-form__label&quot;&gt;Expiration month&lt;/label&gt;
+        &lt;select id&#x3D;&quot;cc-expiration-month&quot; class&#x3D;&quot;cc-form__select&quot; aria-label&#x3D;&quot;Expiration month&quot;
+                formControlName&#x3D;&quot;expirationMonth&quot;&gt;
+          &lt;option *ngFor&#x3D;&quot;let month of months&quot; value&#x3D;&quot;{{month}}&quot;
+                  (click)&#x3D;&quot;ccBoxFlip.classList.remove(&#x27;hover&#x27;)&quot;&gt;{{month}}
+          &lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;cc-form__wrapper cc-form__wrapper--short&quot;&gt;
+        &lt;label for&#x3D;&quot;cc-expiration-year&quot; class&#x3D;&quot;cc-form__label&quot;&gt;Expiration year&lt;/label&gt;
+        &lt;select id&#x3D;&quot;cc-expiration-year&quot; class&#x3D;&quot;cc-form__select&quot; aria-label&#x3D;&quot;Expiration year&quot;
+                formControlName&#x3D;&quot;expirationYear&quot;&gt;
+          &lt;option *ngFor&#x3D;&quot;let year of years&quot; value&#x3D;&quot;{{year}}&quot;
+                  (click)&#x3D;&quot;ccBoxFlip.classList.remove(&#x27;hover&#x27;)&quot;&gt;{{year}}
+          &lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;cc-form__wrapper cc-form__wrapper--short cc-form__wrapper--last&quot;&gt;
+        &lt;label for&#x3D;&quot;cc-ccv&quot; class&#x3D;&quot;cc-form__label&quot;&gt;ccv&lt;/label&gt;
+        &lt;input class&#x3D;&quot;cc-form__input cc-form__input--short&quot; id&#x3D;&quot;cc-ccv&quot; aria-label&#x3D;&quot;CCV&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;CCV&quot;
+               minlength&#x3D;&quot;3&quot; maxlength&#x3D;&quot;4&quot; formControlName&#x3D;&quot;ccv&quot; (focus)&#x3D;&quot;ccBoxFlip.classList.add(&#x27;hover&#x27;)&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form__error&quot;
+         *ngIf&#x3D;&quot;validateExpirationMonth &amp;&amp; ccForm.get(&#x27;expirationMonth&#x27;).touched &amp;&amp;
+             ccForm.get(&#x27;expirationMonth&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+      {{expirationMonthMissingTxt}}
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form__error&quot;
+         *ngIf&#x3D;&quot;validateExpirationMonth &amp;&amp; ccForm.get(&#x27;expirationYear&#x27;).touched &amp;&amp;
+             ccForm.get(&#x27;expirationYear&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+      {{expirationYearMissingTxt}}
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form__error&quot; *ngIf&#x3D;&quot;validateCardExpiration &amp;&amp; ccForm.get(&#x27;expirationMonth&#x27;).touched &amp;&amp;
+    ccForm.get(&#x27;expirationYear&#x27;).touched &amp;&amp; ccForm.hasError(&#x27;expiration&#x27;)&quot;&gt;
+      {{cardExpiredTxt}}
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form__error&quot;
+         *ngIf&#x3D;&quot;validateCCV &amp;&amp; ccForm.get(&#x27;ccv&#x27;).touched &amp;&amp; ccForm.get(&#x27;ccv&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+      {{ccvMissingTxt}}
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form__error&quot;
+         *ngIf&#x3D;&quot;validateCCV &amp;&amp; ccForm.get(&#x27;ccv&#x27;).touched &amp;&amp; ccForm.get(&#x27;ccv&#x27;).hasError(&#x27;minlength&#x27;)&quot;&gt;
+      {{ccvNumTooShortTxt}}
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form__error&quot;
+         *ngIf&#x3D;&quot;validateCCV &amp;&amp; ccForm.get(&#x27;ccv&#x27;).touched &amp;&amp; ccForm.get(&#x27;ccv&#x27;).hasError(&#x27;maxlength&#x27;)&quot;&gt;
+      {{ccvNumTooLongTxt}}
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;cc-form__error&quot;
+         *ngIf&#x3D;&quot;validateCCV &amp;&amp; ccForm.get(&#x27;ccv&#x27;).touched &amp;&amp; ccForm.get(&#x27;ccv&#x27;).hasError(&#x27;numbersOnly&#x27;)&quot;&gt;
+      {{ccvContainsLettersTxt}}
+    &lt;/div&gt;
+    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;cc-form__button cc-form__button--ripple&quot; aria-label&#x3D;&quot;submit&quot; (click)&#x3D;&quot;emitSavedCard()&quot;
+            (keydown.enter)&#x3D;&quot;emitSavedCard()&quot;&gt;Submit
+    &lt;/button&gt;
+  &lt;/form&gt;
+&lt;/section&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./payment-card.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;style/manifest&#x27;;
+
+.cc-form {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+
+  &amp;--inline {
+    align-items: inherit;
+    display: inherit;
+    flex-flow: row;
+    flex-wrap: inherit;
+    height: 100%;
+    justify-content: flex-end;
+    margin-bottom: $small-margin;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+      align-items: inherit;
+      display: inherit;
+      flex-flow: row;
+      flex-wrap: inherit;
+      height: 100%;
+      justify-content: flex-end;
+      margin-bottom: $small-margin;
+      width: 100%;
+    }
+
+    @include breakpoint(mobile) {
+      align-items: center;
+      display: inherit;
+      flex-flow: column;
+      flex-wrap: wrap;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  @at-root input {
+    &amp;[type&#x3D;&#x27;number&#x27;] {
+      -moz-appearance: textfield;
+    }
+
+    &amp;::-webkit-outer-spin-button,
+    &amp;::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &amp;__wrapper {
+    @include breakpoint(laptop) {
+      margin-right: $small-margin;
+      margin-top: $small-margin;
+
+      &amp;--long {
+        width: $input-width-large;
+      }
+
+      &amp;--short {
+        width: $input-width-short;
+      }
+
+      &amp;--last {
+        margin-left: $small-margin;
+        margin-right: $big-margin;
+        margin-top: $label-line-height + 20px;
+      }
+    }
+
+    @include breakpoint(tablet) {
+      margin-right: $small-margin;
+      margin-top: $small-margin;
+
+      &amp;--long {
+        width: $input-width-large;
+      }
+
+      &amp;--short {
+        width: $input-width-short;
+      }
+
+      &amp;--last {
+        margin-left: $small-margin;
+        margin-right: $big-margin;
+      }
+    }
+
+    @include breakpoint(mobile) {
+      margin-right: 0;
+      margin-top: 0;
+
+      &amp;--long,
+      &amp;--short {
+        width: 80%;
+      }
+
+      &amp;--last {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &amp;__label {
+    color: hsla(0, 0, 0, 0.6);
+    display: block;
+    font-family: &#x27;Inconsolata&#x27;, Serif, serif;
+    font-size: $label-font-size-normal;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: $label-line-height;
+    margin-bottom: 5px;
+    margin-top: $small-margin;
+    text-align: left;
+    text-shadow: none;
+    text-transform: uppercase;
+    width: 100%;
+
+    &amp;--first {
+      margin-top: $big-margin;
+    }
+  }
+
+  &amp;__select {
+    @extend .cc-form__input;
+    appearance: listbox;
+  }
+
+  &amp;__input {
+    border: 1px solid hsla(0, 0, 0, 0.3);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
+    color: hsl(0, 0, 20);
+    display: block;
+    font-size: $input-font-size;
+    height: $input-height;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+
+    &amp;--transparent {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    &amp;--embosed {
+      color: $card-font-colour;
+      font-family: &#x27;Inconsolata&#x27;, monospace;
+      font-size: $cc-font-size;
+      text-shadow: 0 2px 1px hsla(0, 0, 0, 0.3);
+
+      @include breakpoint(tablet) {
+        font-size: $cc-font-size-medium;
+      }
+
+      @include breakpoint(mobile) {
+        font-size: $cc-font-size-big;
+      }
+    }
+
+    &amp;--cursive {
+      font-size: $label-font-size-normal;
+      font-style: italic;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+    }
+
+    &amp;--right-align {
+      padding-right: $small-margin;
+      text-align: right;
+    }
+
+    &amp;--left-align {
+      text-align: left;
+    }
+
+    &amp;:focus {
+      border-color: $input-focus-border-colour;
+    }
+  }
+
+  &amp;__error {
+    color: $card-font-invalid-colour;
+    font-size: $label-font-size-normal;
+  }
+
+  &amp;__button {
+    background: $input-focus-border-colour;
+    border: 0;
+    border-radius: $small-radius;
+    color: $card-font-colour;
+    cursor: pointer;
+    margin-bottom: $small-margin;
+    margin-top: $small-padding;
+    outline: 0;
+    overflow: hidden;
+    padding: $small-padding;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: $input-width-large;
+
+    &amp;:hover {
+      box-shadow: 0 6px 8px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    &amp;:focus {
+      background: darken($input-focus-border-colour, 12%);
+    }
+
+    &amp;--ripple {
+      overflow: hidden;
+      position: relative;
+
+      &amp;:after {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 80%;
+        content: &#x27;&#x27;;
+        display: block;
+        height: 120px;
+        left: 50%;
+        margin-left: -50%;
+        margin-top: -60px;
+        position: absolute;
+        top: 50%;
+        transform: scale(0);
+        width: 100%;
+      }
+
+      &amp;:not(:active):after {
+        animation: button-ripple 2s ease-out;
+      }
+    }
+
+    @keyframes button-ripple {
+      0% {
+        transform: scale(0);
+      }
+      20% {
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.cc-wrapper {
+  background-color: $wrapper-background;
+  border-radius: $wrapper-radius;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.cc-box {
+  height: $card-height;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  transform: translateY(-100%);
+  width: $card-width;
+  z-index: 1;
+
+  @include breakpoint(tablet) {
+    transform: translateY(-115%);
+  }
+
+  @include breakpoint(mobile) {
+    transform: translateY(-130%);
+  }
+
+  &amp;--flip {
+    transform-style: preserve-3d;
+    transition: $transition-time;
+
+    &amp;:hover,
+    &amp;.hover {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &amp;__element {
+    padding: 0;
+    width: 80%;
+  }
+
+  &amp;__logo {
+    align-items: center;
+    color: $card-font-colour;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: $input-font-size;
+    font-style: italic;
+    font-weight: bold;
+    justify-content: flex-end;
+    margin-right: $medium-margin;
+    width: 100%;
+  }
+
+  &amp;__strip {
+    background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
+    font-size: $strip-font-size;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transform: translateY(-90%);
+    width: 100%;
+  }
+
+  &amp;__front,
+  &amp;__back {
+    align-items: center;
+    backface-visibility: hidden;
+    background: linear-gradient(135deg, #bd6772, #53223f);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column nowrap;
+    height: 250px;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &amp;__front {
+    transform: rotateY(0deg);
+  }
+
+  &amp;__back {
+    transform: rotateY(180deg);
+  }
+}
+
+.ng-invalid {
+  &amp;.ng-touched {
+    border-color: $card-font-invalid-colour;
+  }
+}
+
+.ng-valid {
+  &amp;.ng-touched {
+    border-color: $input-border-color;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="cc-wrapper">  <div class="cc-box">    <div #ccBoxFlip class="cc-box--flip">      <div class="cc-box__front">        <div class="cc-box__logo">          <p>{{getCardType(ccNumber.value) | uppercase}}</p>        </div>        <div class="cc-box__element">          <label class="cc-form__label" for="cc-card-number-display"></label>          <input class="cc-form__input cc-form__input--transparent cc-form__input--embosed" id="cc-card-number-display"                 aria-label="Payment card number" disabled="disabled"                 [value]="ccForm.get(\'cardNumber\').value | paymentCardNumber">        </div>        <div class="cc-box__element">          <label class="cc-form__label" for="cc-holder-display">CARD HOLDER</label>          <input class="cc-form__input cc-form__input--transparent cc-form__input--embosed" id="cc-holder-display"                 aria-label="Card holder" disabled="disabled" [value]="ccForm.get(\'cardHolder\').value | uppercase">        </div>        <div class="cc-box__element">          <label class="cc-form__label" for="cc-valid-date-display">VALID THRU</label>          <input class="cc-form__input cc-form__input--left-align cc-form__input--transparent cc-form__input--embosed"                 id="cc-valid-date-display" aria-label="Card holder" disabled="disabled"                 [value]="ccForm.get(\'expirationMonth\').value + \'/\' + ccForm.get(\'expirationYear\').value | validThru">        </div>        <div class="cc-box__chip"></div>      </div>      <div class="cc-box__back">        <div class="cc-box__strip">&nbsp;</div>        <div class="cc-box__element">          <input class="cc-form__input cc-form__input--cursive cc-form__input--right-align" id="cc-ccv-display"                 aria-label="CCV" disabled="disabled"                 [value]="\'CCV: \' + ccForm.get(\'ccv\').value" title="CCV">        </div>      </div>    </div>  </div>  <form class="cc-form" [formGroup]="ccForm" autocomplete="off">    <div class="cc-form__wrapper--long">      <label for="cc-number" class="cc-form__label cc-form__label--first">Card number</label>      <input #ccNumber class="cc-form__input" id="cc-number" aria-label="Card number"             type="text" title="Card number" maxlength="19" formControlName="cardNumber"             (focus)="ccBoxFlip.classList.remove(\'hover\')">      <div class="cc-form__error"           *ngIf="validateCCNum && ccForm.get(\'cardNumber\').touched && ccForm.get(\'cardNumber\').hasError(\'required\')">        {{ccNumMissingTxt}}      </div>      <div class="cc-form__error"           *ngIf="validateCCNum && ccForm.get(\'cardNumber\').touched && ccForm.get(\'cardNumber\').hasError(\'minlength\')">        {{ccNumTooShortTxt}}      </div>      <div class="cc-form__error"           *ngIf="validateCCNum && ccForm.get(\'cardNumber\').touched && ccForm.get(\'cardNumber\').hasError(\'maxlength\')">        {{ccNumTooLongTxt}}      </div>      <div class="cc-form__error"           *ngIf="validateCCNum && ccForm.get(\'cardNumber\').touched && ccForm.get(\'cardNumber\').hasError(\'numbersOnly\')">        {{ccNumContainsLettersTxt}}      </div>      <div class="cc-form__error"           *ngIf="validateCCNum && ccForm.get(\'cardNumber\').touched && ccForm.get(\'cardNumber\').hasError(\'checksum\')">        {{ccNumChecksumInvalidTxt}}      </div>    </div>    <div class="cc-form__wrapper--long">      <label for="cc-holder-name" class="cc-form__label">Card Holder name</label>      <input class="cc-form__input" id="cc-holder-name" aria-label="Card holder name" type="text"             title="Card holder name" maxlength="22" formControlName="cardHolder"             (focus)="ccBoxFlip.classList.remove(\'hover\')">      <div class="cc-form__error"           *ngIf="validateCardHolder && ccForm.get(\'cardHolder\').touched &&           ccForm.get(\'cardHolder\').hasError(\'required\')">        {{cardHolderMissingTxt}}      </div>      <div class="cc-form__error"           *ngIf="validateCardHolder && ccForm.get(\'cardHolder\').touched &&           ccForm.get(\'cardHolder\').hasError(\'maxlength\')">        {{cardHolderTooLongTxt}}      </div>    </div>    <div class="cc-form--inline">      <div class="cc-form__wrapper cc-form__wrapper--short">        <label for="cc-expiration-month" class="cc-form__label">Expiration month</label>        <select id="cc-expiration-month" class="cc-form__select" aria-label="Expiration month"                formControlName="expirationMonth">          <option *ngFor="let month of months" value="{{month}}"                  (click)="ccBoxFlip.classList.remove(\'hover\')">{{month}}          </option>        </select>      </div>      <div class="cc-form__wrapper cc-form__wrapper--short">        <label for="cc-expiration-year" class="cc-form__label">Expiration year</label>        <select id="cc-expiration-year" class="cc-form__select" aria-label="Expiration year"                formControlName="expirationYear">          <option *ngFor="let year of years" value="{{year}}"                  (click)="ccBoxFlip.classList.remove(\'hover\')">{{year}}          </option>        </select>      </div>      <div class="cc-form__wrapper cc-form__wrapper--short cc-form__wrapper--last">        <label for="cc-ccv" class="cc-form__label">ccv</label>        <input class="cc-form__input cc-form__input--short" id="cc-ccv" aria-label="CCV" type="text" title="CCV"               minlength="3" maxlength="4" formControlName="ccv" (focus)="ccBoxFlip.classList.add(\'hover\')">      </div>    </div>    <div class="cc-form__error"         *ngIf="validateExpirationMonth && ccForm.get(\'expirationMonth\').touched &&             ccForm.get(\'expirationMonth\').hasError(\'required\')">      {{expirationMonthMissingTxt}}    </div>    <div class="cc-form__error"         *ngIf="validateExpirationMonth && ccForm.get(\'expirationYear\').touched &&             ccForm.get(\'expirationYear\').hasError(\'required\')">      {{expirationYearMissingTxt}}    </div>    <div class="cc-form__error" *ngIf="validateCardExpiration && ccForm.get(\'expirationMonth\').touched &&    ccForm.get(\'expirationYear\').touched && ccForm.hasError(\'expiration\')">      {{cardExpiredTxt}}    </div>    <div class="cc-form__error"         *ngIf="validateCCV && ccForm.get(\'ccv\').touched && ccForm.get(\'ccv\').hasError(\'required\')">      {{ccvMissingTxt}}    </div>    <div class="cc-form__error"         *ngIf="validateCCV && ccForm.get(\'ccv\').touched && ccForm.get(\'ccv\').hasError(\'minlength\')">      {{ccvNumTooShortTxt}}    </div>    <div class="cc-form__error"         *ngIf="validateCCV && ccForm.get(\'ccv\').touched && ccForm.get(\'ccv\').hasError(\'maxlength\')">      {{ccvNumTooLongTxt}}    </div>    <div class="cc-form__error"         *ngIf="validateCCV && ccForm.get(\'ccv\').touched && ccForm.get(\'ccv\').hasError(\'numbersOnly\')">      {{ccvContainsLettersTxt}}    </div>    <button type="submit" class="cc-form__button cc-form__button--ripple" aria-label="submit" (click)="emitSavedCard()"            (keydown.enter)="emitSavedCard()">Submit    </button>  </form></section></div>'
+    var COMPONENTS = [{'name': 'PaymentCardComponent', 'selector': 'ng-payment-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PaymentCardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PaymentCardComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

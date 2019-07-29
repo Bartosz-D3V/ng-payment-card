@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-payment-card-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/stripe.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ng-payment-card-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="responsive-angular-payment-card-component">Responsive, Angular payment card component</h1>
+<p>Customizable component with zero external dependencies.</p>
+<p align="center">
+
+<p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="GitHub" class="img-responsive"></a>
+<a href="https://www.npmjs.com/package/ng-payment-card"><img src="https://img.shields.io/npm/v/ng-payment-card.svg" alt="GitHub" class="img-responsive"></a>
+<a href="https://travis-ci.com/Bartosz-D3V/ng-payment-card"><img src="https://travis-ci.com/Bartosz-D3V/ng-payment-card.svg?branch=master" alt="Build Status" class="img-responsive"></a>
+<a href="https://ci.appveyor.com/project/Bartosz-D3V/ng-payment-card/branch/master"><img src="https://ci.appveyor.com/api/projects/status/ivxohrhd06i2yvco/branch/master?svg=true" alt="Build status" class="img-responsive"></a>
+<a href="https://codecov.io/gh/Bartosz-D3V/ng-payment-card"><img src="https://codecov.io/gh/Bartosz-D3V/ng-payment-card/branch/master/graph/badge.svg" alt="codecov" class="img-responsive"></a>
+<a href="https://david-dm.org/bartosz-d3v/ng-credit-card"><img src="https://david-dm.org/bartosz-d3v/ng-payment-card.svg" alt="David" class="img-responsive"></a>
+<a href="https://david-dm.org/bartosz-d3v/ng-credit-card?type=dev"><img src="https://david-dm.org/bartosz-d3v/ng-payment-card/dev-status.svg" alt="David" class="img-responsive"></a>
+<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="code style: prettier" class="img-responsive"></a>
+<a href="https://renovatebot.com/"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate enabled" class="img-responsive"></a>
+<a href="https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" class="img-responsive"></a></p>
+</p>
+
+<p align="center">
+
+<img src="docs/demo.gif" width="607" height="574"/>
+
+</p>
+
+<h2 id="install">Install</h2>
+<div><pre class="line-numbers"><code class="language-bash">yarn add ng-payment-card //or
+npm install --save ng-payment-card</code></pre></div><p><em>Version 0.0.8 is no longer compatible with Angular 2 - 4 due to TypeScript upgrade</em></p>
+<p><em>For Angular 2 - 4, please use version 0.0.7</em></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Neat design</li>
+<li>Validation of all fields (including Luhn validation) - that can be switched off</li>
+<li>Displaying appropriate card provider&#39;s name based on card number</li>
+<li>Fully responsive</li>
+<li>No dependencies (apart from Angular itself)</li>
+<li>Angular 2 - 7 compatible</li>
+<li>Built with BEM methodology and SCSS</li>
+<li>Fully customizable</li>
+<li>100% test coverage level</li>
+<li>Built with statical code analysis tools</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>After installing the component as a dependency, import it into you Angular module.</p>
+<div><pre class="line-numbers"><code class="language-js">import { NgPaymentCardModule } from &#39;ng-payment-card&#39;;</code></pre></div><p>Afterwards, you can use the component within your templates.</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;ng-payment-card&gt;&lt;/ng-payment-card&gt;
+
+// Setting custom validation messages
+&lt;ng-payment-card
+  [ccNumMissingTxt]=&#39;Please provide card number&#39;
+  [cardExpiredTxt]=&#39;Payment card has expired&#39;&gt;
+&lt;/ng-payment-card&gt;
+
+// Handling event emitter
+&lt;ng-payment-card
+  (formSaved)=&quot;processPayment(cc)&quot;&gt;
+&lt;/ng-payment-card&gt;</code></pre></div><p>Upon submitting the form, component will emit object in the following format:</p>
+<div><pre class="line-numbers"><code class="language-ts">cardNumber: string;
+cardHolder: string;
+expirationMonth: string;
+expirationYear: string;
+ccv: number;</code></pre></div><p><a href="https://bartosz-d3v.github.io/ng-payment-card/components/PaymentCardComponent.html#inputs">Full list of available inputs</a></p>
+<h2 id="supported-card-types">Supported card types</h2>
+<ul>
+<li>American Express</li>
+<li>Diners</li>
+<li>Diners Carte Blanche</li>
+<li>Discover Club</li>
+<li>China UnionPay</li>
+<li>JCB</li>
+<li>Laser</li>
+<li>MAESTRO</li>
+<li>Mastercard</li>
+<li>Visa Electron</li>
+<li>Visa</li>
+</ul>
+<h2 id="development">Development</h2>
+<h3 id="installation">Installation</h3>
+<div><pre class="line-numbers"><code class="language-bash">yarn // or
+npm install</code></pre></div><h3 id="running">Running</h3>
+<div><pre class="line-numbers"><code class="language-bash">yarn start // or
+npm start</code></pre></div><h3 id="testing">Testing</h3>
+<div><pre class="line-numbers"><code class="language-bash">npm test</code></pre></div><h2 id="license">License</h2>
+<p>MIT</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
